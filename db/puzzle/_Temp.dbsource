@@ -1,0 +1,73 @@
+global startX = 12
+global startY = 35
+global jump = 52
+global score = 1000
+global gameover = 0
+white_rgb = rgb(255,255,255)
+black_rgb = rgb(0,0,0)
+red_rgb = rgb(255,0,0)
+#constant BG_FN = "BG.bmp"
+
+load image BG_FN , 10
+
+dim feild(10,10)
+for y = 1 to 10
+    for x = 1 to 10
+        feild(x,y) = 0
+    next x
+next y
+
+
+
+do
+
+    paste image 10, 0, 0
+
+    for y = 1 to 10
+        for x = 1 to 10
+            squarex = startx + ((x-1) * jump)
+            squarey = starty + ((y-1) * jump)
+            mx = mousex()
+            my = mousey()
+         
+            ink white_rgb,white_rgb
+            box squarex, squarey, squarex + jump, squarey + jump
+         
+            ink black_rgb,black_rgb
+            SET TEXT SIZE 100 
+            text squarex + 25, squarey, "x"      
+            remstart
+            if board(x,y) = 1
+                text squarex + 25, squarey, "X"
+            endif
+            if board(x,y) = 2
+                text squarex + 25, squarey, "O"
+            endif
+         
+            if (mx > squarex and mx < squarex + jumpx) and (my > squarey and my < squarey+jumpy) and mouseclick() and board(x,y) = 0 and gameover = 0
+                board(x,y) = player
+                inc player
+                if player = 3 then player = 1
+            endif
+            remend        
+         next x
+    next y
+     
+loop
+
+
+function reset()
+    for y = 1 to 10
+        for x = 1 to 10
+            feild(x,y) = 0
+        next x
+    next y
+    
+    gameover = 0
+    player = 1
+    winer = 0
+endfunction
+
+
+
+
