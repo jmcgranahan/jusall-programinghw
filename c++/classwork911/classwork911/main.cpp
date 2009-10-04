@@ -276,11 +276,6 @@ int main()
 
 	cout << "\n--- >> ---------------------------------------------\n\n";
 
-	s1 = "abcdefghijklmnopqrstuvwxyz";
-	s2 = "xzy";
-	cout << s1 << endl << s2 <<endl;
-	cout << s1.Find("xyz") << end;
-
 	cout << "\n>>> cin >> s1;\n";
 	cout << " Press ENTER >";
 	cin >> s1;
