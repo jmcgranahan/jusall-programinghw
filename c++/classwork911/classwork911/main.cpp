@@ -107,7 +107,7 @@ int main()
 	cout << " s3 = [" << s3 << "]\n";
 	cout << " s4 = [" << s4 << "]\n\n";
 
-	cout << " >>>                            s3.Find(\"456\") = [" << s3.Find("45") << "]\n";
+	cout << " >>>                            s3.Find(\"456\") = [" << s3.Find("45") << "]\n"; //THIS SCARES THE EVERLOVING HELL OUT OF ME
 	cout << " >>>                              s3.Find(s4) = [" << s3.Find(s4) << "]\n";
 	cout << " >>>                               s3.Find(s3) = [" << s3.Find(s3) << "]\n";
 
@@ -275,6 +275,11 @@ int main()
 	cout << " >>>                                 s1 != s1 = [" << (s1 != s1) << "]\n";
 
 	cout << "\n--- >> ---------------------------------------------\n\n";
+
+	s1 = "abcdefghijklmnopqrstuvwxyz";
+	s2 = "xzy";
+	cout << s1 << endl << s2 <<endl;
+	cout << s1.Find("xyz") << end;
 
 	cout << "\n>>> cin >> s1;\n";
 	cout << " Press ENTER >";

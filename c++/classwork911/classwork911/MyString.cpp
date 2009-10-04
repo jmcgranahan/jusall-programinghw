@@ -210,27 +210,18 @@ void MyString::Insert(const MyString & aMyString, int index)
 {
 	int MyStringLength = _length + aMyString._length;
 	char * _Temp = new char[_capacity + 1];
-	strncpy( _Temp, _string);
+	char * _Temp2 = new char[aMyString._capacity + 1];
+	strcpy( _Temp, _string);
+	strcpy( _Temp2, aMyString._string);
 
-	if(MyStringLength > _capacity)
-	{
-		//need more capacity
-		_capacity = MyStringLength;
-		delete [] _string;
-		_string = new char[_capacity + 1];
-	}
+	this->Clear(MyStringLength+1);
+
 	strncpy( _string, _Temp, index);
-	strcat(_string,aMyString._string);
+	_string[index] = '\0';
+	this->Append(_Temp2);
 
-	int TempIndex = index+aMyString.Length-1;
-	do{
-		TempIndex++;
-		_string[TempIndex] = _Temp[TempIndex - index];
+	strcat(_string, _Temp+index);
 
-		
-	}while(TempIndex <= _length+aMyString.Length);
-
-	strcat( _string, _Temp);
 	_length = MyStringLength;
 
 }
@@ -281,23 +272,22 @@ MyString MyString::SubStr(int startIndex, int numChars) const
 		}
 		m._string[numChars] = '\0';
 	}
+	m._length = numChars;
 	return m;
 }
 //-----------------------------------------------------
 MyString MyString::operator= (const MyString & aMyString)
 {
-	MyString Temp;
-	Temp.Assign(aMyString);
-	return Temp;
+	this->Assign(aMyString);
+	return 0;
 	
 }
 
 //-----------------------------------------------------
 MyString MyString::operator= (const char *  const aCString)
 {
-	MyString Temp;
-	Temp.Assign(aCString);
-	return Temp;
+	this->Assign(aCString);
+	return 0;
 	
 }
 //-----------------------------------------------------
@@ -331,20 +321,20 @@ MyString MyString::operator+= (const char *  const aCString)
 //-----------------------------------------------------
 char & MyString::operator[] (int index) const
 {
-	char At;
-	if((index <= _length) && (index != 0)){
-		char * Pointer = _string;
-		Pointer += index - 1;
-		At = *Pointer;
-		
+	
+	if((index <= _length) && (index >= 0)){	
+		return _string[index];
 	}
-	if(index >= _length){
+	else if(index >= _length){
 		std::cout << "error: index longer than MyString length" << std::endl;
+		return _string[0];
 	}
-	if(index == 0){
-		std::cout << "error: index cannot equal 0" << std::endl;
+	else if(index < 0){
+		std::cout << "error: index cannot be less than 0" << std::endl;
+		return _string[0];
 	}
-	return At;
+	
+	
 }
 //-----------------------------------------------------
 bool MyString::operator> (const MyString & aMyString) 
