@@ -8,8 +8,27 @@ MyDate::MyDate()
 {
 	_days = 0;
 }
-//MyDate(int day, int month, int year);
-//MyDate(int days); 
+MyDate::MyDate(int day, int month, int year)
+{
+	int tempDays = 0;
+	tempDays += (year-1) * 365 + ( ((int) ((year-1) / 4)) - ((int) ((year-1) / 100)) + ((int) ((year-1) / 400)));
+	tempDays += ((month-1) * 30) + ((month-1) % 2);
+	if(month > 2)
+	{
+		if((year%4 == 0)&& ((year%100 != 0) || (year%400 == 0))) tempDays - 2;
+		else tempDays - 1 ;
+	}
+	tempDays += day;
+	_days = tempDays;
+	
+}
+
+MyDate::MyDate(int days)
+{
+	_days = days;
+	return;
+
+}
 //MyDate(MyDate & aMyDate); 
  
 // METHODS
@@ -19,7 +38,11 @@ MyDate::MyDate()
 //bool IsLeapYear();
  
       
-//int GetDay();
+int MyDate::GetDay()
+{
+	return _days;
+
+}
 //void SetDay(int newDay);
      
       

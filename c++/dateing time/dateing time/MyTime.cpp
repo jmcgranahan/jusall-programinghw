@@ -447,4 +447,13 @@ ostream & operator<< (ostream & os, const MyTime & aMyTime)
 
 }
 
-//friend istream & operator>> (istream & is, MyTime & aMyTime);
+istream & operator>> (istream & is, MyTime & aMyTime)
+{
+	cout << "Enter Ticks: ";
+	long tempTicks = 0;
+	is >> tempTicks;
+	while(tempTicks > MyTime::_ticksPerDay) tempTicks -= MyTime::_ticksPerDay;
+	aMyTime._ticks = tempTicks;
+	cout << endl;
+	return is;
+}

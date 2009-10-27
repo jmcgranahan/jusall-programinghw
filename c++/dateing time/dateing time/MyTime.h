@@ -154,6 +154,6 @@ public:
       // <<, >> stream insertion and extraction
       friend ostream & operator<< (ostream & os, const MyTime & aMyTime);
  
-      //friend istream & operator>> (istream & is, MyTime & aMyTime);
+      friend istream & operator>> (istream & is, MyTime & aMyTime);
 };
 #endif

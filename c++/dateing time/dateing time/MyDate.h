@@ -29,8 +29,8 @@ public:
  
       // CONSTRUCTORS
       MyDate(); // default: sets date to jan 1, year 1
-      //MyDate(int day, int month, int year);
-      //MyDate(int days); // sets date to 'days' days from jan 1 year 1
+      MyDate(int day, int month, int year);
+      MyDate(int days); // sets date to 'days' days from jan 1 year 1
       //MyDate(MyDate & aMyDate); // copy constructor
  
       // METHODS
@@ -42,7 +42,7 @@ public:
       // Accessors and mutators for:
       // day, month, and year
       // returns int day of month
-      //int GetDay() ;
+      int GetDay() ;
       // sets day of month (1-31)
       //void SetDay(int newDay);
      
