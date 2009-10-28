@@ -6,8 +6,8 @@ using namespace std;
 
 int main()
 {
-	MyDate d1(1,1,2009);
+	MyDate d1(1,3,3999);
+	cout << d1.GetMonth() << endl;
 
-	cout << d1.GetDay() <<endl;
 
 }

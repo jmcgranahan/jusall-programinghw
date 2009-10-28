@@ -15,8 +15,8 @@ MyDate::MyDate(int day, int month, int year)
 	tempDays += ((month-1) * 30) + ((month-1) % 2);
 	if(month > 2)
 	{
-		if((year%4 == 0)&& ((year%100 != 0) || (year%400 == 0))) tempDays - 2;
-		else tempDays - 1 ;
+		if((year%4 == 0)&& ((year%100 != 0) || (year%400 == 0))) tempDays -= 1;
+		else tempDays -= 2 ;
 	}
 	tempDays += day;
 	_days = tempDays;
@@ -29,37 +29,113 @@ MyDate::MyDate(int days)
 	return;
 
 }
-//MyDate(MyDate & aMyDate); 
+
+MyDate::MyDate(MyDate & aMyDate)
+{
+	_days = aMyDate.GetDateSerial();
+	return;
+
+}
  
 // METHODS
  
 //static bool IsLeapYear(MyDate & aMyDate);
 //static bool IsLeapYear(int year);
-//bool IsLeapYear();
+bool MyDate::IsLeapYear()
+{
+	int year = this->GetYear();
+	if((year%4 == 0)&& ((year%100 != 0) || (year%400 == 0))) return true;
+	else return false;
+}
  
       
-int MyDate::GetDay()
-{
-	return _days;
+//int MyDate::GetDay()
 
-}
-//void SetDay(int newDay);
+//void MyDate::SetDay(int newDay)
+
      
       
-//int GetMonth()
+int MyDate::GetMonth()
+{
+	int tempDays = _days;
+	int year = this->GetYear();
+	int month = 0;
+	bool isLeap = this->IsLeapYear();
+	while (year > 1) {
+		if((year%4 == 0)&& ((year%100 != 0) || (year%400 == 0)))
+		{
+			tempDays -= 366;
+		}
+		else
+		{
+			tempDays -= 365;
+		}
+		year--;
+	}
+	if(tempDays < 31) month = 1;
+	else if (tempDays < (59 + ( 1 * isLeap))) month = 2;
+	else {
+		tempDays -= (59 + ( 1 * isLeap));
+		month = 2
+
+}
 //void SetMonth(int newMonth);
  
-//int MyDate::GetYear()
+int MyDate::GetYear()
+{
+	int tempDays = _days;
+	int year = 1;
+	while(tempDays > 365){
+		if((year%4 == 0)&& ((year%100 != 0) || (year%400 == 0)))
+		{
+			tempDays -= 366;
+		}
+		else
+		{
+			tempDays -= 365;
+		}
+		year++;
+	}
+	return year;
+
+
+}
 //void SetYear(int newYear);
  
 //void GetDayName(char * dayBuffer);
 //void GetMonthName(char * monthBuffer);
 
-//int GetDateSerial() const;
+int MyDate::GetDateSerial() const
+{
+	return _days;
+
+}
  
-//void SetDate(int Days);
-//void SetDate(int newDay, int newMonth, int newYear);
-//void SetDate(const MyDate & aMyDate);
+void MyDate::SetDate(int Days)
+{
+	_days = Days;
+	return;
+}
+
+void MyDate::SetDate(int newDay, int newMonth, int newYear)
+{
+	int tempDays = 0;
+	tempDays += (newYear-1) * 365 + ( ((int) ((newYear-1) / 4)) - ((int) ((newYear-1) / 100)) + ((int) ((newYear-1) / 400)));
+	tempDays += ((newMonth-1) * 30) + ((newMonth-1) % 2);
+	if(newMonth > 2)
+	{
+		if((newYear%4 == 0)&& ((newYear%100 != 0) || (newYear%400 == 0))) tempDays -= 2;
+		else tempDays -= 1 ;
+	}
+	tempDays += newDay;
+	_days = tempDays;	
+}
+
+void MyDate::SetDate(const MyDate & aMyDate)
+{
+	_days = aMyDate.GetDateSerial();
+	return;
+}
  
 //static MyDate Now();
  

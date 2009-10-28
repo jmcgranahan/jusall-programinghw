@@ -31,28 +31,28 @@ public:
       MyDate(); // default: sets date to jan 1, year 1
       MyDate(int day, int month, int year);
       MyDate(int days); // sets date to 'days' days from jan 1 year 1
-      //MyDate(MyDate & aMyDate); // copy constructor
+      MyDate(MyDate & aMyDate); // copy constructor
  
       // METHODS
  
       //static bool IsLeapYear(MyDate & aMyDate);
       //static bool IsLeapYear(int year);
-      //bool IsLeapYear();// returns true if the current instance is a leapyear
+      bool IsLeapYear();// returns true if the current instance is a leapyear
  
       // Accessors and mutators for:
       // day, month, and year
       // returns int day of month
-      int GetDay() ;
+      //int GetDay() ;
       // sets day of month (1-31)
       //void SetDay(int newDay);
      
       // returns int month of year ( jan = 1 dec = 12)
-      //int GetMonth();
+      int GetMonth();
       // sets month of year ( jan = 1 dec = 12)
       //void SetMonth(int newMonth);
  
       // returns int year
-      //int GetYear();
+      int GetYear();
       // sets year
       //void SetYear(int newYear);
  
@@ -64,19 +64,19 @@ public:
       //void GetMonthName(char * monthBuffer);
  
       // returns number of days since jan 1 year 1 for current instance date
-      //int GetDateSerial() const;
+      int GetDateSerial() const;
  
       // SetDate (various useful overloads)
             // Days
-      //void SetDate(int Days);
+      void SetDate(int Days);
             // Day, Month Year
-      //void SetDate(int newDay, int newMonth, int newYear);
+      void SetDate(int newDay, int newMonth, int newYear);
             // MyDate
-      //void SetDate(const MyDate & aMyDate);
+      void SetDate(const MyDate & aMyDate);
  
       // Now
       // a static function that returns a MyDate object
-//   initialized to the current date according to the system clock
+	  //   initialized to the current date according to the system clock
       //static MyDate Now();
  
       // Add (various useful functions)
