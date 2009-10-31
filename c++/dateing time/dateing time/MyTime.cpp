@@ -258,10 +258,7 @@ MyTime MyTime::Now()
 	time(& rawtime);
 	struct tm * timeinfo;
 	timeinfo = localtime( & rawtime);
-	int tempHour =timeinfo->tm_hour;
-	int tempMinute =timeinfo->tm_min;
-	int tempSecond =timeinfo->tm_sec;
-	MyTime tempMyTime((tempHour * _ticksPerHour) + (tempMinute * _ticksPerMinute) + (tempSecond * _ticksPerSecond));
+	MyTime tempMyTime((timeinfo->tm_hour * _ticksPerHour) + (timeinfo->tm_min * _ticksPerMinute) + (timeinfo->tm_sec * _ticksPerSecond));
 	return tempMyTime;
 }
 

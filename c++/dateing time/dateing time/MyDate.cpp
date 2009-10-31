@@ -62,6 +62,7 @@ int MyDate::GetMonth()
 	int month = 0;
 	bool isLeap = this->IsLeapYear();
 	while (year > 1) {
+		
 		if((year%4 == 0)&& ((year%100 != 0) || (year%400 == 0)))
 		{
 			tempDays -= 366;
@@ -72,12 +73,31 @@ int MyDate::GetMonth()
 		}
 		year--;
 	}
-	if(tempDays < 31) month = 1;
-	else if (tempDays < (59 + ( 1 * isLeap))) month = 2;
-	else {
+	if(tempDays <= 31) month = 1;
+	else if (tempDays <= (59 + ( 1 * isLeap))) month = 2;
+	else if (tempDays <= (213 + ( 1 * isLeap))) {
 		tempDays -= (59 + ( 1 * isLeap));
-		month = 2
-
+		month = 3;
+		int extraDay = 1;
+		while(tempDays >= (30 + extraDay))
+		{
+			tempDays -= (30 + extraDay);
+			month++;
+			extraDay = !extraDay;
+		}
+	}
+	else {
+		tempDays -= (212 + ( 1 * isLeap));
+		month = 9;
+		int extraDay = 1;
+		while(tempDays >= (30 + extraDay))
+		{
+			tempDays -= (30 + extraDay);
+			month++;
+			extraDay = !extraDay;
+		}
+	}
+	return month;
 }
 //void SetMonth(int newMonth);
  
@@ -128,7 +148,8 @@ void MyDate::SetDate(int newDay, int newMonth, int newYear)
 		else tempDays -= 1 ;
 	}
 	tempDays += newDay;
-	_days = tempDays;	
+	_days = tempDays;
+	return;
 }
 
 void MyDate::SetDate(const MyDate & aMyDate)
