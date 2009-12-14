@@ -1,4 +1,4 @@
-/*//MyArray.cpp
+//MyArray.cpp
 #include <iostream>
 #include "MyArray.h"
 
@@ -195,4 +195,3 @@ bool MyArray<elemType>::operator!= (const MyArray & aMyArray)
 	}
 	return false;
 }
-*/

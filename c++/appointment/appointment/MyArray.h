@@ -53,11 +53,12 @@ public:
       // Takes an argument of the templated type and
       // adds it to the end of the list/array
       void Add(const elemType & elem){
+		elemType temp = elem;
 		if (_size >= _capacity)
 		{
 			MakeRoom();
 		}
-		list[_size] = elem;
+		list[_size] = temp;
 		_size++;
 	
 }
