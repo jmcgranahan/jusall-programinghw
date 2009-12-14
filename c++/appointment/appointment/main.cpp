@@ -3,6 +3,8 @@
 #include "MyDate.h"
 #include "MyTime.h"
 #include "MyArray.h"
+#include <fstream>
+using std::ofstream;
 
 using namespace std;
 
@@ -15,8 +17,8 @@ private:
 public:
 	MyApp(){
 		Description = "Empty appointment";
-		Date.Now();
-		Time.Now();
+		Date = Date.Now();
+		Time = Time.Now();
 	};
 	MyApp(const MyApp & aMyApp){
 		Description = aMyApp.Description;
@@ -26,14 +28,14 @@ public:
 	MyApp(MyDate & aMyDate){
 		Description = "Empty appointment";
 		Date.SetDate(aMyDate);
-		Time.Now();
+		Time = Time.Now();
 	};
 	MyApp(int day, int month, int year){
 		Description = "Empty appointment";
 		Date.SetYear(year);
 		Date.SetMonth(month);
 		Date.SetDay(day);
-		Time.Now();
+		Time = Time.Now();
 	};
 	MyApp(int day, int month, int year, int hour, int minute){
 		Description = "Empty appointment";
@@ -138,18 +140,75 @@ public:
 	}
 };
 
+
 int main()
 {
 	MyArray<MyApp> appointments(10);
-	MyApp app1(5,6,5);
-	MyApp app2;
-	app1.SetDescription("test");
-	cout << app1.GetDesc() << "\n" << app1.GetDate() << "\n" << app1.GetTime() << "\n";
-	appointments.Add(app1);
-	app2 = appointments.At(1);
-	cout << app2.GetDesc() << "\n" << app2.GetDate() << "\n" << app2.GetTime() << "\n";
-	app2 = app1;
-	cout << app2.GetDesc() << "\n" << app2.GetDate() << "\n" << app2.GetTime() << "\n";
+	MyArray<MyApp> appointments2(10);
+	MyApp app1;
+	ofstream myofile;
+	ifstream myifile;
+	for(int i = 0; i < 10; i++)
+	{
+		app1.SetDate(i+1,i+1,i+1);
+		MyString String("test");
+		String.Append(i);
+		app1.SetDescription(String);
+		appointments.Add(app1);
+	}
+	
+	myofile.open("data.txt", ios::out);
+
+	if(myofile.is_open())
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			myofile << appointments.At(i).GetDesc() << "  ";
+			if(appointments.At(i).GetTime().GetTicks() > 0)
+				myofile << appointments.At(i).GetTime() << "  ";
+			myofile << appointments.At(i).GetDate() << "\n";
+
+		}
+
+		myofile.close();
+	}
+	else
+		cout << "Failed to open" << "\n";
+
+	myifile.open("data.txt", ios::in);
+
+	if(myifile.is_open())
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			char desc[512];
+			int hour;
+			char colens[5];
+			int min;
+			int sec;
+			int year;
+			int month;
+			int day;
+			myifile >> desc >> hour >> colens[0] >> min >> colens[0] >> sec >> day >> colens[0] >> month >> colens[0]>> year;
+			app1.SetDescription(desc);
+			app1.SetDate(year,month,day);
+			app1.SetTime(hour,min,sec);
+			appointments2.Add(app1);
+		}
+
+		myifile.close();
+	}
+	else
+		cout << "Failed to open" << "\n";
+
+	for (int i = 0; i < 10; i++)
+	{
+		cout << appointments2.At(i).GetDesc() << "  ";
+		if(appointments2.At(i).GetTime().GetTicks() > 0)
+			cout << appointments2.At(i).GetTime() << "  ";
+		cout << appointments2.At(i).GetDate() << "\n";
+	}
 
 	return 0;
 }
+

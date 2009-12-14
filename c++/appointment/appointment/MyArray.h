@@ -169,15 +169,16 @@ public:
 	return true;
 
 }
-      bool operator!= (const MyArray & aMyArray){
-	if( _size != aMyArray.Size())
-		return true;
-	else
+	bool operator!= (const MyArray & aMyArray)
 	{
-		for(int i = 0; i < _size; i++)
+		if( _size != aMyArray.Size())
+			return true;
+		else
+		{
+			for(int i = 0; i < _size; i++)
 			if( list[i] != aMyArray.At(i+1))
 				return true;
-	}
+		}
 	return false;
 }
 };

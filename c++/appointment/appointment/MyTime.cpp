@@ -438,7 +438,7 @@ bool MyTime::operator!= (const MyTime & aMyTime) const
 // <<, >> stream insertion and extraction
 ostream & operator<< (ostream & os, const MyTime & aMyTime)
 {
-	os << "total ticks:" << aMyTime.GetTicks() <<endl<< "hours	   :" << aMyTime.GetHours() <<endl<< "minutes    :" << aMyTime.GetMinutes() <<endl<< "seconds    :" <<aMyTime.GetSeconds() <<endl<<endl;
+	os << aMyTime.GetHours() << ":" << aMyTime.GetMinutes() << ":" <<aMyTime.GetSeconds();
 
 	return os;
 

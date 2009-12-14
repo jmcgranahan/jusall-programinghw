@@ -477,7 +477,7 @@ bool MyDate::operator!= (const MyDate & aMyDate)  const
 // <<, >> stream insertion and extraction
 ostream & operator<< (ostream & os, MyDate & aMyDate)
 {
-	os << "total days:" << aMyDate.GetDateSerial() <<endl<< aMyDate.GetDay() << "/"<<  aMyDate.GetMonth() <<"/" <<aMyDate.GetYear() <<endl<<endl;
+	os << aMyDate.GetDay() << "/"<<  aMyDate.GetMonth() <<"/" <<aMyDate.GetYear();
 
 	return os;
 
