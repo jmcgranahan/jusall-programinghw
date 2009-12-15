@@ -51,7 +51,7 @@ int MyDate::yearToDay(int year)
       // CONSTRUCTORS
 MyDate::MyDate()
 {
-	_days = 0;
+	_days = 1;
 }
 MyDate::MyDate(int day, int month, int year)
 {
@@ -86,6 +86,8 @@ MyDate::MyDate(int day, int month, int year)
 
 MyDate::MyDate(int days)
 {
+	if(days < 1)
+		days = 1;
 	_days = days;
 	return;
 
@@ -480,7 +482,6 @@ ostream & operator<< (ostream & os, MyDate & aMyDate)
 	os << aMyDate.GetDay() << "/"<<  aMyDate.GetMonth() <<"/" <<aMyDate.GetYear();
 
 	return os;
-
 }
  
       // date must be one of these formats

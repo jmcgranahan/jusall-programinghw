@@ -4,6 +4,7 @@
 #include "MyTime.h"
 #include "MyArray.h"
 #include <fstream>
+#define _CRT_SECURE_NO_WARNINGS
 using std::ofstream;
 
 using namespace std;
@@ -115,6 +116,14 @@ public:
 	}
 
 
+	bool IsInDateRage(MyDate startDate, MyDate endDate)
+	{
+		if(Date >= startDate && Date <= endDate)
+			return true;
+		else
+			return false;
+
+	}
 	MyDate GetDate() {
 		MyDate temp;
 		temp.SetDate(this->Date);
@@ -138,76 +147,73 @@ public:
 		this->SetTime(aMyApp);
 		return aMyApp;
 	}
+	friend ostream & operator<< (ostream & os, MyApp & aMyApp)
+	{
+		os << aMyApp.GetDesc() << " " << aMyApp.GetTime() << " " << aMyApp.GetDate();
+		return os;
+	}
+	friend istream & operator>> ( istream & is, MyApp & aMyApp)
+	{
+		char desc[512];
+		int hour;
+		char colens[5];
+		int min;
+		int sec;
+		int year;
+		int month;
+		int day;
+		is >> desc >> hour >> colens[0] >> min >> colens[0] >> sec >> day >> colens[0] >> month >> colens[0]>> year;
+		aMyApp.SetDescription(desc);
+		aMyApp.SetDate(year,month,day);
+		aMyApp.SetTime(hour,min,sec);
+		return is;
+	}
 };
 
 
 int main()
 {
 	MyArray<MyApp> appointments(10);
-	MyArray<MyApp> appointments2(10);
 	MyApp app1;
-	ofstream myofile;
+	MyDate startDate(1,1,1);
+	MyDate endDate(4,1,1);
 	ifstream myifile;
-	for(int i = 0; i < 10; i++)
+
+
+	for(int i = 0; i < 15; i++)
 	{
-		app1.SetDate(i+1,i+1,i+1);
+		MyDate tempDate(i+1);
+		app1.SetDate(tempDate);
 		MyString String("test");
 		String.Append(i);
 		app1.SetDescription(String);
 		appointments.Add(app1);
 	}
+
+
+	appointments.Display();
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n";
+
+	appointments.WriteOut("data.txt");
+	appointments.Display();
+
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n";
+
+	appointments.WriteIn("data.txt");
+	appointments.Display();
+
+
+	for (int i = 0; i < appointments.Size(); i++)
+	{
+		if(appointments.At(i).IsInDateRage(startDate,endDate))
+			cout << "appointment " << i << " is within the dates" << "\n" ;
+		else
+			cout << "appointment " << i << " is not within the dates" << "\n";
+	}
 	
-	myofile.open("data.txt", ios::out);
 
-	if(myofile.is_open())
-	{
-		for (int i = 0; i < 10; i++)
-		{
-			myofile << appointments.At(i).GetDesc() << "  ";
-			if(appointments.At(i).GetTime().GetTicks() > 0)
-				myofile << appointments.At(i).GetTime() << "  ";
-			myofile << appointments.At(i).GetDate() << "\n";
 
-		}
-
-		myofile.close();
-	}
-	else
-		cout << "Failed to open" << "\n";
-
-	myifile.open("data.txt", ios::in);
-
-	if(myifile.is_open())
-	{
-		for (int i = 0; i < 10; i++)
-		{
-			char desc[512];
-			int hour;
-			char colens[5];
-			int min;
-			int sec;
-			int year;
-			int month;
-			int day;
-			myifile >> desc >> hour >> colens[0] >> min >> colens[0] >> sec >> day >> colens[0] >> month >> colens[0]>> year;
-			app1.SetDescription(desc);
-			app1.SetDate(year,month,day);
-			app1.SetTime(hour,min,sec);
-			appointments2.Add(app1);
-		}
-
-		myifile.close();
-	}
-	else
-		cout << "Failed to open" << "\n";
-
-	for (int i = 0; i < 10; i++)
-	{
-		cout << appointments2.At(i).GetDesc() << "  ";
-		if(appointments2.At(i).GetTime().GetTicks() > 0)
-			cout << appointments2.At(i).GetTime() << "  ";
-		cout << appointments2.At(i).GetDate() << "\n";
-	}
+	
 
 	return 0;
 }

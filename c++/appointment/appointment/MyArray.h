@@ -20,39 +20,38 @@ private:
       //   maintains current data
       void MakeRoom(){
 		elemType * Temp = new elemType[_capacity];
-		for(int i=0; i <= _capacity;i++)
+		for(int i=0; i < _capacity;i++)
 			Temp[i] = list[i];
 		delete [] list;
 		_capacity *= 2;
 		list = new elemType[_capacity];
-		for(int i=0; i <= _capacity/2;i++)
+		for(int i=0; i < _capacity/2;i++)
 			list[i] = Temp[i];
 		delete [] Temp;
 }
 public:
  
 // Ctors
-      MyArray(){
+	MyArray(){
 		_size = 0;
 		_capacity = 16;
 		list = new elemType[_capacity];
 }// default
 
-      MyArray(int capacity){
+	MyArray(int capacity){
 		_size = 0;
 		_capacity = capacity;
 		list = new elemType[_capacity];
-} // initialize to capacity
+	} // initialize to capacity
 
-      //MyArray( MyArray & original); // copy constructor
+//MyArray( MyArray & original); // copy constructor
 // Dtor
-      ~MyArray(){delete [] list;}
- 
+	~MyArray(){delete [] list;}
 // METHODS
 // Add
-      // Takes an argument of the templated type and
-      // adds it to the end of the list/array
-      void Add(const elemType & elem){
+// Takes an argument of the templated type and
+// adds it to the end of the list/array
+	void Add(const elemType & elem){
 		elemType temp = elem;
 		if (_size >= _capacity)
 		{
@@ -60,17 +59,16 @@ public:
 		}
 		list[_size] = temp;
 		_size++;
-	
-}
+	}
 // At
-      // Takes an int argument
-      // Returns a reference to the element at a specified location in this MyArray
-      elemType & At(int index){return list[index];}
+    // Takes an int argument
+    // Returns a reference to the element at a specified location in this MyArray
+    elemType & At(int index){return list[index];}
 // Find
-      // Takes an argument of the templated type
-      // Returns the int index were this element is found
-      // Returns -1 if element is not found
-      int Find(const elemType & elem){
+    // Takes an argument of the templated type
+    // Returns the int index were this element is found
+    // Returns -1 if element is not found
+	int Find(const elemType & elem){
 		elemType temp = elem;
 		for( int i = 0;i < _size; i++)
 		{
@@ -86,7 +84,7 @@ public:
       // Inserts the element at that index in the list/array
       // moving the element currently at that index and all subsequent
       // elements up one index
-      void Insert(const elemType & elem, int index){
+    void Insert(const elemType & elem, int index){
 	if (_size+1 >= _capacity)
 	{
 		MakeRoom();
@@ -115,11 +113,11 @@ public:
 // RemoveAt
       // Takes an int argument
       // Removes the element at that index in the list/array
-      void RemoveAt(int index){
-	for(int i=index; i < _size; i++)
+    void RemoveAt(int index){
+	for(int i=index; i < _size-1; i++)
 	{
 		int j = i+1;
-		list[i] = list[j];
+		list[j] = list[i];
 	}
 	_size--;
 
@@ -127,12 +125,68 @@ public:
 // SetValue
       // Takes an item to assign and an int index to assign it at
       // Assigns the item to the specified index of this MyArray
-      void SetValue(const elemType & elem, int index){list[index-1] = elem;}
+    void SetValue(const elemType & elem, int index){list[index-1] = elem;}
 // Size
       // Returns the number of elements in this MyArray
-      int Size(){return _size;}
+    int Size(){return _size;}
 // Capacity
-	  int Capacity(){return _capacity;}
+	int Capacity(){return _capacity;}
+
+	void WriteOut(const char * fileName)
+	{
+		ofstream myofile;
+		int tempSize = _size;
+		myofile.open(fileName, ios::out);
+
+		if(myofile.is_open())
+		{
+			myofile << tempSize << "\n";
+
+			for (int i = 0; i < _size; i++)
+			{
+				myofile << this->At(i) << "\n";
+			}
+			Empty();
+			myofile.close();
+		}
+		else
+			cout << "Failed to open" << "\n";
+
+	}
+	void WriteIn(const char * fileName)
+	{
+		ifstream myifile;
+		int lines;
+		elemType temp;
+		myifile.open("data.txt", ios::in);
+		if(myifile.is_open())
+		{
+			myifile >> lines; 
+			for(int i=0; i < lines; i++)
+			{
+				myifile >> temp;
+				Add(temp);
+			}
+
+		myifile.close();
+	}
+	else
+		cout << "Failed to open" << "\n";
+	}
+
+	void Display()
+	{
+		for (int i = 0; i < _size; i++)
+		{
+			cout << "[" << i << "] = " << list[i] << "\n";
+		}
+	}
+	void Empty()
+	{
+		_size = 0;
+		delete [] list;
+		list = new elemType[_capacity];
+	}
  
 // OPERATORS
       // = (assignment - takes a MyArray and makes a deep copy)
@@ -141,7 +195,7 @@ public:
       // [] (read/write char access by index)
             // Returns a reference to the element at that index
             // throws an exception if index is < 0 or >= _length
-      elemType & operator[] (int index) const{
+    elemType & operator[] (int index) const{
 	if((index < _size) && (index >= 0)){	
 		return list[index];
 	}
@@ -155,9 +209,9 @@ public:
 	}
 }
  
-      // ==, != (boolean relational test operators)
+    // ==, != (boolean relational test operators)
       //  compares arrays for element by element equality
-      bool operator== (const MyArray & aMyArray){
+    bool operator== (const MyArray & aMyArray){
 	if( _size != aMyArray.Size())
 		return false;
 	else
