@@ -50,6 +50,9 @@ namespace WindowsApplication1
             rules[7,1] = rule71.Text;
             //end rules
             decimal numGens = genselect.Value;
+
+
+            //make sure there is a rule in 0,0 , to prevent a loop error
             if (rules[0, 0].Length == 0)
             {
                 textBox1.Text = "please enter a rule in the first slot \r\n";
@@ -69,9 +72,9 @@ namespace WindowsApplication1
                 {
                     bool foundRule = false;
                     int i = 0;
-                    while(i < NUMRULES && !foundRule)
+                    while(i < NUMRULES && !foundRule) //more efficiant that orriginal, stops once a rule is found for the one char
                     {
-                        if ((rules[i, 0].Length != 0) && (rules[i, 0][0] == c))
+                        if ((rules[i, 0].Length != 0) && (rules[i, 0][0] == c)) // makes sure there is even a rule to test before testing it
                         {
                             sb.Append(rules[i,1]);
                             foundRule = true;
