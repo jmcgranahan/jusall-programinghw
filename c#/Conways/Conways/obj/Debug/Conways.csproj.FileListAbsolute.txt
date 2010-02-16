@@ -1,0 +1,17 @@
+C:\Documents and Settings\pmiller\My Documents\Visual Studio 2008\Projects\Conways\Conways\bin\Debug\Conways.exe
+C:\Documents and Settings\pmiller\My Documents\Visual Studio 2008\Projects\Conways\Conways\bin\Debug\Conways.pdb
+C:\Documents and Settings\pmiller\My Documents\Visual Studio 2008\Projects\Conways\Conways\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\pmiller\My Documents\Visual Studio 2008\Projects\Conways\Conways\obj\Debug\Conways.exe
+C:\Documents and Settings\pmiller\My Documents\Visual Studio 2008\Projects\Conways\Conways\obj\Debug\Conways.pdb
+I:\code\c#\Conways\Conways\obj\Debug\Conways.exe
+I:\code\c#\Conways\Conways\obj\Debug\Conways.pdb
+I:\code\c#\Conways\Conways\bin\Debug\Conways.exe
+I:\code\c#\Conways\Conways\bin\Debug\Conways.pdb
+I:\code\c#\Conways\Conways\obj\Debug\ResolveAssemblyReference.cache
+I:\code\c#\Conways\Conways\bin\Debug\CA.txt
+J:\code\c#\Conways\Conways\obj\Debug\Conways.exe
+J:\code\c#\Conways\Conways\obj\Debug\Conways.pdb
+J:\code\c#\Conways\Conways\obj\Debug\ResolveAssemblyReference.cache
+J:\code\c#\Conways\Conways\bin\Debug\CA.txt
+J:\code\c#\Conways\Conways\bin\Debug\Conways.exe
+J:\code\c#\Conways\Conways\bin\Debug\Conways.pdb

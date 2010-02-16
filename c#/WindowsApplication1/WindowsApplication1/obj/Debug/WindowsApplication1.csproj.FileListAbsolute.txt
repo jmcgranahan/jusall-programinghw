@@ -6,3 +6,5 @@ I:\code\c#\WindowsApplication1\WindowsApplication1\obj\Debug\ResolveAssemblyRefe
 I:\code\c#\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.Form1.resources
 I:\code\c#\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.Properties.Resources.resources
 I:\code\c#\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.csproj.GenerateResource.Cache
+J:\code\c#\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.exe
+J:\code\c#\WindowsApplication1\WindowsApplication1\obj\Debug\WindowsApplication1.pdb
