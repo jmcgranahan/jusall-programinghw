@@ -1,0 +1,8 @@
+G:\code\c#\Ants\Ants\bin\Debug\Ants.exe
+G:\code\c#\Ants\Ants\bin\Debug\Ants.pdb
+G:\code\c#\Ants\Ants\obj\Debug\ResolveAssemblyReference.cache
+G:\code\c#\Ants\Ants\obj\Debug\Ants.Properties.Resources.resources
+G:\code\c#\Ants\Ants\obj\Debug\Ants.csproj.GenerateResource.Cache
+G:\code\c#\Ants\Ants\obj\Debug\Ants.exe
+G:\code\c#\Ants\Ants\obj\Debug\Ants.pdb
+G:\code\c#\Ants\Ants\obj\Debug\Ants.ants.resources

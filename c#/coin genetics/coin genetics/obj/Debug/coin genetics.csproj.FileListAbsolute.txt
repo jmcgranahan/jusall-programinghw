@@ -1,0 +1,24 @@
+I:\code\c#\coin genetics\coin genetics\obj\Debug\ResolveAssemblyReference.cache
+I:\code\c#\coin genetics\coin genetics\obj\Debug\coin_genetics.Form1.resources
+I:\code\c#\coin genetics\coin genetics\obj\Debug\coin_genetics.Properties.Resources.resources
+I:\code\c#\coin genetics\coin genetics\obj\Debug\coin genetics.csproj.GenerateResource.Cache
+I:\code\c#\coin genetics\coin genetics\bin\Debug\coin genetics.exe
+I:\code\c#\coin genetics\coin genetics\bin\Debug\coin genetics.pdb
+I:\code\c#\coin genetics\coin genetics\obj\Debug\coin genetics.exe
+I:\code\c#\coin genetics\coin genetics\obj\Debug\coin genetics.pdb
+J:\code\c#\coin genetics\coin genetics\obj\Debug\coin genetics.exe
+J:\code\c#\coin genetics\coin genetics\obj\Debug\coin genetics.pdb
+J:\code\c#\coin genetics\coin genetics\obj\Debug\ResolveAssemblyReference.cache
+J:\code\c#\coin genetics\coin genetics\obj\Debug\coin_genetics.Form1.resources
+J:\code\c#\coin genetics\coin genetics\obj\Debug\coin_genetics.Properties.Resources.resources
+J:\code\c#\coin genetics\coin genetics\obj\Debug\coin genetics.csproj.GenerateResource.Cache
+J:\code\c#\coin genetics\coin genetics\bin\Debug\coin genetics.exe
+J:\code\c#\coin genetics\coin genetics\bin\Debug\coin genetics.pdb
+G:\code\c#\coin genetics\coin genetics\obj\Debug\coin genetics.exe
+G:\code\c#\coin genetics\coin genetics\obj\Debug\coin genetics.pdb
+G:\code\c#\coin genetics\coin genetics\bin\Debug\coin genetics.exe
+G:\code\c#\coin genetics\coin genetics\bin\Debug\coin genetics.pdb
+G:\code\c#\coin genetics\coin genetics\obj\Debug\ResolveAssemblyReference.cache
+G:\code\c#\coin genetics\coin genetics\obj\Debug\coin_genetics.Form1.resources
+G:\code\c#\coin genetics\coin genetics\obj\Debug\coin_genetics.Properties.Resources.resources
+G:\code\c#\coin genetics\coin genetics\obj\Debug\coin genetics.csproj.GenerateResource.Cache

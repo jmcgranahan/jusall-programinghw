@@ -1,0 +1,10 @@
+C:\Documents and Settings\pmiller\My Documents\Visual Studio 2008\Projects\Hello World GA\Hello World GA\bin\Debug\Hello World GA.exe
+C:\Documents and Settings\pmiller\My Documents\Visual Studio 2008\Projects\Hello World GA\Hello World GA\bin\Debug\Hello World GA.pdb
+C:\Documents and Settings\pmiller\My Documents\Visual Studio 2008\Projects\Hello World GA\Hello World GA\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\pmiller\My Documents\Visual Studio 2008\Projects\Hello World GA\Hello World GA\obj\Debug\Hello_World_GA.Form1.resources
+C:\Documents and Settings\pmiller\My Documents\Visual Studio 2008\Projects\Hello World GA\Hello World GA\obj\Debug\Hello_World_GA.Properties.Resources.resources
+C:\Documents and Settings\pmiller\My Documents\Visual Studio 2008\Projects\Hello World GA\Hello World GA\obj\Debug\Hello World GA.csproj.GenerateResource.Cache
+C:\Documents and Settings\pmiller\My Documents\Visual Studio 2008\Projects\Hello World GA\Hello World GA\obj\Debug\Hello World GA.exe
+C:\Documents and Settings\pmiller\My Documents\Visual Studio 2008\Projects\Hello World GA\Hello World GA\obj\Debug\Hello World GA.pdb
+I:\code\c#\Hello World GA\Hello World GA\obj\Debug\Hello World GA.exe
+I:\code\c#\Hello World GA\Hello World GA\obj\Debug\Hello World GA.pdb
