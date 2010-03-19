@@ -11,10 +11,10 @@ namespace Ants
 {
     public partial class ants : Form
     {
-        const int NUM_ANTS = 1000;
+        const int NUM_ANTS = 500;
         const int WHEIGHT = 200;
         const int WWIDTH = 200;
-        const int PERCENT_FOOD = 5;
+        const int PERCENT_FOOD = 0;
         World myWorld;
         Scent myScent;
         Bitmap b;
@@ -96,21 +96,21 @@ namespace Ants
     {
         public enum Direction { North, NorthEast, East, SouthEast, South, SouthWest, West, NorthWest };
         public Direction dir;
-        public int x, y;
+        public int x, y, index, stepsFromHome;
         public bool hasFOOD;
         public World world;
         public Scent scent;
-        public int index;
 
         public Ant(World w ,Scent s ,int i)
         {
-            Random rand = new Random();
+            Random rand = new Random(i*1024);
             world = w;
             scent = s;
             index = i;
             x = world.width/2;
             y = world.height/2;
             dir = (Direction)rand.Next(7);
+            stepsFromHome = 100;
         }
 
         public void Act()
@@ -144,6 +144,8 @@ namespace Ants
                 if (world.hasFOOD(x, y) && rand.Next(2) < 1)
                     PickupFood();
             }
+            if (x < 102 && x > 98 && y < 102 && y > 98)
+                stepsFromHome = 100;
         }
 
         private Direction AimHome()
@@ -223,6 +225,11 @@ namespace Ants
                 y = Fy;
                 if (hasFOOD)
                     scent.AddFood(x,y);
+                if (stepsFromHome > 0)
+                {
+                    scent.AddHome(x, y);
+                    stepsFromHome--;
+                }
                 return 1;
             }
             else
