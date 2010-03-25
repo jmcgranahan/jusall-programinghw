@@ -11,10 +11,10 @@ namespace Ants
 {
     public partial class ants : Form
     {
-        const int NUM_ANTS = 500;
+        const int NUM_ANTS = 100;
         const int WHEIGHT = 200;
         const int WWIDTH = 200;
-        const int PERCENT_FOOD = 0;
+        const int PERCENT_FOOD = 5;
         World myWorld;
         Scent myScent;
         Bitmap b;
@@ -29,6 +29,27 @@ namespace Ants
         {
             myScent = new Scent(WWIDTH, WHEIGHT);
             myWorld = new World(WWIDTH, WHEIGHT, NUM_ANTS, PERCENT_FOOD, myScent);
+
+            /*for (int r = 105; r < 116; r++)
+            {
+                for (int c = 50; c < 61; c++)
+                {
+                    myWorld.field[c, r] = 1;
+                }
+            }
+
+            for (int r = 0; r < 200; r++)
+            {
+                for (int i = 0; i < 200; i++)
+                {
+                    myScent.AddHome(100, r);
+                    myScent.AddHome(i, 100);
+                }
+            }
+            myWorld.ants[0].x = 54;
+            myWorld.ants[0].y = 100;
+            myWorld.ants[0].dir = Ant.Direction.South;*/
+
             
             b = new Bitmap(WWIDTH, WHEIGHT);
             g = Graphics.FromImage(b);
@@ -109,7 +130,7 @@ namespace Ants
             index = i;
             x = world.width/2;
             y = world.height/2;
-            dir = (Direction)rand.Next(7);
+            dir = (Direction)rand.Next(8);
             stepsFromHome = 100;
         }
 
@@ -119,29 +140,29 @@ namespace Ants
                 dir = (Direction)0;
             else if ((int)dir < 0)
                 dir = (Direction)8;
-            Random rand = new Random(x*y*index);
+            Random randd = new Random();
+            Random rand = new Random(x*y*index+1*randd.Next());
             int moveReturn;
+
             if (hasFOOD)
             {
                 dir = AimHome();
-                moveReturn = Move();
+                moveReturn = Move();         
+                
                 if(((x == world.width/2) || (x == (world.width/2)+1)) &&
                      ((y == world.height/2) || (y == (world.height/2)+1)))    
                     DropFood();
-
                 if (moveReturn == 0 && rand.Next(1, 10) > 6)
                     DropFood();
                 else if (moveReturn == 0)
                     dir = (Direction)((int)dir + (rand.Next(1, 4) - 2));
-                
-                    
             }
             else
             {
                 if(rand.Next(10) < 3)
                     dir = (Direction)(((int)dir)+(rand.Next(1,4)-2));
                 moveReturn = Move();
-                if (world.hasFOOD(x, y) && rand.Next(2) < 1)
+                if (world.hasFOOD(x, y))
                     PickupFood();
             }
             if (x < 102 && x > 98 && y < 102 && y > 98)
@@ -150,39 +171,66 @@ namespace Ants
 
         private Direction AimHome()
         {
-            Random rand = new Random(x * y * index);
-            Direction tempdir;
-            if (x == world.width / 2)
+            Random rand = new Random(x * y * index+1);
+            Direction tempdir = dir;
+            int homeScent = 0, foodScent = 0, strongest = 0;
+
+            for (int r = 0; r < 4; r++)
             {
-                if (y < world.height / 2)
+                for (int c = 0; c < 4; c++)
+                {
+                    int scentx = x + (r - 1);
+                    int scenty = y + (c - 1);
+                    if (scentx != x && scenty != y)
+                    {
+                        Toroidal(ref scentx, ref scenty);
+                        scent.Scents(scentx, scenty, ref homeScent, ref foodScent);
+                        if (homeScent > strongest)
+                            tempdir = Aim(scentx, scenty);
+                    }
+                }
+            }
+              
+
+            tempdir = (rand.Next(10) > 3 ? (tempdir + rand.Next(1, 3) - 2) : tempdir);
+           
+            return tempdir;
+        }
+
+        private Direction Aim(int aimx, int aimy)
+        {
+            Direction tempdir;
+            if (x == aimx)
+            {
+                if (y < aimy)
                     tempdir = Direction.South;
                 else
                     tempdir = Direction.North;
             }
-            if (y == world.height / 2)
+
+            else if (y == aimy)
             {
-                if (x < world.width / 2)
+                if (x < aimx)
                     tempdir = Direction.East;
                 else
                     tempdir = Direction.West;
             }
 
-            if (x < world.width / 2)
+            else if (x < aimx)
             {
-                if (y < world.height / 2)
+                if (y < aimy)
                     tempdir = Direction.SouthEast;
                 else
                     tempdir = Direction.NorthEast;
             }
+
             else
             {
-                if (y < world.height / 2)
+                if (y < aimy)
                     tempdir = Direction.SouthWest;
                 else
                     tempdir = Direction.NorthWest;
             }
-
-            tempdir = (rand.Next(10) > 2 ? (tempdir + rand.Next(1,3) - 2) : tempdir);
             return tempdir;
         }
 
@@ -267,6 +315,7 @@ namespace Ants
         {
             world.field[x, y] = World.SPACE;
             hasFOOD = true;
+            dir = (Direction)((int)dir + 4);
         }
 
 
