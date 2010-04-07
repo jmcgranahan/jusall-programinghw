@@ -1,0 +1,41 @@
+﻿// SignpostMarv's Wii Classic Controller GlovePIE script v1.0
+// Intended for use with Project64 and Second Life
+// Project 64 Notes [2008-05-13]:
+//   PPJoy Analog 0 and 1 map to the main control stick
+//   PPJoy Analog 6 and 7 map to the C buttons/C stick (making the script future-proof for gamecube emulation)
+//   Project64 picks up the shoulder buttons as S0- and S0+, though this does mean that the
+//     shoulder buttons can't operate independantly.
+// Second Life Notes [2008-05-13]:
+//   Although not yet tested with the SL Viewer (due to the RC currently not providing a
+//     mechanism for selecting which input device to use with the joystick flycam, this
+//     script was written with Second Life in mind.
+//   Analog4 is intended to control the fish-eye lense effect, or other depth-of-field control,
+//     with the Left shoulder button controling forward motion, and the Right controling backward motion.
+PPJoy.Analog0 = Classic.Joy1X
+PPJoy.Analog1 = Classic.Joy1Y
+PPJoy.Analog4 = (Classic.L * -1.2) + (Classic.R * 1.125)
+// In case a game requires independant operation of the shoulder buttons, comment out the previous statement and uncomment the two below.
+// PPJoy.Analog4 = Classic.L
+// PPJoy.Analog5 = Classic.R
+PPJoy.Analog6 = Classic.Joy2X
+PPJoy.Analog7 = Classic.Joy2Y
+
+PPJoy.Digital0 = Classic.a
+PPJoy.Digital1 = Classic.b
+PPJoy.Digital2 = Classic.x
+PPJoy.Digital3 = Classic.y
+PPJoy.Digital4 = Classic.Minus
+PPJoy.Digital5 = Classic.Plus
+PPJoy.Digital6 = Classic.ZL
+PPJoy.Digital7 = Classic.ZR
+PPJoy.Digital8 = Classic.Home
+PPJoy.Digital9 = Classic.Up
+PPJoy.Digital10 = Classic.Down
+PPJoy.Digital11 = Classic.Left
+PPJoy.Digital12 = Classic.Right
+
+// Project 64 only. Feel free to comment out or remove if not using with Project 64.
+Keyboard.F2 = Classic.ZL     // Pauses the CPU
+Keyboard.F5 = Classic.Minus  // Save State
+Keyboard.F7 = Classic.Plus   // Load State
+wiimote1.Led1 = 1

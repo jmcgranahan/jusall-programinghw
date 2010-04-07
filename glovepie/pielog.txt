@@ -1,0 +1,91 @@
+(0, 17-Mar-2010 12:03:42) Initializing PieLog
+(0, 17-Mar-2010 12:03:42) Initializing filemode variable
+(0, 17-Mar-2010 12:03:42) Initializing PieSpeech
+(0, 17-Mar-2010 12:03:42) Initializing PieVariables
+(0, 17-Mar-2010 12:03:42) Initializing PieCursorUnit
+(0, 17-Mar-2010 12:03:42) Initializing PieMouse
+(0, 17-Mar-2010 12:03:42) Initializing PieKeyboard
+(0, 17-Mar-2010 12:03:42) Initializing PieInput
+(0, 17-Mar-2010 12:03:42) Initializing PieOSC
+(0, 17-Mar-2010 12:03:42) Initializing PiePie
+(0, 17-Mar-2010 12:03:42) Initializing PieFunction
+(0, 17-Mar-2010 12:03:42) Initializing PieStatement
+(0, 17-Mar-2010 12:03:42) Initializing PieExpression
+(0, 17-Mar-2010 12:03:42) Initializing PieJoystick
+(0, 17-Mar-2010 12:03:42) Initializing PieP5
+(0, 17-Mar-2010 12:03:42) Initializing PieMidi
+(0, 17-Mar-2010 12:03:42) Initializing PiePPJoy
+(0, 17-Mar-2010 12:03:42) Initializing PieRemote
+(0, 17-Mar-2010 12:03:42) Initializing Pie Speech Recognition
+(0, 17-Mar-2010 12:03:42) Initializing PieScreen
+(0, 17-Mar-2010 12:03:42) GetMonitorEDID
+(0, 17-Mar-2010 12:03:42) Initializing PieWIndow
+(0, 17-Mar-2010 12:03:42) Initializing PieCursors
+(0, 17-Mar-2010 12:03:42) Initializing PieZ800
+(0, 17-Mar-2010 12:03:42) Initializing PieIntersense
+(0, 17-Mar-2010 12:03:42) Initializing PieFastrak
+(0, 17-Mar-2010 12:03:42) Initializing PiePPT
+(0, 17-Mar-2010 12:03:42) Initializing PieTrackIR
+(0, 17-Mar-2010 12:03:42) Initializing PiePinch
+(0, 17-Mar-2010 12:03:42) Initializing PieBird
+(0, 17-Mar-2010 12:03:42) Initializing PieFiveDT
+(0, 17-Mar-2010 12:03:42) Starting main
+(0, 17-Mar-2010 12:03:42) Application object initialized
+(0, 17-Mar-2010 12:03:42) Creating main window
+(0, 17-Mar-2010 12:03:42) EditorForm.Create
+(0, 17-Mar-2010 12:03:42) Checking command line parameters:
+(0, 17-Mar-2010 12:03:42) Creating debug window
+(0, 17-Mar-2010 12:03:42) Assigning exception handler
+(0, 17-Mar-2010 12:03:42) Creating debug remote control window
+(0, 17-Mar-2010 12:03:42) Running application
+(0, 17-Mar-2010 12:04:01) File>Open
+(0, 17-Mar-2010 12:04:03) ClearMidiGui
+(0, 17-Mar-2010 12:04:49) RunButton
+(0, 17-Mar-2010 12:04:49) Compile>Run
+(0, 17-Mar-2010 12:04:49) Compile>Compile
+(0, 17-Mar-2010 12:04:49) CompileCode
+(0, 17-Mar-2010 12:04:49) StartingInputMonitor CompileJoystick
+(0, 17-Mar-2010 12:04:49) EnumerateJoysticks
+(0, 17-Mar-2010 12:04:49) Enumerated... BadGamePad = False
+(0, 17-Mar-2010 12:04:49) StartCompileTimeP5 False
+(0, 17-Mar-2010 12:04:49) StoppingInputMonitor CompileJoystick
+(0, 17-Mar-2010 12:04:49) StartRuntime
+(0, 17-Mar-2010 12:04:49) StartKeyboardMonitor
+(0, 17-Mar-2010 12:04:49) StartingInputMonitor keyboard
+(0, 17-Mar-2010 12:04:49) StartRuntimeJoystick
+(0, 17-Mar-2010 12:04:49) ************************* False
+(0, 17-Mar-2010 12:04:53) FormCloseQuery
+(0, 17-Mar-2010 12:04:53) Compile>Stop
+(0, 17-Mar-2010 12:04:53) StopRuntime
+(0, 17-Mar-2010 12:04:53) StopKeyboardMonitor
+(0, 17-Mar-2010 12:04:53) StoppingInputMonitor Keyboard
+(0, 17-Mar-2010 12:04:53) StopRuntimeJoystick
+(0, 17-Mar-2010 12:04:55) Application finished
+(0, 17-Mar-2010 12:04:55) Destroying EditorForm
+(0, 17-Mar-2010 12:04:55) Finalizing PieFiveDT
+(0, 17-Mar-2010 12:04:55) Finalizing PieBird
+(0, 17-Mar-2010 12:04:55) Finalizing PiePinch
+(0, 17-Mar-2010 12:04:55) Finalizing PieTrackIR
+(0, 17-Mar-2010 12:04:55) Finalizing PiePPT
+(0, 17-Mar-2010 12:04:55) Finalizing PieFastrak
+(0, 17-Mar-2010 12:04:55) Finalizing PieIntersense
+(0, 17-Mar-2010 12:04:55) Finalizing PieZ800
+(0, 17-Mar-2010 12:04:55) Finalizing PieCursors
+(0, 17-Mar-2010 12:04:55) Finalizing PieWindow
+(0, 17-Mar-2010 12:04:55) Finalizing PieScreen
+(0, 17-Mar-2010 12:04:55) Finalizing Pie Speech Recognition
+(0, 17-Mar-2010 12:04:55) Finalizing PieRemote
+(0, 17-Mar-2010 12:04:55) Finalizing PiePPJoy
+(0, 17-Mar-2010 12:04:55) Finalizing PieMidi
+(0, 17-Mar-2010 12:04:55) Finalizing PieP5
+(0, 17-Mar-2010 12:04:55) Finalizing PieJoystick
+(0, 17-Mar-2010 12:04:55) Finalizing PieStatement
+(0, 17-Mar-2010 12:04:55) Finalizing PieFunction
+(0, 17-Mar-2010 12:04:55) Finalizing PiePie
+(0, 17-Mar-2010 12:04:55) Finalizing PieOSC
+(0, 17-Mar-2010 12:04:55) Finalizing PieKeyboard
+(0, 17-Mar-2010 12:04:55) Finalizing PieMouse
+(0, 17-Mar-2010 12:04:55) Finalizing PieVariables
+(0, 17-Mar-2010 12:04:55) Finalizing PieSpeech
+(0, 17-Mar-2010 12:04:55) Finalizing PieLog
+(0, 17-Mar-2010 12:04:55) Closing log file
