@@ -11,7 +11,7 @@ namespace Ants
 {
     public partial class ants : Form
     {
-        const int NUM_ANTS = 100;
+        const int NUM_ANTS = 1;
         const int WHEIGHT = 200;
         const int WWIDTH = 200;
         const int PERCENT_FOOD = 5;
