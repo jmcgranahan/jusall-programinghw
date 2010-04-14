@@ -59,6 +59,11 @@
             // stepsUpDown1
             // 
             this.stepsUpDown1.Location = new System.Drawing.Point(416, 49);
+            this.stepsUpDown1.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.stepsUpDown1.Name = "stepsUpDown1";
             this.stepsUpDown1.Size = new System.Drawing.Size(45, 20);
             this.stepsUpDown1.TabIndex = 2;

@@ -11,10 +11,10 @@ namespace Ants
 {
     public partial class ants : Form
     {
-        const int NUM_ANTS = 1;
+        const int NUM_ANTS = 1000;
         const int WHEIGHT = 200;
         const int WWIDTH = 200;
-        const int PERCENT_FOOD = 5;
+        const int PERCENT_FOOD = 3;
         World myWorld;
         Scent myScent;
         Bitmap b;
@@ -29,8 +29,8 @@ namespace Ants
         {
             myScent = new Scent(WWIDTH, WHEIGHT);
             myWorld = new World(WWIDTH, WHEIGHT, NUM_ANTS, PERCENT_FOOD, myScent);
-
-            /*for (int r = 105; r < 116; r++)
+            /*
+            for (int r = 105; r < 116; r++)
             {
                 for (int c = 50; c < 61; c++)
                 {
@@ -42,14 +42,21 @@ namespace Ants
             {
                 for (int i = 0; i < 200; i++)
                 {
-                    myScent.AddHome(100, r);
+                    myScent.AddHome(100, r-);
                     myScent.AddHome(i, 100);
                 }
             }
             myWorld.ants[0].x = 54;
             myWorld.ants[0].y = 100;
-            myWorld.ants[0].dir = Ant.Direction.South;*/
-
+            myWorld.ants[0].dir = Ant.Direction.South;
+            */
+            for (int i = 0; i < 200; i++)
+            {
+                myScent.AddHome(WWIDTH / 2, WHEIGHT / 2);
+                myScent.AddHome((WWIDTH / 2 + 1), WHEIGHT / 2);
+                myScent.AddHome(WWIDTH / 2, (WHEIGHT / 2 + 1));
+                myScent.AddHome((WWIDTH / 2 + 1), (WHEIGHT / 2 + 1));
+            }
             
             b = new Bitmap(WWIDTH, WHEIGHT);
             g = Graphics.FromImage(b);
@@ -59,10 +66,11 @@ namespace Ants
 
         private void button1_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 5000; i++)
+            for (int i = 0; i < stepsUpDown1.Value; i++)
             {
                 debugbox.Text = "";
                 myWorld.TimeStep();
+                myScent.TimeStep();
                 Display();
                 
             }
@@ -80,7 +88,7 @@ namespace Ants
                     int home = 0, food = 0;
                     int R, G, B;
                     myScent.Scents(r, c, ref home, ref food);
-                    B = (home<255? home : 255);
+                    B = (home / 4 < 255 ? home / 4 : 255);
                     G = (food / 4 < 255 ? food / 4 : 255);
                     R = (food / 4 < 255 ? food / 4 : 255);
                     
@@ -117,21 +125,24 @@ namespace Ants
     {
         public enum Direction { North, NorthEast, East, SouthEast, South, SouthWest, West, NorthWest };
         public Direction dir;
-        public int x, y, index, stepsFromHome;
-        public bool hasFOOD;
+        public int x, y, index, stepsFromHome, lastx, lasty, poison, resistance;
+        public bool hasFOOD, alive;
         public World world;
         public Scent scent;
+        static Random rand = new Random();
 
         public Ant(World w ,Scent s ,int i)
         {
-            Random rand = new Random(i*1024);
             world = w;
             scent = s;
             index = i;
             x = world.width/2;
             y = world.height/2;
             dir = (Direction)rand.Next(8);
-            stepsFromHome = 100;
+            stepsFromHome = 50;
+            poison = 0;
+            resistance = rand.Next(100);
+            alive = true;
         }
 
         public void Act()
@@ -140,71 +151,113 @@ namespace Ants
                 dir = (Direction)0;
             else if ((int)dir < 0)
                 dir = (Direction)8;
-            Random randd = new Random();
-            Random rand = new Random(x*y*index+1*randd.Next());
             int moveReturn;
+
+            if (poison > resistance * 4)
+            {
+                alive = false;
+                return;
+            }
+            else if (poison)
+                poison++;
+           
+
+               
 
             if (hasFOOD)
             {
-                dir = AimHome();
-                moveReturn = Move();         
-                
-                if(((x == world.width/2) || (x == (world.width/2)+1)) &&
-                     ((y == world.height/2) || (y == (world.height/2)+1)))    
+                if (IsHome())
+                {
                     DropFood();
-                if (moveReturn == 0 && rand.Next(1, 10) > 6)
+                    return;
+                }
+
+                dir = AimHome();
+                moveReturn = Move();
+
+                if (moveReturn == 0 && rand.Next(1, 10) > 9)
                     DropFood();
                 else if (moveReturn == 0)
-                    dir = (Direction)((int)dir + (rand.Next(1, 4) - 2));
+                    dir = (Direction)((int)dir + (rand.Next(0, 4) - 2));
             }
-            else
+            else if (stepsFromHome == 0)
             {
-                if(rand.Next(10) < 3)
-                    dir = (Direction)(((int)dir)+(rand.Next(1,4)-2));
+                dir = AimFood();
+                if (rand.Next(10) < 3)
+                    dir = (Direction)(((int)dir) + (rand.Next(0, 4) - 2));
                 moveReturn = Move();
                 if (world.hasFOOD(x, y))
                     PickupFood();
             }
-            if (x < 102 && x > 98 && y < 102 && y > 98)
-                stepsFromHome = 100;
+            else
+            {
+                if (rand.Next(10) < 3)
+                    dir = (Direction)(((int)dir) + (rand.Next(0, 4) - 2));
+                Move();
+            }
+
+            if (IsHome())
+                stepsFromHome = 25;
         }
 
         private Direction AimHome()
         {
-            Random rand = new Random(x * y * index+1);
             Direction tempdir = dir;
             int homeScent = 0, foodScent = 0, strongest = 0;
 
-            for (int r = 0; r < 4; r++)
+            for (int r = 0; r < 6; r++)
             {
-                for (int c = 0; c < 4; c++)
+                for (int c = 0; c < 6; c++)
                 {
-                    int scentx = x + (r - 1);
-                    int scenty = y + (c - 1);
-                    if (scentx != x && scenty != y)
+                    int scentx = x + (r - 2);
+                    int scenty = y + (c - 2);
+                    if ((scentx != x && scenty != y) && (scentx != lastx && scenty != lasty))
                     {
                         Toroidal(ref scentx, ref scenty);
+                        homeScent = 0;
+                        foodScent = 0;
                         scent.Scents(scentx, scenty, ref homeScent, ref foodScent);
                         if (homeScent > strongest)
                             tempdir = Aim(scentx, scenty);
                     }
                 }
-            }
-              
+            }          
+            return tempdir;
+        }
 
-            tempdir = (rand.Next(10) > 3 ? (tempdir + rand.Next(1, 3) - 2) : tempdir);
-           
+        private Direction AimFood()
+        {
+            Direction tempdir = dir;
+            int homeScent = 0, foodScent = 0, strongest = 0;
+
+            for (int r = 0; r < 6; r++)
+            {
+                for (int c = 0; c < 6; c++)
+                {
+                    int scentx = x + (r - 2);
+                    int scenty = y + (c - 2);
+                    if ((scentx != x && scenty != y) && (scentx != lastx && scenty != lasty))
+                    {
+                        Toroidal(ref scentx, ref scenty);
+                        homeScent = 0;
+                        foodScent = 0;
+                        scent.Scents(scentx, scenty, ref homeScent, ref foodScent);
+                        if (foodScent > strongest)
+                            tempdir = Aim(scentx, scenty);
+                    }
+                }
+            }
             return tempdir;
         }
 
         private Direction Aim(int aimx, int aimy)
         {
-            Direction tempdir;
+            Direction tempdir = dir;
             if (x == aimx)
             {
                 if (y < aimy)
                     tempdir = Direction.South;
-                else
+                else if (y > aimy)
                     tempdir = Direction.North;
             }
 
@@ -212,7 +265,7 @@ namespace Ants
             {
                 if (x < aimx)
                     tempdir = Direction.East;
-                else
+                else if (x > aimx)
                     tempdir = Direction.West;
             }
 
@@ -232,6 +285,14 @@ namespace Ants
                     tempdir = Direction.NorthWest;
             }
             return tempdir;
+        }
+
+        private bool IsHome()
+        {
+            if ((x > world.width / 2 - 1) && (x < world.width / 2 + 2) && (y > world.height / 2 - 1) && (y < world.height / 2 + 2))
+                return true;
+            else
+                return false;
         }
 
         private int Move()
@@ -269,13 +330,16 @@ namespace Ants
             if ((world.field[Fx, Fy] == World.SPACE) ||(hasFOOD == false))
                 
             {
+                lastx = x;
+                lasty = y;
                 x = Fx;
                 y = Fy;
                 if (hasFOOD)
                     scent.AddFood(x,y);
                 if (stepsFromHome > 0)
                 {
-                    scent.AddHome(x, y);
+                    for(int i = 0; i < stepsFromHome;i++)
+                        scent.AddHome(x, y);
                     stepsFromHome--;
                 }
                 return 1;
@@ -301,7 +365,6 @@ namespace Ants
 
         private void DropFood()
         {
-            Random rand = new Random(x * y * index);
             if (world.field[x, y] == World.SPACE)
             {
                 world.field[x, y] = World.FOOD;
@@ -315,6 +378,7 @@ namespace Ants
         {
             world.field[x, y] = World.SPACE;
             hasFOOD = true;
+            scent.AddFood(x, y);
             dir = (Direction)((int)dir + 4);
         }
 
@@ -323,7 +387,7 @@ namespace Ants
     public class World
     {
         public const int FOOD = 1, SPACE = 0;
-        public int height, width;
+        public int height, width, collected;
         public int[,] field;
         public Ant[] ants;
         public Scent scent;
@@ -364,10 +428,21 @@ namespace Ants
             {
                 ant.Act();
             }
-            field[100, 100] = World.SPACE;
-            field[100, 101] = World.SPACE;
-            field[101, 100] = World.SPACE;
-            field[101, 101] = World.SPACE;
+
+            for (int r = 0; r < 4; r++)
+            {
+                for (int c = 0; c < 4; c++)
+                {
+                    int x = width/2 + (r - 1);
+                    int y = height/2 + (c - 1);
+
+                    if (field[x,y] == World.FOOD)
+                    {
+                        collected++;
+                        field[x, y] = World.SPACE;
+                    }
+                }
+            }
         }
 
     }
@@ -411,5 +486,20 @@ namespace Ants
             food = foodfield[x, y];
         }
 
+        public void TimeStep()
+        {
+
+            for (int r = 0; r < width; r++)
+            {
+                for (int c = 0; c < height; c++)
+                {
+                    if (homefield[r, c] > 0 && ((c < width / 2) || (c > width / 2) && (r < height / 2) || (r > height / 2)))
+                        homefield[r, c]--;
+                    if(foodfield[r, c] > 0)
+                        foodfield[r, c]--;
+                }
+            }
+
+        }
     }
 }
