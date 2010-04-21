@@ -1,0 +1,16 @@
+G:\code\c#\ALfinal\ALfinal\obj\Debug\ResolveAssemblyReference.cache
+G:\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.Gui.resources
+G:\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.Properties.Resources.resources
+G:\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.csproj.GenerateResource.Cache
+G:\code\c#\ALfinal\ALfinal\bin\Debug\ALfinal.exe
+G:\code\c#\ALfinal\ALfinal\bin\Debug\ALfinal.pdb
+G:\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.exe
+G:\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.pdb
+F:\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.exe
+F:\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.pdb
+F:\code\c#\ALfinal\ALfinal\bin\Debug\ALfinal.exe
+F:\code\c#\ALfinal\ALfinal\bin\Debug\ALfinal.pdb
+F:\code\c#\ALfinal\ALfinal\obj\Debug\ResolveAssemblyReference.cache
+F:\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.Gui.resources
+F:\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.Properties.Resources.resources
+F:\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.csproj.GenerateResource.Cache
