@@ -109,6 +109,7 @@ return
 G15:
 	clipboard := ""
 	send {ctrl down}{alt down}{shift down}c{ctrl up}{alt up}{shift up}
+	ClipWait
 	send %clipboard%
 return
 

@@ -14,6 +14,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #include start-up.ahk
 ;----------------includes/functions------------------
 #include G11shortcuts.ahk
+#include BWmouse4hack.ahk
+#include Chromem4chack.ahk
 #include Actions.ahk
 #include l4d.ahk
 ;----------------includes/binds----------------------
@@ -24,7 +26,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #include time&date.ahk
 #include truecrypt.ahk
 #include volmenu.ahk
-;#include WinTraymin.ahk
+
 
 
 EmptyMem()

@@ -1,5 +1,4 @@
 
-
 :*:/ahkfolder::
 run explorer C:\Users\gowness\Documents\AutoHotkey\
 return
@@ -9,16 +8,12 @@ SendInput %A_IPAddress1%
 return
 :*:/gmail::biga05@gmail.com
 
-:*:/typecb::
+:*:/tcb::
 cb := clipboard
 SendInput %cb%
 return
 
-^!k:: 
-keywait ctrl
-keywait alt
-kill()
-
+^!k:: kill()
 
 :*:/public-vpn::
 run vpn.exe gowness passes client.ovpn
@@ -76,19 +71,19 @@ Send {alt up}{pgup up}
 Osd_Off(9)
 return
 
-*!F::
-if(active)
+*!f::
+if(L4DActive)
 	ChangeFireMode()
 else
 	send {alt down}{f down}
 return
 
-*!F up::
-if(!active)
+*!f up::
+if(!L4DActive)
 	send {alt up}{f up}
 return
 
 *LButton::mousedown()
 
-+z::   Win__Fling(1, "A")
+^+z::   Win__Fling(1, "A")
 

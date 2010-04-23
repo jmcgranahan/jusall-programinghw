@@ -19,11 +19,5 @@ WindowCheck:
 		L4DActive := false
 	}
 	Splashup(L4DActive)
-	
-	ifWinExist, User Account Control
-	{
-		winActivate
-		send {alt down}y{alt up}
-	}
 return 
 
