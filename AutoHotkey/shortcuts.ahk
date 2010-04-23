@@ -14,7 +14,11 @@ cb := clipboard
 SendInput %cb%
 return
 
-^!k:: kill()
+^!k:: 
+keywait ctrl
+keywait alt
+kill()
+
 
 :*:/public-vpn::
 run vpn.exe gowness passes client.ovpn
@@ -83,6 +87,7 @@ return
 if(!active)
 	send {alt up}{f up}
 return
+
 *LButton::mousedown()
 
 +z::   Win__Fling(1, "A")
