@@ -24,7 +24,7 @@ namespace ALfinal
         private void Gui_Load(object sender, EventArgs e)
         {
             zombieLand = new World(WIDTH, HEIGHT, HUMANS, IMMUNE);
-
+            
             for (int r = 0; r < WIDTH; r++)
             {
                 zombieLand.SetSpace(0, r, 1);
@@ -37,6 +37,17 @@ namespace ALfinal
                 zombieLand.SetSpace(WIDTH - 2, r, 1);
                 zombieLand.SetSpace(r, WIDTH - 2, 1);
             }
+
+            /*
+            zombieLand.Humans[0].Speed = Human.SpeedNum.Stop;
+            zombieLand.Humans[0].PosX = 200;
+            zombieLand.Humans[0].PosY = 200;
+
+            zombieLand.Humans[1].Speed = Human.SpeedNum.Limp;
+            zombieLand.Humans[1].Dir = Human.Direction.East;
+            zombieLand.Humans[1].PosX = 180;
+            zombieLand.Humans[1].PosY = 197;
+            */
    
 
             bitMap = new Bitmap(WIDTH, HEIGHT);
@@ -65,9 +76,12 @@ namespace ALfinal
                         bitMap.SetPixel(r, c, Color.Yellow);
                 }
             }
+
+            int aliveCount = 0, sickCount = 0, infectedCount = 0, panicingCount = 0;
             foreach (Human human in zombieLand.Humans)
             {
                 //debugBox.Text += "Human#" + human.Index + " see's " + human.HumansInSight() + "\r\n";
+                //debugBox.Text += "Human#" + human.Index + " see's " + human.InfectedInSight() + "\r\n";
                 Color humanColor;
                 if (!human.Alive)
                     humanColor = Color.Gray;
@@ -80,17 +94,38 @@ namespace ALfinal
                 else
                     humanColor = Color.LightSalmon;
 
-                if (human.Index == 1)
-                    humanColor = Color.Azure;
-
                 bitMap.SetPixel(human.PosX, human.PosY, humanColor);
+
+                if (human.Alive)
+                {
+                    if (human.Infected)
+                        infectedCount++;
+                    else if (human.Sick)
+                        sickCount++;
+                    else
+                    {
+                        aliveCount++;
+                        if (human.Panic)
+                            panicingCount++;
+                    }
+
+                }
+
             }
+            debugBox.Text += "Survivors:" + aliveCount + "\r\n";
+            debugBox.Text += "Panicing:" + panicingCount + "\r\n";
+            debugBox.Text += "Sick:" + sickCount + "\r\n";
+            debugBox.Text += "Infected:" + infectedCount + "\r\n";
+            debugBox.Text += "Dead:" + (HUMANS - (aliveCount + sickCount + infectedCount)) + "\r\n";
+            
 
             this.Refresh();
         }
 
         private void resetButton_Click(object sender, EventArgs e)
         {
+            debugBox.Text = "";
+            zombieLand.Humans[0].Reset();
             Gui_Load(sender, e);
         }
 

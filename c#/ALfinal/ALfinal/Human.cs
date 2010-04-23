@@ -48,7 +48,7 @@ namespace ALfinal
 
         private void ActInfected()
         {
-            speed = (speed != SpeedNum.Stop)? SpeedNum.Limp: SpeedNum.Stop;
+            speed = ((speed != SpeedNum.Stop)? SpeedNum.Limp: SpeedNum.Stop);
             for (int i = 0; i < HumansInRange(); i++)
                 InfectedNom();
 
@@ -69,7 +69,10 @@ namespace ALfinal
         private void ActHuman()
         {
             for (int i = 0; i < InfectedInRange(); i++)
+            {
+                panic = true;
                 InfectedAttack();
+            }
 
             if (InfectedInSight() > 0)
             {
@@ -83,8 +86,6 @@ namespace ALfinal
                     panic = false;
             }
 
-
-
             if (sick)
             {
                 sick = immune ? false : true;
@@ -96,7 +97,7 @@ namespace ALfinal
                 if (rand.Next(100) < ticksSick)
                 {
                     infected = true;
-                    health += 100;
+                    health += 50;
                 }
             }
 
@@ -109,9 +110,10 @@ namespace ALfinal
             {
                 speed = SpeedNum.Walk;
                 if (rand.Next(10) < 5)
-                    dir = (Direction)rand.Next(7);
-                if ( rand.Next(100) > 80)
+                    dir = (Direction)rand.Next(8);
+                if ( rand.Next(100) > 50)
                     dir = AimAwayFromInfected();
+                 
             }
 
 
@@ -157,10 +159,13 @@ namespace ALfinal
 
         private int Move()
         {
-            if ((int)dir > 7)
-                dir = (Direction)(0 + (dir - 8));
-            else if ((int)dir < 0)
-                dir = (Direction)(7 + (dir + 1));
+            while ((int)dir < 0 || (int)dir > 7)
+            {
+                if ((int)dir > 7)
+                    dir = (Direction)(0 + ((int)dir - 8));
+                else if ((int)dir < 0)
+                    dir = (Direction)(7 + ((int)dir + 1));
+            }
 
             if (dir == Direction.East)
                 return AttemptMove(1, 0);
@@ -255,15 +260,15 @@ namespace ALfinal
         {
             int found = 0;
             int[] vec = DirToVec();
-            for (int r = 1; r < 5; r++)
+            for (int r = 1; r < 4; r++)
             {
-                for (int c = 0; c < 5; c++)
+                for (int c = 0; c < (Math.Floor((double)r / 2) * 2 + 1); c++)
                 {
 
-                int lookX = x + (r * vec[0]) + ((c - 2) * vec[1]);
-                int lookY = y + (r * vec[1]) + ((c - 2) * vec[0]);
-                Toroidal(ref lookX, ref lookY);
-                found += world.HumanField[lookX, lookY];
+                    int lookX = x + (r * vec[0]) + ((c - ((int)(r / 2))) * vec[1]);
+                    int lookY = y + (r * vec[1]) + ((c - ((int)(r / 2))) * vec[0]);
+                    Toroidal(ref lookX, ref lookY);
+                    found += world.HumanField[lookX, lookY];
                 }
             }
             return found;
@@ -273,13 +278,13 @@ namespace ALfinal
         {
             int found = 0;
             int[] vec = DirToVec();
-            for (int r = 0; r < 15; r++)
+            for (int r = 1; r < 7; r++)
             {
-                for (int c = 0; c < 7; c++)
+                for (int c = 0; c < (Math.Floor((double) r/3)*2+1); c++)
                 {
 
-                    int lookX = x + (r * vec[0]) + ((c - 3) * vec[1]);
-                    int lookY = y + (r * vec[1]) + ((c - 3) * vec[0]);
+                    int lookX = x + (r * vec[0]) + ((c - ((int)(r / 3))) * vec[1]);
+                    int lookY = y + (r * vec[1]) + ((c - ((int)(r / 3))) * vec[0]);
                     Toroidal(ref lookX, ref lookY);
                     found += world.InfectedField[lookX, lookY];
                 }
@@ -324,7 +329,7 @@ namespace ALfinal
             health -= 2;
             if (!immune)
             {
-                if (rand.Next(110) > health)
+                if (rand.Next(150) > health)
                     sick = true;
             }
         }
@@ -336,46 +341,72 @@ namespace ALfinal
 
         private Direction AimAwayFromInfected()
         {
-            Direction tempdir = (Direction)rand.Next(7);
+            Direction tempdir = (Direction)((int)dir + 4), olddir = dir;
+            
             int most = 0;
 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 9; i++)
             {
-                dir = (Direction)((int)dir +(i - 3));
-                if (InfectedInRange() > most)
+                dir = (Direction)i;
+                if (InfectedInSight() > most)
                 {
                     tempdir = dir;
                     most = InfectedInRange();
                 }
-                else if (InfectedInRange() >= most)
+                else if (InfectedInSight() >= most && InfectedInSight() != 0)
                 {
                     tempdir = (rand.Next(100) > 50) ? dir : tempdir;
                 }
+
+                else if (InfectedInSight() >= most && InfectedInSight() == 0)
+                {
+                    tempdir = olddir + 4;
+                }
             }
-            dir = (Direction)((int)dir + 3);
+            dir = olddir;
+            tempdir = (Direction)((int)tempdir + 4);
             return tempdir;
         }
 
         private Direction AimAtHumans()
         {
-            Direction tempdir = (Direction)rand.Next(7);
+            Direction tempdir = dir, olddir = dir;
+
             int most = 0;
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 3; i++)
             {
-                dir = (Direction)((int)dir + (i - 2));
-                if (HumansInRange() > most)
+                dir = (Direction)((int)olddir + (i - 1));
+                if (HumansInSight() > most)
                 {
                     tempdir = dir;
                     most = InfectedInRange();
                 }
+                else if (HumansInSight() >= most && HumansInSight() != 0)
+                {
+                    tempdir = (rand.Next(100) > 50) ? dir : tempdir;
+                }
+
+                else if (HumansInSight() >= most && HumansInSight() == 0)
+                {
+                    tempdir = olddir;
+                }
             }
+            dir = olddir;
             return tempdir;
         }
 
         private int[] DirToVec()
         {
             int[] vec = new int[2];
+
+            while ((int)dir < 0 || (int)dir > 7)
+            {
+                if ((int)dir > 7)
+                    dir = (Direction)(0 + ((int)dir - 8));
+                else if ((int)dir < 0)
+                    dir = (Direction)(7 + ((int)dir + 1));
+            }
 
             if (dir == Direction.East)
             {
@@ -429,6 +460,11 @@ namespace ALfinal
         public void Kill()
         {
             alive = false;
+        }
+
+        public void Reset()
+        {
+            Humans = 0;
         }
 
         public void TimeStep()

@@ -29,13 +29,13 @@ namespace ALfinal
 
             height = initHeight;
             width = initWidth;
-
+            
             humans = new Human[numHumans];
             for (int i = 0; i < numHumans; i++)
             {
                 humans[i] = new Human(this, ((rand.Next(100) < perImmune) ? true : false));
             }
-            humans[rand.Next(numHumans - 1)].Infected = true;
+            humans[0].Infected = true;
         }
 
         private void Toroidal(ref int Fx, ref int Fy)
