@@ -30,5 +30,14 @@ D:\Documents\code\c#\ALfinal\ALfinal\obj\Debug\ResolveAssemblyReference.cache
 D:\Documents\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.Gui.resources
 D:\Documents\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.Properties.Resources.resources
 D:\Documents\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.csproj.GenerateResource.Cache
+<<<<<<< .mine
 \\10.0.0.2\g\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.exe
 \\10.0.0.2\g\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.pdb
+Y:\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.exe
+Y:\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.pdb
+\\5.20.147.6\g\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.exe
+\\5.20.147.6\g\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.pdb
+=======
+\\10.0.0.2\g\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.exe
+\\10.0.0.2\g\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.pdb
+>>>>>>> .r54
