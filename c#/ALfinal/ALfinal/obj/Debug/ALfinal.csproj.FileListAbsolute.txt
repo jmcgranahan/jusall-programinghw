@@ -30,3 +30,5 @@ D:\Documents\code\c#\ALfinal\ALfinal\obj\Debug\ResolveAssemblyReference.cache
 D:\Documents\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.Gui.resources
 D:\Documents\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.Properties.Resources.resources
 D:\Documents\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.csproj.GenerateResource.Cache
+\\10.0.0.2\g\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.exe
+\\10.0.0.2\g\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.pdb

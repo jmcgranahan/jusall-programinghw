@@ -1,0 +1,9 @@
+Y:\code\c#\CA-GM\CA-GM\bin\Debug\CA-GM.exe
+Y:\code\c#\CA-GM\CA-GM\bin\Debug\CA-GM.pdb
+Y:\code\c#\CA-GM\CA-GM\obj\x86\Debug\ResolveAssemblyReference.cache
+Y:\code\c#\CA-GM\CA-GM\obj\x86\Debug\CA_GM.Form1.resources
+Y:\code\c#\CA-GM\CA-GM\obj\x86\Debug\CA_GM.Properties.Resources.resources
+Y:\code\c#\CA-GM\CA-GM\obj\x86\Debug\GenerateResource.read.1.tlog
+Y:\code\c#\CA-GM\CA-GM\obj\x86\Debug\GenerateResource.write.1.tlog
+Y:\code\c#\CA-GM\CA-GM\obj\x86\Debug\CA-GM.exe
+Y:\code\c#\CA-GM\CA-GM\obj\x86\Debug\CA-GM.pdb

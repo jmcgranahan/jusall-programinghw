@@ -37,31 +37,30 @@ Splashup(Active="")
 		;SplashOn_Off(false)
 	}
 }
-ChangeFireMode()
-{
-	global $FireMode, $Active
-	if($FireMode = "Auto")
-		$FireMode = Normal
-	else if($FireMode = "Single")
-		$FireMode = Burst
-	else if($FireMode = "Burst")
-		$FireMode = Auto
-	else if($FireMode = "Normal")
-		$FireMode = Single			
-		
-	Splashup(false)
-}
 
-mousedown()
+ChangeFireMode:
+
+if($FireMode = "Auto")
+	$FireMode = Normal
+else if($FireMode = "Single")
+	$FireMode = Burst
+else if($FireMode = "Burst")
+	$FireMode = Auto
+else if($FireMode = "Normal")
+	$FireMode = Single			
+	
+Splashup(false)
+return
+
+mousedown:
+
+if($Firemode = "Normal")
+	Click down
+if($FireMode = "Single")
+	Click
+	
+if($FireMode = "Auto")
 {
-	global $FireMode, $Active
-	if(!$Active || $Firemode = "Normal")
-		Click down
-	if($Active && ($FireMode = "Single"))
-		Click
-		
-	if($Active && ($FireMode = "Auto"))
-	{
 		while GetKeyState("LButton","P")
 		{
 			click up
@@ -69,9 +68,9 @@ mousedown()
 			click down
 		}
 	}
-	
-	if($Active && ($FireMode = "Burst"))
-	{
+
+if($FireMode = "Burst")
+{
 		while GetKeyState("LButton","P")
 		{
 			Loop, 3
@@ -84,8 +83,8 @@ mousedown()
 			sleep, 125
 		}
 	}
-	Keywait, LButton
-	Click up
-}
+Keywait, LButton
+Click up
+return
 
 

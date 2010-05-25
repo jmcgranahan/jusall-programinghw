@@ -21,3 +21,13 @@ WindowCheck:
 	Splashup(L4DActive)
 return 
 
+timer:
+	if autoclick
+	{
+		click down
+		Sleep, 1
+		click up
+	}
+	
+return
+

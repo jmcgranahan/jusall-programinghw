@@ -85,6 +85,7 @@ G10:
 return
 
 G11:
+	autoclick := !autoclick
 return
 
 G12:

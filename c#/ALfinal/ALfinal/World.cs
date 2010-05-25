@@ -9,33 +9,23 @@ namespace ALfinal
     {
         public const int WALL = 1, SPACE = 0;
         private int height, width;
-        private Human[] humans;
-        private int[,] field, humanField, sickField, infectedField, humanFieldBuffer, sickFieldBuffer, infectedFieldBuffer;
+        private Cell[] Cells;
+        private int[,,] field;
 
         static Random rand = new Random();
 
-        public World(int initWidth, int initHeight, int numHumans, int perImmune)
+        public World(int initWidth, int initHeight, int numCells, int perImmune)
         {
             field = new int[initWidth, initHeight];
-
-            humanField = new int[initWidth, initHeight];
-            humanFieldBuffer = new int[initWidth, initHeight];
-
-            sickField = new int[initWidth, initHeight];
-            sickFieldBuffer = new int[initWidth, initHeight];
-
-            infectedField = new int[initWidth, initHeight];
-            infectedFieldBuffer = new int[initWidth, initHeight];
 
             height = initHeight;
             width = initWidth;
             
-            humans = new Human[numHumans];
-            for (int i = 0; i < numHumans; i++)
+            Cells = new Cell[numCells];
+            for (int i = 0; i < numCells; i++)
             {
-                humans[i] = new Human(this, ((rand.Next(100) < perImmune) ? true : false));
+                Cells[i] = new Cell(this, ((rand.Next(100) < perImmune) ? true : false));
             }
-            humans[0].Infected = true;
         }
 
         private void Toroidal(ref int Fx, ref int Fy)
@@ -53,67 +43,19 @@ namespace ALfinal
 
         public void TimeStep()
         {
-            foreach (Human human in humans)
+            foreach (Cell cell in Cells)
             {
-                human.TimeStep();
+                cell.TimeStep();
             }
-
-            humanField = humanFieldBuffer;
-            sickField = sickFieldBuffer;
-            infectedField = infectedFieldBuffer;
-            humanFieldBuffer = new int[width, height];
-            sickFieldBuffer = new int[width, height];
-            infectedFieldBuffer = new int[width, height];
         }
 
-        public Human[] Humans
+        public Cell[] Cells
         {
             get
             {
-                return humans;
+                return Cells;
             }
 
-        }
-
-        public int[,] HumanField
-        {
-            get
-            {
-                return humanField;
-            }
-        }
-
-        public int[,] SickField
-        {
-            get
-            {
-                return sickField;
-            }
-
-        }
-
-        public int[,] InfectedField
-        {
-            get
-            {
-                return infectedField;
-            }
-
-        }
-
-        public void HumanMark(int x, int y)
-        {
-            humanFieldBuffer[x, y]++;
-        }
-
-        public void SickMark(int x, int y)
-        {
-            sickFieldBuffer[x, y]++;
-        }
-
-        public void InfectedMark(int x, int y)
-        {
-            infectedFieldBuffer[x, y]++;
         }
 
         public int Width
@@ -132,15 +74,6 @@ namespace ALfinal
             }
         }
 
-        public void SetSpace(int x, int y, int material)
-        {
-            field[x, y] = material;
-        }
-
-        public bool IsOpen(int x, int y)
-        {
-            return field[x, y] == 0;
-        }
         public int[,] Field
         {
             get

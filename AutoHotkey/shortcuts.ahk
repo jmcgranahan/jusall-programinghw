@@ -71,19 +71,5 @@ Send {alt up}{pgup up}
 Osd_Off(9)
 return
 
-*!f::
-if(L4DActive)
-	ChangeFireMode()
-else
-	send {alt down}{f down}
-return
-
-*!f up::
-if(!L4DActive)
-	send {alt up}{f up}
-return
-
-*LButton::mousedown()
-
 ^+z::   Win__Fling(1, "A")
 
