@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace CA_GM
+namespace WindowsFormsApplication1
 {
     static class Program
     {
@@ -15,7 +15,7 @@ namespace CA_GM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Window());
+            Application.Run(new Form1());
         }
     }
 }

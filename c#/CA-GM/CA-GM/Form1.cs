@@ -1,4 +1,3 @@
-<<<<<<< .mine
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,17 +9,29 @@ using System.Windows.Forms;
 
 namespace CA_GM
 {
-    public partial class Form1 : Form
+    public partial class Window : Form
     {
 
-        const int WIDTH = 256, HEIGHT = 256;
+        public const int WIDTH = 100, HEIGHT = 100;
         World world;
         Bitmap bitMap;
         Graphics graphic;
 
-        public Form1()
+        public Window()
         {
             InitializeComponent();
+        }
+
+        private void Window_Load(object sender, EventArgs e)
+        {
+            world = new World(WIDTH, HEIGHT);
+
+            bitMap = new Bitmap(WIDTH, HEIGHT);
+            graphic = Graphics.FromImage(bitMap);
+            Display.Image = bitMap;
+            //world.CellOutput[25,25].
+            DisplayOutput();
+
         }
 
         private void goButton_Click(object sender, EventArgs e)
@@ -33,125 +44,30 @@ namespace CA_GM
         }
 
 
-        private void Display()
+        private void DisplayOutput()
         {
-            graphic.Clear(Color.Black);
+            graphic.Clear(Color.White);
 
-            int aliveCount = 0, sickCount = 0, infectedCount = 0, panicingCount = 0;
-            foreach (Human human in zombieLand.Humans)
+            for (int r = 0; r < WIDTH; r++)
             {
-                //debugBox.Text += "Human#" + human.Index + " see's " + human.HumansInSight() + "\r\n";
-                //debugBox.Text += "Human#" + human.Index + " see's " + human.InfectedInSight() + "\r\n";
-                Color humanColor;
-                if (!human.Alive)
-                    humanColor = Color.Gray;
-                else if (human.Infected)
-                    humanColor = Color.LimeGreen;
-                else if (human.Sick)
-                    humanColor = Color.Purple;
-                else if (human.Panic)
-                    humanColor = Color.Red;
-                else
-                    humanColor = Color.LightSalmon;
-
-                bitMap.SetPixel(human.PosX, human.PosY, humanColor);
-
-                if (human.Alive)
-                {
-                    if (human.Infected)
-                        infectedCount++;
-                    else if (human.Sick)
-                        sickCount++;
-                    else
-                    {
-                        aliveCount++;
-                        if (human.Panic)
-                            panicingCount++;
-                    }
-
-                }
-
+                for (int c = 0; c < HEIGHT; c++)
+                    bitMap.SetPixel(c,r, world.CellOutput()[c,r].cellColor());
             }
+
+            this.Refresh();
+        }
+
+        private void stepTimer_Tick(object sender, EventArgs e)
+        {
+            DebugBox.Text = "";
+            world.TimeStep();
+            DisplayOutput();
+
+        }
+
+   
+
+
 
     }
 }
-=======
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-
-namespace CA_GM
-{
-    public partial class Form1 : Form
-    {
-        public Form1()
-        {
-            InitializeComponent();
-        }
-
-        private void goButton_Click(object sender, EventArgs e)
-        {
-            stepTimer.Enabled = !stepTimer.Enabled;
-            if (stepTimer.Enabled)
-                goButton.Text = "STOP";
-            else
-                goButton.Text = "GO";
-        }
-
-
-        private void Display()
-        {
-            graphic.Clear(Color.Black);
-            for (int r = 0; r < WIDTH-1; r++)
-            {
-                for (int c = 0; c < HEIGHT-1; c++)
-                {
-                    if(!zombieLand.IsOpen(r,c))
-                        bitMap.SetPixel(r, c, Color.Yellow);
-                }
-            }
-
-            int aliveCount = 0, sickCount = 0, infectedCount = 0, panicingCount = 0;
-            foreach (Human human in zombieLand.Humans)
-            {
-                //debugBox.Text += "Human#" + human.Index + " see's " + human.HumansInSight() + "\r\n";
-                //debugBox.Text += "Human#" + human.Index + " see's " + human.InfectedInSight() + "\r\n";
-                Color humanColor;
-                if (!human.Alive)
-                    humanColor = Color.Gray;
-                else if (human.Infected)
-                    humanColor = Color.LimeGreen;
-                else if (human.Sick)
-                    humanColor = Color.Purple;
-                else if (human.Panic)
-                    humanColor = Color.Red;
-                else
-                    humanColor = Color.LightSalmon;
-
-                bitMap.SetPixel(human.PosX, human.PosY, humanColor);
-
-                if (human.Alive)
-                {
-                    if (human.Infected)
-                        infectedCount++;
-                    else if (human.Sick)
-                        sickCount++;
-                    else
-                    {
-                        aliveCount++;
-                        if (human.Panic)
-                            panicingCount++;
-                    }
-
-                }
-
-            }
-
-    }
-}
->>>>>>> .r54

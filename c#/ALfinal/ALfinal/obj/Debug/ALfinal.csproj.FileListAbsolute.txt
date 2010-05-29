@@ -38,6 +38,4 @@ Y:\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.pdb
 \\5.20.147.6\g\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.exe
 \\5.20.147.6\g\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.pdb
 =======
-\\10.0.0.2\g\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.exe
-\\10.0.0.2\g\code\c#\ALfinal\ALfinal\obj\Debug\ALfinal.pdb
 >>>>>>> .r54

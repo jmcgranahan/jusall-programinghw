@@ -1,6 +1,6 @@
 ﻿namespace CA_GM
 {
-    partial class Form1
+    partial class Window
     {
         /// <summary>
         /// Required designer variable.
@@ -38,9 +38,11 @@
             // 
             // Display
             // 
+            this.Display.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Display.Location = new System.Drawing.Point(0, 0);
             this.Display.Name = "Display";
             this.Display.Size = new System.Drawing.Size(400, 400);
+            this.Display.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Display.TabIndex = 0;
             this.Display.TabStop = false;
             // 
@@ -57,6 +59,7 @@
             // stepTimer
             // 
             this.stepTimer.Interval = 10;
+            this.stepTimer.Tick += new System.EventHandler(this.stepTimer_Tick);
             // 
             // DebugBox
             // 
@@ -66,16 +69,18 @@
             this.DebugBox.Size = new System.Drawing.Size(100, 348);
             this.DebugBox.TabIndex = 2;
             // 
-            // Form1
+            // Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(516, 401);
             this.Controls.Add(this.DebugBox);
             this.Controls.Add(this.goButton);
             this.Controls.Add(this.Display);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Window";
+            this.Text = "CA-GM";
+            this.Load += new System.EventHandler(this.Window_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Display)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
