@@ -7,3 +7,12 @@ F:\code\c#\CA-GM\CA-GM\obj\x86\Debug\GenerateResource.read.1.tlog
 F:\code\c#\CA-GM\CA-GM\obj\x86\Debug\GenerateResource.write.1.tlog
 F:\code\c#\CA-GM\CA-GM\obj\x86\Debug\CA-GM.exe
 F:\code\c#\CA-GM\CA-GM\obj\x86\Debug\CA-GM.pdb
+D:\Documents\code\c#\CA-GM\CA-GM\obj\x86\Debug\CA-GM.exe
+D:\Documents\code\c#\CA-GM\CA-GM\obj\x86\Debug\CA-GM.pdb
+D:\Documents\code\c#\CA-GM\CA-GM\bin\Debug\CA-GM.exe
+D:\Documents\code\c#\CA-GM\CA-GM\bin\Debug\CA-GM.pdb
+D:\Documents\code\c#\CA-GM\CA-GM\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Documents\code\c#\CA-GM\CA-GM\obj\x86\Debug\CA_GM.Window.resources
+D:\Documents\code\c#\CA-GM\CA-GM\obj\x86\Debug\CA_GM.Properties.Resources.resources
+D:\Documents\code\c#\CA-GM\CA-GM\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Documents\code\c#\CA-GM\CA-GM\obj\x86\Debug\GenerateResource.write.1.tlog
