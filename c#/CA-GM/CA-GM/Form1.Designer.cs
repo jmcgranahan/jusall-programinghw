@@ -33,6 +33,7 @@
             this.goButton = new System.Windows.Forms.Button();
             this.stepTimer = new System.Windows.Forms.Timer(this.components);
             this.DebugBox = new System.Windows.Forms.TextBox();
+            this.Reset_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Display)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,8 +67,18 @@
             this.DebugBox.Location = new System.Drawing.Point(411, 12);
             this.DebugBox.Multiline = true;
             this.DebugBox.Name = "DebugBox";
-            this.DebugBox.Size = new System.Drawing.Size(100, 348);
+            this.DebugBox.Size = new System.Drawing.Size(100, 307);
             this.DebugBox.TabIndex = 2;
+            // 
+            // Reset_Button
+            // 
+            this.Reset_Button.Location = new System.Drawing.Point(404, 325);
+            this.Reset_Button.Name = "Reset_Button";
+            this.Reset_Button.Size = new System.Drawing.Size(107, 35);
+            this.Reset_Button.TabIndex = 3;
+            this.Reset_Button.Text = "Reset";
+            this.Reset_Button.UseVisualStyleBackColor = true;
+            this.Reset_Button.Click += new System.EventHandler(this.button1_Click);
             // 
             // Window
             // 
@@ -75,6 +86,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(516, 401);
+            this.Controls.Add(this.Reset_Button);
             this.Controls.Add(this.DebugBox);
             this.Controls.Add(this.goButton);
             this.Controls.Add(this.Display);
@@ -93,6 +105,7 @@
         private System.Windows.Forms.Button goButton;
         private System.Windows.Forms.Timer stepTimer;
         private System.Windows.Forms.TextBox DebugBox;
+        private System.Windows.Forms.Button Reset_Button;
     }
 }
 

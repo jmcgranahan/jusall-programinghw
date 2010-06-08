@@ -36,12 +36,24 @@ namespace CA_GM
         {
             Cell[] surroundingCells = world.GetSurroundingCells(x,y);
             colorGeneBuffer = GenerateGene(surroundingCells);
+            MutateGeneBuffer();
         }
         
         public void Mutate()
         {
             colorGene = colorGeneBuffer;
             
+        }
+
+        private void MutateGeneBuffer()
+        {
+            for (int i = 0; i <256;i++)
+            {
+                if (rand.Next(100)<5)
+                    colorGeneBuffer[i] = rand.Next(1,4);
+
+            }
+
         }
 
         private int[] GenerateGene(Cell[] surroundingCells)

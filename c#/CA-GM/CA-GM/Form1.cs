@@ -65,6 +65,14 @@ namespace CA_GM
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            world = new World(WIDTH, HEIGHT);
+            DisplayOutput();
+
+
+        }
+
    
 
 
