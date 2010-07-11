@@ -1,91 +1,554 @@
-(0, 17-Mar-2010 12:03:42) Initializing PieLog
-(0, 17-Mar-2010 12:03:42) Initializing filemode variable
-(0, 17-Mar-2010 12:03:42) Initializing PieSpeech
-(0, 17-Mar-2010 12:03:42) Initializing PieVariables
-(0, 17-Mar-2010 12:03:42) Initializing PieCursorUnit
-(0, 17-Mar-2010 12:03:42) Initializing PieMouse
-(0, 17-Mar-2010 12:03:42) Initializing PieKeyboard
-(0, 17-Mar-2010 12:03:42) Initializing PieInput
-(0, 17-Mar-2010 12:03:42) Initializing PieOSC
-(0, 17-Mar-2010 12:03:42) Initializing PiePie
-(0, 17-Mar-2010 12:03:42) Initializing PieFunction
-(0, 17-Mar-2010 12:03:42) Initializing PieStatement
-(0, 17-Mar-2010 12:03:42) Initializing PieExpression
-(0, 17-Mar-2010 12:03:42) Initializing PieJoystick
-(0, 17-Mar-2010 12:03:42) Initializing PieP5
-(0, 17-Mar-2010 12:03:42) Initializing PieMidi
-(0, 17-Mar-2010 12:03:42) Initializing PiePPJoy
-(0, 17-Mar-2010 12:03:42) Initializing PieRemote
-(0, 17-Mar-2010 12:03:42) Initializing Pie Speech Recognition
-(0, 17-Mar-2010 12:03:42) Initializing PieScreen
-(0, 17-Mar-2010 12:03:42) GetMonitorEDID
-(0, 17-Mar-2010 12:03:42) Initializing PieWIndow
-(0, 17-Mar-2010 12:03:42) Initializing PieCursors
-(0, 17-Mar-2010 12:03:42) Initializing PieZ800
-(0, 17-Mar-2010 12:03:42) Initializing PieIntersense
-(0, 17-Mar-2010 12:03:42) Initializing PieFastrak
-(0, 17-Mar-2010 12:03:42) Initializing PiePPT
-(0, 17-Mar-2010 12:03:42) Initializing PieTrackIR
-(0, 17-Mar-2010 12:03:42) Initializing PiePinch
-(0, 17-Mar-2010 12:03:42) Initializing PieBird
-(0, 17-Mar-2010 12:03:42) Initializing PieFiveDT
-(0, 17-Mar-2010 12:03:42) Starting main
-(0, 17-Mar-2010 12:03:42) Application object initialized
-(0, 17-Mar-2010 12:03:42) Creating main window
-(0, 17-Mar-2010 12:03:42) EditorForm.Create
-(0, 17-Mar-2010 12:03:42) Checking command line parameters:
-(0, 17-Mar-2010 12:03:42) Creating debug window
-(0, 17-Mar-2010 12:03:42) Assigning exception handler
-(0, 17-Mar-2010 12:03:42) Creating debug remote control window
-(0, 17-Mar-2010 12:03:42) Running application
-(0, 17-Mar-2010 12:04:01) File>Open
-(0, 17-Mar-2010 12:04:03) ClearMidiGui
-(0, 17-Mar-2010 12:04:49) RunButton
-(0, 17-Mar-2010 12:04:49) Compile>Run
-(0, 17-Mar-2010 12:04:49) Compile>Compile
-(0, 17-Mar-2010 12:04:49) CompileCode
-(0, 17-Mar-2010 12:04:49) StartingInputMonitor CompileJoystick
-(0, 17-Mar-2010 12:04:49) EnumerateJoysticks
-(0, 17-Mar-2010 12:04:49) Enumerated... BadGamePad = False
-(0, 17-Mar-2010 12:04:49) StartCompileTimeP5 False
-(0, 17-Mar-2010 12:04:49) StoppingInputMonitor CompileJoystick
-(0, 17-Mar-2010 12:04:49) StartRuntime
-(0, 17-Mar-2010 12:04:49) StartKeyboardMonitor
-(0, 17-Mar-2010 12:04:49) StartingInputMonitor keyboard
-(0, 17-Mar-2010 12:04:49) StartRuntimeJoystick
-(0, 17-Mar-2010 12:04:49) ************************* False
-(0, 17-Mar-2010 12:04:53) FormCloseQuery
-(0, 17-Mar-2010 12:04:53) Compile>Stop
-(0, 17-Mar-2010 12:04:53) StopRuntime
-(0, 17-Mar-2010 12:04:53) StopKeyboardMonitor
-(0, 17-Mar-2010 12:04:53) StoppingInputMonitor Keyboard
-(0, 17-Mar-2010 12:04:53) StopRuntimeJoystick
-(0, 17-Mar-2010 12:04:55) Application finished
-(0, 17-Mar-2010 12:04:55) Destroying EditorForm
-(0, 17-Mar-2010 12:04:55) Finalizing PieFiveDT
-(0, 17-Mar-2010 12:04:55) Finalizing PieBird
-(0, 17-Mar-2010 12:04:55) Finalizing PiePinch
-(0, 17-Mar-2010 12:04:55) Finalizing PieTrackIR
-(0, 17-Mar-2010 12:04:55) Finalizing PiePPT
-(0, 17-Mar-2010 12:04:55) Finalizing PieFastrak
-(0, 17-Mar-2010 12:04:55) Finalizing PieIntersense
-(0, 17-Mar-2010 12:04:55) Finalizing PieZ800
-(0, 17-Mar-2010 12:04:55) Finalizing PieCursors
-(0, 17-Mar-2010 12:04:55) Finalizing PieWindow
-(0, 17-Mar-2010 12:04:55) Finalizing PieScreen
-(0, 17-Mar-2010 12:04:55) Finalizing Pie Speech Recognition
-(0, 17-Mar-2010 12:04:55) Finalizing PieRemote
-(0, 17-Mar-2010 12:04:55) Finalizing PiePPJoy
-(0, 17-Mar-2010 12:04:55) Finalizing PieMidi
-(0, 17-Mar-2010 12:04:55) Finalizing PieP5
-(0, 17-Mar-2010 12:04:55) Finalizing PieJoystick
-(0, 17-Mar-2010 12:04:55) Finalizing PieStatement
-(0, 17-Mar-2010 12:04:55) Finalizing PieFunction
-(0, 17-Mar-2010 12:04:55) Finalizing PiePie
-(0, 17-Mar-2010 12:04:55) Finalizing PieOSC
-(0, 17-Mar-2010 12:04:55) Finalizing PieKeyboard
-(0, 17-Mar-2010 12:04:55) Finalizing PieMouse
-(0, 17-Mar-2010 12:04:55) Finalizing PieVariables
-(0, 17-Mar-2010 12:04:55) Finalizing PieSpeech
-(0, 17-Mar-2010 12:04:55) Finalizing PieLog
-(0, 17-Mar-2010 12:04:55) Closing log file
+(0, 13-Jun-2010 22:08:11) Initializing PieLog
+(0, 13-Jun-2010 22:08:11) Initializing filemode variable
+(0, 13-Jun-2010 22:08:11) Initializing PieSpeech
+(0, 13-Jun-2010 22:08:11) Initializing PieVariables
+(0, 13-Jun-2010 22:08:11) Initializing PieCursorUnit
+(0, 13-Jun-2010 22:08:11) Initializing PieMouse
+(0, 13-Jun-2010 22:08:11) Initializing PieKeyboard
+(0, 13-Jun-2010 22:08:11) Initializing PieInput
+(0, 13-Jun-2010 22:08:11) Initializing PieOSC
+(0, 13-Jun-2010 22:08:11) Initializing PiePie
+(0, 13-Jun-2010 22:08:11) Initializing PieFunction
+(0, 13-Jun-2010 22:08:11) Initializing PieStatement
+(0, 13-Jun-2010 22:08:11) Initializing PieExpression
+(0, 13-Jun-2010 22:08:11) Initializing PieJoystick
+(0, 13-Jun-2010 22:08:11) Initializing PieP5
+(0, 13-Jun-2010 22:08:11) Initializing PieMidi
+(0, 13-Jun-2010 22:08:11) Initializing PiePPJoy
+(0, 13-Jun-2010 22:08:11) Initializing PieRemote
+(0, 13-Jun-2010 22:08:11) Initializing Pie Speech Recognition
+(0, 13-Jun-2010 22:08:11) Initializing PieScreen
+(0, 13-Jun-2010 22:08:11) GetMonitorEDID
+(1, 13-Jun-2010 22:08:11) Exception: EConvertError (2009, 65530) is not a valid DateDay pair
+(0, 13-Jun-2010 22:08:11) Initializing PieWIndow
+(0, 13-Jun-2010 22:08:11) Initializing PieCursors
+(0, 13-Jun-2010 22:08:11) Initializing PieZ800
+(0, 13-Jun-2010 22:08:11) Initializing PieIntersense
+(0, 13-Jun-2010 22:08:11) Initializing PieFastrak
+(0, 13-Jun-2010 22:08:11) Initializing PiePPT
+(0, 13-Jun-2010 22:08:11) Initializing PieTrackIR
+(0, 13-Jun-2010 22:08:11) Initializing PiePinch
+(0, 13-Jun-2010 22:08:11) Initializing PieBird
+(0, 13-Jun-2010 22:08:11) Initializing PieFiveDT
+(0, 13-Jun-2010 22:08:11) Starting main
+(0, 13-Jun-2010 22:08:11) Application object initialized
+(0, 13-Jun-2010 22:08:11) Creating main window
+(0, 13-Jun-2010 22:08:12) EditorForm.Create
+(0, 13-Jun-2010 22:08:12) Checking command line parameters:
+(0, 13-Jun-2010 22:08:12) Creating debug window
+(0, 13-Jun-2010 22:08:12) Assigning exception handler
+(0, 13-Jun-2010 22:08:12) Creating debug remote control window
+(0, 13-Jun-2010 22:08:12) Running application
+(0, 13-Jun-2010 22:08:14) File>Open
+(0, 13-Jun-2010 22:08:18) ClearMidiGui
+(0, 13-Jun-2010 22:17:05) RunButton
+(0, 13-Jun-2010 22:17:05) Compile>Run
+(0, 13-Jun-2010 22:17:05) Compile>Compile
+(0, 13-Jun-2010 22:17:05) CompileCode
+(0, 13-Jun-2010 22:17:05) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:17:05) EnumerateJoysticks
+(0, 13-Jun-2010 22:17:05) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:17:05) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:17:05) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:17:05) StartRuntime
+(0, 13-Jun-2010 22:17:05) StartKeyboardMonitor
+(0, 13-Jun-2010 22:17:05) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:17:10) StopButton
+(0, 13-Jun-2010 22:17:10) Compile>Stop
+(0, 13-Jun-2010 22:17:10) StopRuntime
+(0, 13-Jun-2010 22:17:10) StopKeyboardMonitor
+(0, 13-Jun-2010 22:17:10) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:17:10) StopRuntimeJoystick
+(0, 13-Jun-2010 22:17:10) StartRuntimeJoystick
+(0, 13-Jun-2010 22:17:10) ************************* False
+(0, 13-Jun-2010 22:17:12) RunButton
+(0, 13-Jun-2010 22:17:12) Compile>Run
+(0, 13-Jun-2010 22:17:12) Compile>Compile
+(0, 13-Jun-2010 22:17:12) CompileCode
+(0, 13-Jun-2010 22:17:12) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:17:12) EnumerateJoysticks
+(0, 13-Jun-2010 22:17:12) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:17:12) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:17:12) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:17:12) StartRuntime
+(0, 13-Jun-2010 22:17:12) StartKeyboardMonitor
+(0, 13-Jun-2010 22:17:12) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:17:12) StartRuntimeJoystick
+(0, 13-Jun-2010 22:17:12) ************************* False
+(0, 13-Jun-2010 22:17:12) StopButton
+(0, 13-Jun-2010 22:17:12) Compile>Stop
+(0, 13-Jun-2010 22:17:12) StopRuntime
+(0, 13-Jun-2010 22:17:12) StopKeyboardMonitor
+(0, 13-Jun-2010 22:17:12) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:17:12) StopRuntimeJoystick
+(0, 13-Jun-2010 22:17:13) RunButton
+(0, 13-Jun-2010 22:17:13) Compile>Run
+(0, 13-Jun-2010 22:17:13) Compile>Compile
+(0, 13-Jun-2010 22:17:13) CompileCode
+(0, 13-Jun-2010 22:17:13) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:17:13) EnumerateJoysticks
+(0, 13-Jun-2010 22:17:13) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:17:13) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:17:13) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:17:13) StartRuntime
+(0, 13-Jun-2010 22:17:13) StartKeyboardMonitor
+(0, 13-Jun-2010 22:17:13) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:17:13) StartRuntimeJoystick
+(0, 13-Jun-2010 22:17:13) ************************* False
+(0, 13-Jun-2010 22:17:13) StopButton
+(0, 13-Jun-2010 22:17:13) Compile>Stop
+(0, 13-Jun-2010 22:17:13) StopRuntime
+(0, 13-Jun-2010 22:17:13) StopKeyboardMonitor
+(0, 13-Jun-2010 22:17:13) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:17:13) StopRuntimeJoystick
+(0, 13-Jun-2010 22:17:14) RunButton
+(0, 13-Jun-2010 22:17:14) Compile>Run
+(0, 13-Jun-2010 22:17:14) Compile>Compile
+(0, 13-Jun-2010 22:17:14) CompileCode
+(0, 13-Jun-2010 22:17:14) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:17:14) EnumerateJoysticks
+(0, 13-Jun-2010 22:17:14) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:17:14) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:17:14) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:17:14) StartRuntime
+(0, 13-Jun-2010 22:17:14) StartKeyboardMonitor
+(0, 13-Jun-2010 22:17:14) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:17:14) StartRuntimeJoystick
+(0, 13-Jun-2010 22:17:14) ************************* False
+(0, 13-Jun-2010 22:17:15) StopButton
+(0, 13-Jun-2010 22:17:15) Compile>Stop
+(0, 13-Jun-2010 22:17:15) StopRuntime
+(0, 13-Jun-2010 22:17:15) StopKeyboardMonitor
+(0, 13-Jun-2010 22:17:15) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:17:15) StopRuntimeJoystick
+(0, 13-Jun-2010 22:17:15) RunButton
+(0, 13-Jun-2010 22:17:15) Compile>Run
+(0, 13-Jun-2010 22:17:15) Compile>Compile
+(0, 13-Jun-2010 22:17:15) CompileCode
+(0, 13-Jun-2010 22:17:15) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:17:15) EnumerateJoysticks
+(0, 13-Jun-2010 22:17:15) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:17:15) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:17:15) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:17:15) StartRuntime
+(0, 13-Jun-2010 22:17:15) StartKeyboardMonitor
+(0, 13-Jun-2010 22:17:15) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:17:15) StartRuntimeJoystick
+(0, 13-Jun-2010 22:17:15) ************************* False
+(0, 13-Jun-2010 22:17:16) StopButton
+(0, 13-Jun-2010 22:17:16) Compile>Stop
+(0, 13-Jun-2010 22:17:16) StopRuntime
+(0, 13-Jun-2010 22:17:16) StopKeyboardMonitor
+(0, 13-Jun-2010 22:17:16) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:17:16) StopRuntimeJoystick
+(0, 13-Jun-2010 22:21:25) RunButton
+(0, 13-Jun-2010 22:21:25) Compile>Run
+(0, 13-Jun-2010 22:21:25) Compile>Compile
+(0, 13-Jun-2010 22:21:25) CompileCode
+(0, 13-Jun-2010 22:21:25) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:21:25) EnumerateJoysticks
+(0, 13-Jun-2010 22:21:25) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:21:25) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:21:25) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:21:25) StartRuntime
+(0, 13-Jun-2010 22:21:25) StartKeyboardMonitor
+(0, 13-Jun-2010 22:21:25) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:21:28) StopButton
+(0, 13-Jun-2010 22:21:28) Compile>Stop
+(0, 13-Jun-2010 22:21:28) StopRuntime
+(0, 13-Jun-2010 22:21:28) StopKeyboardMonitor
+(0, 13-Jun-2010 22:21:28) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:21:28) StopRuntimeJoystick
+(0, 13-Jun-2010 22:21:30) StartRuntimeJoystick
+(0, 13-Jun-2010 22:21:30) ************************* False
+(0, 13-Jun-2010 22:23:27) RunButton
+(0, 13-Jun-2010 22:23:27) Compile>Run
+(0, 13-Jun-2010 22:23:27) Compile>Compile
+(0, 13-Jun-2010 22:23:27) CompileCode
+(0, 13-Jun-2010 22:23:27) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:23:27) EnumerateJoysticks
+(0, 13-Jun-2010 22:23:27) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:23:27) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:23:27) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:23:27) StartRuntime
+(0, 13-Jun-2010 22:23:27) StartKeyboardMonitor
+(0, 13-Jun-2010 22:23:27) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:23:27) StartRuntimeJoystick
+(0, 13-Jun-2010 22:23:27) ************************* False
+(0, 13-Jun-2010 22:23:57) StopButton
+(0, 13-Jun-2010 22:23:57) Compile>Stop
+(0, 13-Jun-2010 22:23:57) StopRuntime
+(0, 13-Jun-2010 22:23:57) StopKeyboardMonitor
+(0, 13-Jun-2010 22:23:57) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:23:57) StopRuntimeJoystick
+(0, 13-Jun-2010 22:27:42) RunButton
+(0, 13-Jun-2010 22:27:42) Compile>Run
+(0, 13-Jun-2010 22:27:42) Compile>Compile
+(0, 13-Jun-2010 22:27:42) CompileCode
+(0, 13-Jun-2010 22:27:42) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:27:42) EnumerateJoysticks
+(0, 13-Jun-2010 22:27:42) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:27:42) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:27:42) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:27:42) StartRuntime
+(0, 13-Jun-2010 22:27:42) StartKeyboardMonitor
+(0, 13-Jun-2010 22:27:42) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:27:44) StartRuntimeJoystick
+(0, 13-Jun-2010 22:27:44) ************************* False
+(0, 13-Jun-2010 22:27:59) StopButton
+(0, 13-Jun-2010 22:27:59) Compile>Stop
+(0, 13-Jun-2010 22:27:59) StopRuntime
+(0, 13-Jun-2010 22:27:59) StopKeyboardMonitor
+(0, 13-Jun-2010 22:27:59) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:27:59) StopRuntimeJoystick
+(0, 13-Jun-2010 22:30:52) RunButton
+(0, 13-Jun-2010 22:30:52) Compile>Run
+(0, 13-Jun-2010 22:30:52) Compile>Compile
+(0, 13-Jun-2010 22:30:52) CompileCode
+(0, 13-Jun-2010 22:30:52) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:30:52) EnumerateJoysticks
+(0, 13-Jun-2010 22:30:52) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:30:52) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:30:52) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:30:52) StartRuntime
+(0, 13-Jun-2010 22:30:52) StartKeyboardMonitor
+(0, 13-Jun-2010 22:30:52) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:30:56) StartRuntimeJoystick
+(0, 13-Jun-2010 22:30:56) ************************* False
+(0, 13-Jun-2010 22:32:10) StopButton
+(0, 13-Jun-2010 22:32:10) Compile>Stop
+(0, 13-Jun-2010 22:32:10) StopRuntime
+(0, 13-Jun-2010 22:32:10) StopKeyboardMonitor
+(0, 13-Jun-2010 22:32:10) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:32:11) StopRuntimeJoystick
+(0, 13-Jun-2010 22:33:27) RunButton
+(0, 13-Jun-2010 22:33:27) Compile>Run
+(0, 13-Jun-2010 22:33:27) Compile>Compile
+(0, 13-Jun-2010 22:33:27) CompileCode
+(0, 13-Jun-2010 22:33:27) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:33:27) EnumerateJoysticks
+(0, 13-Jun-2010 22:33:27) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:33:27) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:33:27) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:33:27) StartRuntime
+(0, 13-Jun-2010 22:33:27) StartKeyboardMonitor
+(0, 13-Jun-2010 22:33:27) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:33:30) StartRuntimeJoystick
+(0, 13-Jun-2010 22:33:30) ************************* False
+(0, 13-Jun-2010 22:34:38) StopButton
+(0, 13-Jun-2010 22:34:38) Compile>Stop
+(0, 13-Jun-2010 22:34:38) StopRuntime
+(0, 13-Jun-2010 22:34:38) StopKeyboardMonitor
+(0, 13-Jun-2010 22:34:38) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:34:38) StopRuntimeJoystick
+(0, 13-Jun-2010 22:35:50) RunButton
+(0, 13-Jun-2010 22:35:50) Compile>Run
+(0, 13-Jun-2010 22:35:50) Compile>Compile
+(0, 13-Jun-2010 22:35:50) CompileCode
+(0, 13-Jun-2010 22:35:50) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:35:50) EnumerateJoysticks
+(0, 13-Jun-2010 22:35:50) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:35:50) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:35:50) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:35:50) StartRuntime
+(0, 13-Jun-2010 22:35:50) StartKeyboardMonitor
+(0, 13-Jun-2010 22:35:50) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:35:54) StartRuntimeJoystick
+(0, 13-Jun-2010 22:35:54) ************************* False
+(0, 13-Jun-2010 22:36:53) StopButton
+(0, 13-Jun-2010 22:36:53) Compile>Stop
+(0, 13-Jun-2010 22:36:53) StopRuntime
+(0, 13-Jun-2010 22:36:53) StopKeyboardMonitor
+(0, 13-Jun-2010 22:36:53) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:36:54) StopRuntimeJoystick
+(0, 13-Jun-2010 22:37:17) RunButton
+(0, 13-Jun-2010 22:37:17) Compile>Run
+(0, 13-Jun-2010 22:37:17) Compile>Compile
+(0, 13-Jun-2010 22:37:17) CompileCode
+(0, 13-Jun-2010 22:37:17) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:37:17) EnumerateJoysticks
+(0, 13-Jun-2010 22:37:17) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:37:17) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:37:17) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:37:17) StartRuntime
+(0, 13-Jun-2010 22:37:17) StartKeyboardMonitor
+(0, 13-Jun-2010 22:37:17) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:37:20) StartRuntimeJoystick
+(0, 13-Jun-2010 22:37:20) ************************* False
+(0, 13-Jun-2010 22:40:07) StopButton
+(0, 13-Jun-2010 22:40:07) Compile>Stop
+(0, 13-Jun-2010 22:40:07) StopRuntime
+(0, 13-Jun-2010 22:40:07) StopKeyboardMonitor
+(0, 13-Jun-2010 22:40:07) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:40:07) StopRuntimeJoystick
+(0, 13-Jun-2010 22:40:20) RunButton
+(0, 13-Jun-2010 22:40:20) Compile>Run
+(0, 13-Jun-2010 22:40:20) Compile>Compile
+(0, 13-Jun-2010 22:40:20) CompileCode
+(0, 13-Jun-2010 22:40:20) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:40:20) EnumerateJoysticks
+(0, 13-Jun-2010 22:40:20) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:40:20) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:40:20) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:40:20) StartRuntime
+(0, 13-Jun-2010 22:40:20) StartKeyboardMonitor
+(0, 13-Jun-2010 22:40:20) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:40:23) StartRuntimeJoystick
+(0, 13-Jun-2010 22:40:23) ************************* False
+(0, 13-Jun-2010 22:45:22) StopButton
+(0, 13-Jun-2010 22:45:22) Compile>Stop
+(0, 13-Jun-2010 22:45:22) StopRuntime
+(0, 13-Jun-2010 22:45:22) StopKeyboardMonitor
+(0, 13-Jun-2010 22:45:22) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:45:23) StopRuntimeJoystick
+(0, 13-Jun-2010 22:45:23) RunButton
+(0, 13-Jun-2010 22:45:23) Compile>Run
+(0, 13-Jun-2010 22:45:23) Compile>Compile
+(0, 13-Jun-2010 22:45:23) CompileCode
+(0, 13-Jun-2010 22:45:23) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:45:23) EnumerateJoysticks
+(0, 13-Jun-2010 22:45:23) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:45:23) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:45:23) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:45:23) StartRuntime
+(0, 13-Jun-2010 22:45:23) StartKeyboardMonitor
+(0, 13-Jun-2010 22:45:23) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:45:26) StartRuntimeJoystick
+(0, 13-Jun-2010 22:45:26) ************************* False
+(0, 13-Jun-2010 22:49:12) StopButton
+(0, 13-Jun-2010 22:49:12) Compile>Stop
+(0, 13-Jun-2010 22:49:12) StopRuntime
+(0, 13-Jun-2010 22:49:12) StopKeyboardMonitor
+(0, 13-Jun-2010 22:49:12) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:49:12) StopRuntimeJoystick
+(0, 13-Jun-2010 22:49:21) RunButton
+(0, 13-Jun-2010 22:49:21) Compile>Run
+(0, 13-Jun-2010 22:49:21) Compile>Compile
+(0, 13-Jun-2010 22:49:21) CompileCode
+(0, 13-Jun-2010 22:49:21) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:49:21) EnumerateJoysticks
+(0, 13-Jun-2010 22:49:21) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:49:21) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:49:21) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:49:21) StartRuntime
+(0, 13-Jun-2010 22:49:21) StartKeyboardMonitor
+(0, 13-Jun-2010 22:49:21) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:49:24) StartRuntimeJoystick
+(0, 13-Jun-2010 22:49:24) ************************* False
+(0, 13-Jun-2010 22:49:26) StopButton
+(0, 13-Jun-2010 22:49:26) Compile>Stop
+(0, 13-Jun-2010 22:49:26) StopRuntime
+(0, 13-Jun-2010 22:49:26) StopKeyboardMonitor
+(0, 13-Jun-2010 22:49:26) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:49:27) StopRuntimeJoystick
+(0, 13-Jun-2010 22:49:28) RunButton
+(0, 13-Jun-2010 22:49:28) Compile>Run
+(0, 13-Jun-2010 22:49:28) Compile>Compile
+(0, 13-Jun-2010 22:49:28) CompileCode
+(0, 13-Jun-2010 22:49:28) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:49:28) EnumerateJoysticks
+(0, 13-Jun-2010 22:49:28) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:49:28) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:49:28) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:49:28) StartRuntime
+(0, 13-Jun-2010 22:49:28) StartKeyboardMonitor
+(0, 13-Jun-2010 22:49:28) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:49:28) StopButton
+(0, 13-Jun-2010 22:49:28) Compile>Stop
+(0, 13-Jun-2010 22:49:28) StopRuntime
+(0, 13-Jun-2010 22:49:28) StopKeyboardMonitor
+(0, 13-Jun-2010 22:49:28) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:49:28) StopRuntimeJoystick
+(0, 13-Jun-2010 22:49:32) StartRuntimeJoystick
+(0, 13-Jun-2010 22:49:32) ************************* False
+(0, 13-Jun-2010 22:49:46) RunButton
+(0, 13-Jun-2010 22:49:46) Compile>Run
+(0, 13-Jun-2010 22:49:46) Compile>Compile
+(0, 13-Jun-2010 22:49:46) CompileCode
+(0, 13-Jun-2010 22:49:46) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:49:46) EnumerateJoysticks
+(0, 13-Jun-2010 22:49:46) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:49:46) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:49:46) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:49:46) StartRuntime
+(0, 13-Jun-2010 22:49:46) StartKeyboardMonitor
+(0, 13-Jun-2010 22:49:46) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:49:46) StartRuntimeJoystick
+(0, 13-Jun-2010 22:49:46) ************************* False
+(0, 13-Jun-2010 22:50:37) StopButton
+(0, 13-Jun-2010 22:50:37) Compile>Stop
+(0, 13-Jun-2010 22:50:37) StopRuntime
+(0, 13-Jun-2010 22:50:37) StopKeyboardMonitor
+(0, 13-Jun-2010 22:50:37) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:50:37) StopRuntimeJoystick
+(0, 13-Jun-2010 22:56:08) RunButton
+(0, 13-Jun-2010 22:56:08) Compile>Run
+(0, 13-Jun-2010 22:56:08) Compile>Compile
+(0, 13-Jun-2010 22:56:08) CompileCode
+(0, 13-Jun-2010 22:56:08) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:56:08) EnumerateJoysticks
+(0, 13-Jun-2010 22:56:08) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:56:08) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:56:08) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:56:08) StartRuntime
+(0, 13-Jun-2010 22:56:08) StartKeyboardMonitor
+(0, 13-Jun-2010 22:56:08) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:56:12) StartRuntimeJoystick
+(0, 13-Jun-2010 22:56:12) ************************* False
+(0, 13-Jun-2010 22:56:12) StopButton
+(0, 13-Jun-2010 22:56:12) Compile>Stop
+(0, 13-Jun-2010 22:56:12) StopRuntime
+(0, 13-Jun-2010 22:56:12) StopKeyboardMonitor
+(0, 13-Jun-2010 22:56:12) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:56:12) StopRuntimeJoystick
+(0, 13-Jun-2010 22:56:13) RunButton
+(0, 13-Jun-2010 22:56:13) Compile>Run
+(0, 13-Jun-2010 22:56:13) Compile>Compile
+(0, 13-Jun-2010 22:56:13) CompileCode
+(0, 13-Jun-2010 22:56:13) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:56:13) EnumerateJoysticks
+(0, 13-Jun-2010 22:56:13) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:56:13) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:56:13) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:56:13) StartRuntime
+(0, 13-Jun-2010 22:56:13) StartKeyboardMonitor
+(0, 13-Jun-2010 22:56:13) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:56:15) StopButton
+(0, 13-Jun-2010 22:56:15) Compile>Stop
+(0, 13-Jun-2010 22:56:16) StopRuntime
+(0, 13-Jun-2010 22:56:16) StopKeyboardMonitor
+(0, 13-Jun-2010 22:56:16) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:56:16) StopRuntimeJoystick
+(0, 13-Jun-2010 22:56:18) StartRuntimeJoystick
+(0, 13-Jun-2010 22:56:18) ************************* False
+(0, 13-Jun-2010 22:56:21) RunButton
+(0, 13-Jun-2010 22:56:21) Compile>Run
+(0, 13-Jun-2010 22:56:21) Compile>Compile
+(0, 13-Jun-2010 22:56:21) CompileCode
+(0, 13-Jun-2010 22:56:21) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:56:21) EnumerateJoysticks
+(0, 13-Jun-2010 22:56:21) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:56:21) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:56:21) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:56:21) StartRuntime
+(0, 13-Jun-2010 22:56:21) StartKeyboardMonitor
+(0, 13-Jun-2010 22:56:21) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:56:21) StartRuntimeJoystick
+(0, 13-Jun-2010 22:56:21) ************************* False
+(0, 13-Jun-2010 22:56:46) StopButton
+(0, 13-Jun-2010 22:56:46) Compile>Stop
+(0, 13-Jun-2010 22:56:46) StopRuntime
+(0, 13-Jun-2010 22:56:46) StopKeyboardMonitor
+(0, 13-Jun-2010 22:56:46) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:56:46) StopRuntimeJoystick
+(0, 13-Jun-2010 22:56:46) RunButton
+(0, 13-Jun-2010 22:56:46) Compile>Run
+(0, 13-Jun-2010 22:56:46) Compile>Compile
+(0, 13-Jun-2010 22:56:46) CompileCode
+(0, 13-Jun-2010 22:56:46) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:56:46) EnumerateJoysticks
+(0, 13-Jun-2010 22:56:46) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:56:46) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:56:46) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:56:46) StartRuntime
+(0, 13-Jun-2010 22:56:46) StartKeyboardMonitor
+(0, 13-Jun-2010 22:56:46) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:56:46) StartRuntimeJoystick
+(0, 13-Jun-2010 22:56:46) ************************* False
+(0, 13-Jun-2010 22:56:47) StopButton
+(0, 13-Jun-2010 22:56:47) Compile>Stop
+(0, 13-Jun-2010 22:56:47) StopRuntime
+(0, 13-Jun-2010 22:56:47) StopKeyboardMonitor
+(0, 13-Jun-2010 22:56:47) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:56:47) StopRuntimeJoystick
+(0, 13-Jun-2010 22:57:07) RunButton
+(0, 13-Jun-2010 22:57:07) Compile>Run
+(0, 13-Jun-2010 22:57:07) Compile>Compile
+(0, 13-Jun-2010 22:57:07) CompileCode
+(0, 13-Jun-2010 22:57:07) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:57:07) EnumerateJoysticks
+(0, 13-Jun-2010 22:57:07) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:57:07) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:57:07) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:57:07) StartRuntime
+(0, 13-Jun-2010 22:57:07) StartKeyboardMonitor
+(0, 13-Jun-2010 22:57:07) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:57:07) StartRuntimeJoystick
+(0, 13-Jun-2010 22:57:07) ************************* False
+(0, 13-Jun-2010 22:57:13) StopButton
+(0, 13-Jun-2010 22:57:13) Compile>Stop
+(0, 13-Jun-2010 22:57:13) StopRuntime
+(0, 13-Jun-2010 22:57:13) StopKeyboardMonitor
+(0, 13-Jun-2010 22:57:13) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:57:13) StopRuntimeJoystick
+(0, 13-Jun-2010 22:59:38) RunButton
+(0, 13-Jun-2010 22:59:38) Compile>Run
+(0, 13-Jun-2010 22:59:38) Compile>Compile
+(0, 13-Jun-2010 22:59:38) CompileCode
+(0, 13-Jun-2010 22:59:38) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:59:38) EnumerateJoysticks
+(0, 13-Jun-2010 22:59:38) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:59:38) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:59:38) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:59:38) StartRuntime
+(0, 13-Jun-2010 22:59:38) StartKeyboardMonitor
+(0, 13-Jun-2010 22:59:38) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:59:41) StartRuntimeJoystick
+(0, 13-Jun-2010 22:59:41) ************************* False
+(0, 13-Jun-2010 22:59:44) StopButton
+(0, 13-Jun-2010 22:59:44) Compile>Stop
+(0, 13-Jun-2010 22:59:44) StopRuntime
+(0, 13-Jun-2010 22:59:44) StopKeyboardMonitor
+(0, 13-Jun-2010 22:59:44) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 22:59:44) StopRuntimeJoystick
+(0, 13-Jun-2010 22:59:45) RunButton
+(0, 13-Jun-2010 22:59:45) Compile>Run
+(0, 13-Jun-2010 22:59:45) Compile>Compile
+(0, 13-Jun-2010 22:59:45) CompileCode
+(0, 13-Jun-2010 22:59:45) StartingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:59:45) EnumerateJoysticks
+(0, 13-Jun-2010 22:59:45) Enumerated... BadGamePad = False
+(0, 13-Jun-2010 22:59:45) StartCompileTimeP5 False
+(0, 13-Jun-2010 22:59:45) StoppingInputMonitor CompileJoystick
+(0, 13-Jun-2010 22:59:45) StartRuntime
+(0, 13-Jun-2010 22:59:45) StartKeyboardMonitor
+(0, 13-Jun-2010 22:59:45) StartingInputMonitor keyboard
+(0, 13-Jun-2010 22:59:47) StartRuntimeJoystick
+(0, 13-Jun-2010 22:59:47) ************************* False
+(0, 13-Jun-2010 23:00:42) StopButton
+(0, 13-Jun-2010 23:00:42) Compile>Stop
+(0, 13-Jun-2010 23:00:42) StopRuntime
+(0, 13-Jun-2010 23:00:42) StopKeyboardMonitor
+(0, 13-Jun-2010 23:00:42) StoppingInputMonitor Keyboard
+(0, 13-Jun-2010 23:00:42) StopRuntimeJoystick
+(0, 13-Jun-2010 23:01:33) FormCloseQuery
+(0, 13-Jun-2010 23:01:33) Compile>Stop
+(0, 13-Jun-2010 23:01:37) Application finished
+(0, 13-Jun-2010 23:01:37) Destroying EditorForm
+(0, 13-Jun-2010 23:01:37) Finalizing PieFiveDT
+(0, 13-Jun-2010 23:01:37) Finalizing PieBird
+(0, 13-Jun-2010 23:01:37) Finalizing PiePinch
+(0, 13-Jun-2010 23:01:37) Finalizing PieTrackIR
+(0, 13-Jun-2010 23:01:37) Finalizing PiePPT
+(0, 13-Jun-2010 23:01:37) Finalizing PieFastrak
+(0, 13-Jun-2010 23:01:37) Finalizing PieIntersense
+(0, 13-Jun-2010 23:01:37) Finalizing PieZ800
+(0, 13-Jun-2010 23:01:37) Finalizing PieCursors
+(0, 13-Jun-2010 23:01:37) Finalizing PieWindow
+(0, 13-Jun-2010 23:01:37) Finalizing PieScreen
+(0, 13-Jun-2010 23:01:37) Finalizing Pie Speech Recognition
+(0, 13-Jun-2010 23:01:37) Finalizing PieRemote
+(0, 13-Jun-2010 23:01:37) Finalizing PiePPJoy
+(0, 13-Jun-2010 23:01:37) Finalizing PieMidi
+(0, 13-Jun-2010 23:01:37) Finalizing PieP5
+(0, 13-Jun-2010 23:01:37) Finalizing PieJoystick
+(0, 13-Jun-2010 23:01:37) Finalizing PieStatement
+(0, 13-Jun-2010 23:01:37) Finalizing PieFunction
+(0, 13-Jun-2010 23:01:37) Finalizing PiePie
+(0, 13-Jun-2010 23:01:37) Finalizing PieOSC
+(0, 13-Jun-2010 23:01:37) Finalizing PieKeyboard
+(0, 13-Jun-2010 23:01:37) Finalizing PieMouse
+(0, 13-Jun-2010 23:01:37) Finalizing PieVariables
+(0, 13-Jun-2010 23:01:37) Finalizing PieSpeech
+(0, 13-Jun-2010 23:01:37) Finalizing PieLog
+(0, 13-Jun-2010 23:01:37) Closing log file
