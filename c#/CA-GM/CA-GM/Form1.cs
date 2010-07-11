@@ -51,7 +51,9 @@ namespace CA_GM
             for (int r = 0; r < WIDTH; r++)
             {
                 for (int c = 0; c < HEIGHT; c++)
-                    bitMap.SetPixel(c,r, world.CellOutput()[c,r].cellColor());
+                    //bitMap.SetPixel(c, r, world.CellOutput()[Convert.ToInt32(Math.Floor(c / (double)4)), Convert.ToInt32(Math.Floor(r / (double)4))].cellColor());
+                    bitMap.SetPixel(c, r, world.CellOutput()[c,r].cellColor());
+                    
             }
 
             this.Refresh();
@@ -60,8 +62,13 @@ namespace CA_GM
         private void stepTimer_Tick(object sender, EventArgs e)
         {
             DebugBox.Text = "";
+
+            DateTime startTime = DateTime.Now;
             world.TimeStep();
             DisplayOutput();
+            DateTime stopTime = DateTime.Now;
+            TimeSpan duration = stopTime - startTime;
+            DebugBox.Text += duration;
 
         }
 
