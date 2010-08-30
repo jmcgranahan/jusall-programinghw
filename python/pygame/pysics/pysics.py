@@ -16,16 +16,24 @@ def main():
 	screen = pygame.display.set_mode((640, 480))
 	clock = pygame.time.Clock()
 	world = pysicsWorld.world(screen)
-	player = pysicsObj.object(screen,world,'rect')
+	player = pysicsObj.object(screen,world, 'player', 'square')
 	player.pos = vec2d(320, 240)
 	player.box = 10
+	player.mass = 10
+	lastdraw = 0
 	
+	for i in range(2):
+		object = pysicsObj.object(screen,world, 'box', 'square')
+		object.pos = vec2d(250, 240+i*20)
+		object.box = 10
+		object.mass = 10
 	
 	# game loop
 	while 1:
 
 		# cap the framerate at 60 frames per second
-		elapsed_time = clock.tick(60)
+		elapsed_time = clock.tick(100)
+		lastdraw += elapsed_time
 		
 		# handle user input
 		for e in pygame.event.get():
@@ -36,17 +44,21 @@ def main():
 		# move the player rect around if you press the arrow keys
 		key = pygame.key.get_pressed()
 		if key[K_LEFT]:
-			player.vel += vec2d(-10,0)
+			player.applyforce(vec2d(-100,0))
 		if key[K_RIGHT]:
-			player.vel += vec2d(10,0)
+			player.applyforce(vec2d(100,0))
 		if key[K_UP]:
-			player.vel += vec2d(0,-10)
+			player.applyforce(vec2d(0,-200))
 		if key[K_DOWN]:
-			player.vel += vec2d(0,10)
+			player.applyforce(vec2d(0,100))
 		
 		# draw everything
-		screen.fill((0, 0, 0))
+		
 		world.update(elapsed_time)
+		if lastdraw > 30:
+			screen.fill((0, 0, 0)) 	
+			world.draw()
+			lastdraw = 0
 		pygame.display.flip()
 
 if __name__ == "__main__":
