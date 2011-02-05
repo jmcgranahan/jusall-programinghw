@@ -12,7 +12,7 @@ class world:
 		self.screen = screen
 		self.objects = []
 		self.foundCollisions = []
-		self.timeScale = 1
+		self.timeScale = 4
 	
 	def append(self,object):
 		self.objects.append(object)
