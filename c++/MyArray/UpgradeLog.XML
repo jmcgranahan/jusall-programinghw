@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="MyArray">
+</Property><Property Name="Solution File" Value="F:\code\c++\MyArray\MyArray.sln">
+</Property><Property Name="User Options File" Value="F:\code\c++\MyArray\MyArray.suo">
+</Property><Property Name="Date" Value="Thursday, February 03, 2011">
+</Property><Property Name="Time" Value="19:45 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="MyArray.sln" Description="File successfully backed up as F:\code\c++\MyArray\MyArray.sln.old">
+</Event><Event ErrorLevel="0" Project="" Source="MyArray.suo" Description="File successfully backed up as F:\code\c++\MyArray\MyArray.suo.old">
+</Event><Event ErrorLevel="0" Project="MyArray" Source="MyArray\MyArray.vcproj" Description="Converting project file 'F:\code\c++\MyArray\MyArray\MyArray.vcproj'.">
+</Event><Event ErrorLevel="1" Project="MyArray" Source="MyArray\MyArray.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="MyArray" Source="MyArray\MyArray.vcproj" Description="Done converting to new project file 'F:\code\c++\MyArray\MyArray\MyArray.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="MyArray" Source="MyArray\MyArray.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="MyArray.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="MyArray.sln" Description="Converted">
+</Event></UpgradeLog>

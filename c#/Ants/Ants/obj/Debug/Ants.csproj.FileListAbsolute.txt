@@ -14,3 +14,5 @@ J:\code\c#\Ants\Ants\obj\Debug\ResolveAssemblyReference.cache
 J:\code\c#\Ants\Ants\obj\Debug\Ants.ants.resources
 J:\code\c#\Ants\Ants\obj\Debug\Ants.Properties.Resources.resources
 J:\code\c#\Ants\Ants\obj\Debug\Ants.csproj.GenerateResource.Cache
+F:\code\c#\Ants\Ants\obj\Debug\Ants.exe
+F:\code\c#\Ants\Ants\obj\Debug\Ants.pdb

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Ants">
+</Property><Property Name="Solution File" Value="F:\code\c#\Ants\Ants.sln">
+</Property><Property Name="User Options File" Value="F:\code\c#\Ants\Ants.suo">
+</Property><Property Name="Date" Value="Sunday, October 10, 2010">
+</Property><Property Name="Time" Value="12:16 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Ants.sln" Description="File successfully backed up as F:\code\c#\Ants\Backup\Ants.sln">
+</Event><Event ErrorLevel="0" Project="" Source="Ants.suo" Description="File successfully backed up as F:\code\c#\Ants\Backup\Ants.suo">
+</Event><Event ErrorLevel="0" Project="Ants" Source="Ants\Ants.csproj" Description="Project file successfully backed up as F:\code\c#\Ants\Backup\Ants\Ants.csproj">
+</Event><Event ErrorLevel="0" Project="Ants" Source="Ants\Form1.cs" Description="File successfully backed up as F:\code\c#\Ants\Backup\Ants\Form1.cs">
+</Event><Event ErrorLevel="0" Project="Ants" Source="Ants\Form1.Designer.cs" Description="File successfully backed up as F:\code\c#\Ants\Backup\Ants\Form1.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Ants" Source="Ants\Program.cs" Description="File successfully backed up as F:\code\c#\Ants\Backup\Ants\Program.cs">
+</Event><Event ErrorLevel="0" Project="Ants" Source="Ants\Properties\AssemblyInfo.cs" Description="File successfully backed up as F:\code\c#\Ants\Backup\Ants\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Ants" Source="Ants\Properties\Resources.Designer.cs" Description="File successfully backed up as F:\code\c#\Ants\Backup\Ants\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Ants" Source="Ants\Properties\Settings.Designer.cs" Description="File successfully backed up as F:\code\c#\Ants\Backup\Ants\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="Ants" Source="Ants\Properties\Settings.settings" Description="File successfully backed up as F:\code\c#\Ants\Backup\Ants\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="Ants" Source="Ants\Form1.resx" Description="File successfully backed up as F:\code\c#\Ants\Backup\Ants\Form1.resx">
+</Event><Event ErrorLevel="0" Project="Ants" Source="Ants\Properties\Resources.resx" Description="File successfully backed up as F:\code\c#\Ants\Backup\Ants\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="Ants" Source="Ants\Ants.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Ants" Source="Ants\Ants.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Ants.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Ants.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Ants" Source="Ants\Ants.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

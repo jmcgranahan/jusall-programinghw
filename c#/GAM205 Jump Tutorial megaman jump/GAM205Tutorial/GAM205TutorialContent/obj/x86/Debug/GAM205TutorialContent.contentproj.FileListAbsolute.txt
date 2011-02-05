@@ -1,0 +1,3 @@
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205 Jump Tutorial\GAM205Tutorial\GAM205TutorialContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205Tutorial\GAM205TutorialContent\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump\GAM205Tutorial\GAM205TutorialContent\obj\x86\Debug\ResolveAssemblyReference.cache

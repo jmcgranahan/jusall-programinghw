@@ -1,0 +1,36 @@
+#!/usr/bin/python
+import math
+import numpy
+import random
+from time import time
+repeats = 1000000
+# math.trunc(1012.1234215)
+# 1024 * 1024
+
+start_time = time()
+for i in range(repeats):
+#################################### Test 1
+	sqrt(1012)
+####################################
+test1time = time()-start_time
+print "test: 1 | Elapsed time: " + str(test1time)
+print "Test ran at "+str(repeats/test1time)+"e/s"
+
+start_time = time()
+for i in range(repeats):
+#################################### Test 2
+	1012^.5
+####################################
+test2time = time()-start_time
+print "test: 2 | Elapsed time: " + str(test2time)
+print "Test ran at "+str(repeats/test2time)+" e/s\n"
+
+
+if test1time < test2time:
+	print "Test 1 ran "+str(math.trunc((test2time/test1time)*100-100))+"% faster.\n"
+else:
+	print "Test 2 ran "+str(math.trunc((test1time/test2time)*100-100))+"% faster.\n"
+
+print "        |  Test 1  |  |  Test 2  |     |  difference  |"
+print "run time| "+str(round(test1time,4))+"s |  | "+str(round(test2time,4))+"s |     | "+str(abs(round(test2time-test1time,4)))+"s|"
+print "runs/sec| "+str(math.trunc(repeats/test1time))+"e/s |  | "+str(math.trunc(repeats/test2time))+"e/s |     | "+str(abs(math.trunc((repeats/test2time)-(repeats/test1time))))+" e/s|"

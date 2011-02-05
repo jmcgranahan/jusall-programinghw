@@ -1,0 +1,2 @@
+Content\BlockA0.xnb
+Content\megaman.xnb
