@@ -1,0 +1,30 @@
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205 Jump Tutorial\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\Content\BlockA0.xnb
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205 Jump Tutorial\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\Content\megaman.xnb
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205 Jump Tutorial\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\GAM205Tutorial.exe
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205 Jump Tutorial\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\GAM205Tutorial.pdb
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205 Jump Tutorial\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\GameEngine.dll
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205 Jump Tutorial\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\GameEngine.xml
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205 Jump Tutorial\GAM205Tutorial\GAM205Tutorial\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205 Jump Tutorial\GAM205Tutorial\GAM205Tutorial\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205 Jump Tutorial\GAM205Tutorial\GAM205Tutorial\obj\x86\Debug\GAM205Tutorial.exe
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205 Jump Tutorial\GAM205Tutorial\GAM205Tutorial\obj\x86\Debug\GAM205Tutorial.pdb
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\Content\BlockA0.xnb
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\Content\megaman.xnb
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\GAM205Tutorial.exe
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\GAM205Tutorial.pdb
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\GameEngine.dll
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\GameEngine.xml
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205Tutorial\GAM205Tutorial\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205Tutorial\GAM205Tutorial\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205Tutorial\GAM205Tutorial\obj\x86\Debug\GAM205Tutorial.exe
+C:\Users\TEMP.KNOWN-UNIVERSE\Desktop\GAM205 Jump Tutorial\GAM205Tutorial\GAM205Tutorial\obj\x86\Debug\GAM205Tutorial.pdb
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\Content\BlockA0.xnb
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\Content\megaman.xnb
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\GAM205Tutorial.exe
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\GAM205Tutorial.pdb
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\GameEngine.dll
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\GameEngine.xml
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump\GAM205Tutorial\GAM205Tutorial\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump\GAM205Tutorial\GAM205Tutorial\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump\GAM205Tutorial\GAM205Tutorial\obj\x86\Debug\GAM205Tutorial.exe
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump\GAM205Tutorial\GAM205Tutorial\obj\x86\Debug\GAM205Tutorial.pdb

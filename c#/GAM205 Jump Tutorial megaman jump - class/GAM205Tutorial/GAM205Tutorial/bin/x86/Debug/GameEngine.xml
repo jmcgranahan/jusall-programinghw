@@ -1,0 +1,1596 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GameEngine</name>
+    </assembly>
+    <members>
+        <member name="T:GameEngine.SceneGraph.Scene">
+            <summary>
+            The base class for all game scenes.
+            </summary>
+        </member>
+        <member name="F:GameEngine.SceneGraph.Scene._initalized">
+            <summary>
+            Whether or not this method has been initalized yet.
+            </summary>
+        </member>
+        <member name="F:GameEngine.SceneGraph.Scene._updates">
+            <summary>
+            Tracks whether or not this scene is currently enabled.
+            </summary>
+        </member>
+        <member name="F:GameEngine.SceneGraph.Scene._visible">
+            <summary>
+            Tracks whether or not this scene will render.
+            </summary>
+        </member>
+        <member name="F:GameEngine.SceneGraph.Scene._disposed">
+            <summary>
+            Whether or not this scene should be queued for deletion.
+            </summary>
+        </member>
+        <member name="F:GameEngine.SceneGraph.Scene._uniqueInputManager">
+            <summary>
+            True if this Scene's input manager is unique to it.
+            </summary>
+        </member>
+        <member name="F:GameEngine.SceneGraph.Scene._graphicsDevice">
+            <summary>
+            A reference to this scene's graphic device.
+            </summary>
+        </member>
+        <member name="F:GameEngine.SceneGraph.Scene._content">
+            <summary>
+            A reference to this scene's ContentLoader.
+            </summary>
+        </member>
+        <member name="F:GameEngine.SceneGraph.Scene._input">
+            <summary>
+            A reference to this scene's Input Manager.
+            </summary>
+        </member>
+        <member name="F:GameEngine.SceneGraph.Scene._spriteBatch">
+            <summary>
+            A reference to this scene's SpriteBatch.
+            </summary>
+        </member>
+        <member name="F:GameEngine.SceneGraph.Scene._sceneTransformation">
+            <summary>
+            This scene's world offset matrix.
+            </summary>
+        </member>
+        <member name="F:GameEngine.SceneGraph.Scene._actualTransformMatrix">
+            <summary>
+            A transformation matrix that represents the amalgamation of all the parent matricies.
+            </summary>
+        </member>
+        <member name="F:GameEngine.SceneGraph.Scene._childScenes">
+            <summary>
+            A list of this scene's child scenes.
+            </summary>
+        </member>
+        <member name="F:GameEngine.SceneGraph.Scene._drawables">
+            <summary>
+            A list of this scene's drawable objects.
+            </summary>
+        </member>
+        <member name="F:GameEngine.SceneGraph.Scene._hooks">
+            <summary>
+            A dictionary of all the Event Hooks for this scene.
+            </summary>
+        </member>
+        <member name="M:GameEngine.SceneGraph.Scene.#ctor(System.IServiceProvider)">
+            <summary>
+            Initalizes a new scene with completely new data.
+            </summary>
+            <param name="graphicsContainer">An IServiceProvider that contains a GraphicsServiceComponent.</param>
+        </member>
+        <member name="M:GameEngine.SceneGraph.Scene.#ctor(GameEngine.SceneGraph.Scene,System.Boolean)">
+            <summary>
+            Creates a new scene with data from another scene.
+            </summary>
+            <param name="ParentScene">The scene who will give backing data to the new scene.</param>
+        </member>
+        <member name="M:GameEngine.SceneGraph.Scene.InitalizeScene(System.IServiceProvider)">
+            <summary>
+            Initalizes a new scene with completely new data.
+            </summary>
+            <param name="graphicsContainer">An IServiceProvider that contains a GraphicsServiceComponent.</param>
+        </member>
+        <member name="M:GameEngine.SceneGraph.Scene.InitalizeSceneFromParent(GameEngine.SceneGraph.Scene,System.Boolean)">
+            <summary>
+            Creates a new scene with data from another scene.
+            </summary>
+            <param name="ParentScene">The scene who will give backing data to the new scene.</param>
+        </member>
+        <member name="M:GameEngine.SceneGraph.Scene.UpdateScene(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Executes the update logic for this Scene.
+            </summary>
+            <param name="gameTime">A snapshot of the current gametime.</param>
+        </member>
+        <member name="M:GameEngine.SceneGraph.Scene.UpdateChildScenes(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Updates all the child scenes.
+            </summary>
+            <param name="gameTime">A snapshot of the current gametime.</param>
+        </member>
+        <member name="M:GameEngine.SceneGraph.Scene.CleanDisposedChildScenes">
+            <summary>
+            Removes any child scenes flagged as disposed.
+            </summary>
+        </member>
+        <member name="M:GameEngine.SceneGraph.Scene.Initalize">
+            <summary>
+            Called once when this scene is created.
+            </summary>
+        </member>
+        <member name="M:GameEngine.SceneGraph.Scene.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Called once per update cycle, if "Updates" is true.
+            </summary>
+            <param name="gameTime">A snapshot of the current gameTime.</param>
+        </member>
+        <member name="M:GameEngine.SceneGraph.Scene.UpdateDrawables(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Updates each drawable in the scene.
+            </summary>
+            <param name="gameTime">A snapshot of the current gametime.</param>
+        </member>
+        <member name="M:GameEngine.SceneGraph.Scene.UpdateChildDrawMatricies">
+            <summary>
+            Merges all transformation matricies under this scene with it's own.
+            </summary>
+        </member>
+        <member name="M:GameEngine.SceneGraph.Scene.CleanDisposedDrawables">
+            <summary>
+            Removes any dead drawables from the scene.
+            </summary>
+        </member>
+        <member name="M:GameEngine.SceneGraph.Scene.Draw(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Draws this scene.
+            </summary>
+        </member>
+        <member name="M:GameEngine.SceneGraph.Scene.GetAllChildScenes">
+            <summary>
+            Returns a list of every Scene that is directly or indirectly a child of this Scene.
+            </summary>
+            <returns>A list of Scenes.</returns>
+        </member>
+        <member name="M:GameEngine.SceneGraph.Scene.OnDispose">
+            <summary>
+            Called when this scene is disposed.
+            </summary>
+        </member>
+        <member name="M:GameEngine.SceneGraph.Scene.Dispose">
+            <summary>
+            Disposes of this scene from the SceneGraph.
+            </summary>
+        </member>
+        <member name="M:GameEngine.SceneGraph.Scene.RunEvent``1(``0)">
+            <summary>
+            Sends an event to this Scene and it's children.
+            </summary>
+            <typeparam name="T">The type of event to send.</typeparam>
+            <param name="e">The event arguments.</param>
+        </member>
+        <member name="M:GameEngine.SceneGraph.Scene.RunEvent``1(System.Object,``0)">
+            <summary>
+            Sends an event to this Scene and it's children.
+            </summary>
+            <param name="sender">The object sending the event.</param>
+            <typeparam name="T">The type of event to send.</typeparam>
+            <param name="e">The event arguments.</param>
+        </member>
+        <member name="E:GameEngine.SceneGraph.Scene.Final">
+            <summary>
+            Called when this scene is removed from the SceneGraph.
+            </summary>
+        </member>
+        <member name="P:GameEngine.SceneGraph.Scene.Disposed">
+            <summary>
+            Whether or not 
+            </summary>
+        </member>
+        <member name="P:GameEngine.SceneGraph.Scene.SceneTransformation">
+            <summary>
+            This scene's world offset matrix.
+            </summary>
+        </member>
+        <member name="P:GameEngine.SceneGraph.Scene.ActualSceneTransformation">
+            <summary>
+            A transformation matrix that represents the amalgamation of all the parent matricies.
+            </summary>
+        </member>
+        <member name="P:GameEngine.SceneGraph.Scene.Layer">
+            <summary>
+            Specifies the order this scene will be drawn relative to other scenes.
+            0 is the topmost layer, 1 is the bottommost layer.
+            </summary>
+        </member>
+        <member name="P:GameEngine.SceneGraph.Scene.Graphics">
+            <summary>
+            A reference to this Scene's graphic device.
+            </summary>
+        </member>
+        <member name="P:GameEngine.SceneGraph.Scene.Content">
+            <summary>
+            A reference to this Scene's ContentLoader.
+            </summary>
+        </member>
+        <member name="P:GameEngine.SceneGraph.Scene.Input">
+            <summary>
+            A reference to this Scene's Input Manager.
+            </summary>
+        </member>
+        <member name="P:GameEngine.SceneGraph.Scene.SpriteBatch">
+            <summary>
+            A reference to this Scene's SpriteBatch.
+            </summary>
+        </member>
+        <member name="P:GameEngine.SceneGraph.Scene.Updates">
+            <summary>
+            Tracks whether or not this scene is currently enabled.
+            </summary>
+        </member>
+        <member name="P:GameEngine.SceneGraph.Scene.Visible">
+            <summary>
+            Tracks whether or not this scene will render.
+            </summary>
+        </member>
+        <member name="P:GameEngine.SceneGraph.Scene.ChildScenes">
+            <summary>
+            A list of this scene's child scenes.
+            </summary>
+        </member>
+        <member name="P:GameEngine.SceneGraph.Scene.Drawables">
+            <summary>
+            A list of DrawableObjects currently in the scene.
+            </summary>
+        </member>
+        <member name="P:GameEngine.SceneGraph.Scene.Hooks">
+            <summary>
+            A dictionary of all the Event Hooks for this scene.
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.InputLabel._inputTextLabel">
+            <summary>
+            The label which the user can enter text into
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.InputLabel._nameLabel">
+            <summary>
+            Displays a specified message constantly. 
+            ex Name: 
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.InputLabel._characterLimit">
+            <summary>
+            The current character limit
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.InputLabel._validAlphabetCharacters">
+            <summary>
+            The valid alpha characters. 
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.InputLabel._validNumericCharacters">
+            <summary>
+            The valid numeric characters. (coorosponds to the name of the Keys enum
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.InputLabel.newInputLabel(GameEngine.SceneGraph.Scene,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.String,GameEngine.GUI.InputLabel.CharacterLimit)">
+            <summary>
+            Factory for creating an input label
+            </summary>
+            <param name="parent">The parent Scene</param>
+            <param name="position">The position to be drawn</param>
+            <param name="textColor">The color of the text</param>
+            <param name="labelName">The constant name to be displayed infront of input, for blank pass ""</param>
+            <param name="characterLimit">A small medium or large limit to the amount of characters the input label can take</param>
+            <returns></returns>
+        </member>
+        <member name="M:GameEngine.GUI.InputLabel.#ctor(GameEngine.SceneGraph.Scene,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Color,System.String,GameEngine.GUI.InputLabel.CharacterLimit)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="parent"></param>
+            <param name="position"></param>
+            <param name="textColor"></param>
+            <param name="labelName"></param>
+            <param name="characterLimit"></param>
+        </member>
+        <member name="M:GameEngine.GUI.InputLabel.BindAlphabetCharacters(System.Boolean)">
+            <summary>
+            Binds the addtext event to each key of the specified valid alphabet keys. 
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.InputLabel.BindNumbers(System.Boolean)">
+            <summary>
+            Binds the addtext event to each key of valid numeric keys
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.InputLabel.BindSpecialCharacters(System.Boolean)">
+            <summary>
+            Adds events to space, and backspace keys
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.InputLabel.AddToText(System.String)">
+            <summary>
+            Add the text to the input label
+            </summary>
+            <param name="text">the text to be added to the label </param>
+        </member>
+        <member name="M:GameEngine.GUI.InputLabel.DeleteText">
+            <summary>
+            Remove the character at the end of the string. 
+            </summary>
+        </member>
+        <member name="T:GameEngine.GUI.InputLabel.CharacterLimit">
+            <summary>
+            A limit to how many characters the user can enter. 
+            </summary>
+        </member>
+        <member name="T:GameEngine.Content.ContentLoader">
+            <summary>
+            Handles content loading/retrieval for a particular game scope.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Content.ContentLoader._contentList">
+            <summary>
+            A list of the names of content this loader contains.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Content.ContentLoader._content">
+            <summary>
+            A dictionary of the names and actual loaded content objectsw
+            </summary>
+        </member>
+        <member name="M:GameEngine.Content.ContentLoader.#ctor(System.IServiceProvider,System.String)">
+            <summary>
+            Creates a new ScopedContentLoader.
+            </summary> 
+            <param name="rootDirectory">The root directory to search for content.</param>
+        </member>
+        <member name="M:GameEngine.Content.ContentLoader.Contains(System.String)">
+            <summary>
+            Checks whether or not this content object has been loaded into this manager.
+            </summary>
+            <param name="name">The name of the content object.</param>
+            <returns>Whether or not this loader contains the specified content object.</returns>
+        </member>
+        <member name="M:GameEngine.Content.ContentLoader.Load``1(System.String)">
+            <summary>
+            Loads a resource into this contentloader.
+            </summary>
+            <typeparam name="T">The type of content to retrieve.</typeparam>
+            <param name="contentName">The name of the content to load.</param>
+            <returns>The requested content object.</returns>
+        </member>
+        <member name="T:GameEngine.Drawables.Sprite">
+            <summary>
+            A 2d drawable object.
+            </summary>
+        </member>
+        <member name="T:GameEngine.Drawables.DrawableObject">
+            <summary>
+            The base class for all drawable scene objects.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.DrawableObject._position">
+            <summary>
+            This sprite's position in the gameworld.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.DrawableObject._offset">
+            <summary>
+            This sprite's positional offset.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.DrawableObject._angle">
+            <summary>
+            This sprite's angle.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.DrawableObject._scale">
+            <summary>
+            This sprite's scale.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.DrawableObject._color">
+            <summary>
+            This sprite's color overlay.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.DrawableObject._layer">
+            <summary>
+            This object's renderlayer.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.DrawableObject._disposed">
+            <summary>
+            Whether or not this object is disposed.
+            </summary>
+        </member>
+        <member name="M:GameEngine.Drawables.DrawableObject.#ctor(Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Creates a DrawableObject in a particular scene.
+            </summary>
+            <param name="position">Where to position the drawable object in the scene.</param>
+        </member>
+        <member name="M:GameEngine.Drawables.DrawableObject.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Runs any uer-specified update logic.
+            </summary>
+            <param name="gameTime">A snapshot of the current GameTime.</param>
+        </member>
+        <member name="M:GameEngine.Drawables.DrawableObject.Draw(Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draws the drawable object.
+            </summary>
+            <param name="spriteBatch">The spritebatch to draw to.</param>
+        </member>
+        <member name="M:GameEngine.Drawables.DrawableObject.Dispose">
+            <summary>
+            Tells any scene containing this DrawableObject to dispose of it at the end of it's next update call.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.DrawableObject.Position">
+            <summary>
+            This sprite's position in the gameworld.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.DrawableObject.X">
+            <summary>
+            This sprite's X position.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.DrawableObject.Y">
+            <summary>
+            This sprite's X position.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.DrawableObject.Scale">
+            <summary>
+            This sprite's X/Y scale.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.DrawableObject.Angle">
+            <summary>
+            This sprite's angle.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.DrawableObject.OverlayColor">
+            <summary>
+            This sprite's overlay color.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.DrawableObject.Alpha">
+            <summary>
+            The sprite's transparency.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.DrawableObject.Offset">
+            <summary>
+            This sprite's positional offset.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.DrawableObject.Visible">
+            <summary>
+            Whether or not to render this sprite.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.DrawableObject.Updates">
+            <summary>
+            Whether or not to update this object every cycle.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.DrawableObject.Layer">
+            <summary>
+            This sprite's render layer.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.DrawableObject.UseScreenCoordinates">
+            <summary>
+            If true, this object will render to the screen coordinates, not world coordinates.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.DrawableObject.Disposed">
+            <summary>
+            Whether or not the object has been disposed.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.Sprite._texture">
+            <summary>
+            This sprite's texture.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.Sprite._animation">
+            <summary>
+            This sprite's animation data.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.Sprite._boundingBox">
+            <summary>
+            The sprite's bounding box.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.Sprite._spriteEffect">
+            <summary>
+            The sprites sprite effect
+            </summary>
+        </member>
+        <member name="M:GameEngine.Drawables.Sprite.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Creates a new sprite in the specified scene.
+            </summary>
+            <param name="textureName">The name of the file to use as this sprite's texture.</param>
+            <param name="position">Where to initially position this sprite.</param>
+        </member>
+        <member name="M:GameEngine.Drawables.Sprite.UpdateBoundingBox">
+            <summary>
+            Updates this sprite's bounding box.
+            </summary>
+        </member>
+        <member name="M:GameEngine.Drawables.Sprite.SetOffset(GameEngine.Drawables.Anchor)">
+            <summary>
+            Set this sprite's offset to be a particular named anchorpoint.
+            </summary>
+            <param name="AnchorPoint">The position of the offset.</param>
+        </member>
+        <member name="M:GameEngine.Drawables.Sprite.Draw(Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draws the sprite.
+            </summary>
+            <param name="spriteBatch">The spritebatch to draw to.</param>
+        </member>
+        <member name="P:GameEngine.Drawables.Sprite.Texture">
+            <summary>
+            This sprite's texture.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.Sprite.AnimationData">
+            <summary>
+            This sprite's animation data.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.Sprite.Width">
+            <summary>
+            This sprite's *unscaled* width.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.Sprite.Height">
+            <summary>
+            This sprite's *unscaled* height.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.Sprite.ScaledWidth">
+            <summary>
+            This sprite's *scaled* width.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.Sprite.ScaledHeight">
+            <summary>
+            This sprite's *scaled* height.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.Sprite.BoundingBox">
+            <summary>
+            This sprite's bounding box.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.Sprite.SpriteEffect">
+            <summary>
+            The sprites sprite effects. 
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.Control._focus">
+            <summary>
+            Whether or not this control has focus.
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.Control._name">
+            <summary>
+            The name of this control.
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.Control._text">
+            <summary>
+            The display name of this control.
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.Control._parent">
+            <summary>
+            The ControlCollection that contains this control;
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.Control.DEFAULT_HILIGHT_COLOR">
+            <summary>
+            The default color to hilight a control when it is focused on.
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.Control._label">
+            <summary>
+            A label that contains the name of the control.
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.Control.#ctor(GameEngine.GUI.ControlCollection,System.String,System.String,Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Creates a new conrol.
+            </summary>
+            <param name="parent">The ControlCollection that will hold this control.</param>
+            <param name="controlTexture">The texture of the control.</param>
+            <param name="position">The position of the control.</param>
+        </member>
+        <member name="M:GameEngine.GUI.Control.Use">
+            <summary>
+            This method activates the control's use thingie.
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.Control.OnFocus_Hilight">
+            <summary>
+            Highlights the button when it gains focus.
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.Control.OnLoseFocus_RevertColor">
+            <summary>
+            Unhilights the button when it loses focus.
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.Control.GetControlValue">
+            <summary>
+            Returns a string containing the value of this control.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GameEngine.GUI.Control.FillValuesFromXML(System.Xml.XmlNode)">
+            <summary>
+            Fills this node with values from an XML node, or default values.
+            </summary>
+            <param name="node">The XMLNode to get values from.</param>
+        </member>
+        <member name="M:GameEngine.GUI.Control.GetControlXML">
+            <summary>
+            Gets a string that represents how this control should be saved in xml.
+            </summary>
+            <returns>A string with this control's value in XML.</returns>
+        </member>
+        <member name="M:GameEngine.GUI.Control.LoadValue(System.String)">
+            <summary>
+            Sets this control's value based on a serialized value.
+            </summary>
+            <param name="serializedValue"></param>
+        </member>
+        <member name="E:GameEngine.GUI.Control.OnFocus">
+            <summary>
+            This event runs when the control gains focus.
+            </summary>
+        </member>
+        <member name="E:GameEngine.GUI.Control.OnLoseFocus">
+            <summary>
+            This event runs when the control loses focus.
+            </summary>
+        </member>
+        <member name="P:GameEngine.GUI.Control.Focus">
+            <summary>
+            Gets/Sets whether or not this conrol has focus.
+            </summary>
+        </member>
+        <member name="P:GameEngine.GUI.Control.Name">
+            <summary>
+            This control's name.
+            </summary>
+        </member>
+        <member name="P:GameEngine.GUI.Control.Parent">
+            <summary>
+            The ControlCollection that contains this control;
+            </summary>
+        </member>
+        <member name="P:GameEngine.GUI.Control.ShowLabel">
+            <summary>
+            If true, displays a label attached to this control with it's name.
+            </summary>
+        </member>
+        <member name="P:GameEngine.GUI.Control.Text">
+            <summary>
+            The display text for this Control.
+            </summary>
+        </member>
+        <member name="P:GameEngine.GUI.Control.FocusedColor">
+            <summary>
+            The color to highlight this checkbox with when it has focus.
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.Button.Use">
+            <summary>
+            Called when the user uses the button.
+            </summary>
+        </member>
+        <member name="E:GameEngine.GUI.Button.OnUse">
+            <summary>
+            Called when the button is used.
+            </summary>
+        </member>
+        <member name="T:GameEngine.Input.Button">
+            <summary>
+            Represents a single Button.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Input.Button._isDown">
+            <summary>
+            True when the button is depressed (and it's pressed event has fired).
+            </summary>
+        </member>
+        <member name="F:GameEngine.Input.Button._timePushed">
+            <summary>
+            Set to the time when the button is pushed down.
+            </summary>
+        </member>
+        <member name="M:GameEngine.Input.Button.Update(System.Boolean)">
+            <summary>
+            Sets the status of the button and runs the appropiate event handlers.
+            </summary>
+            <param name="pressed">True if this button is pressed.</param>
+        </member>
+        <member name="M:GameEngine.Input.Button.Update(Microsoft.Xna.Framework.Input.ButtonState)">
+            <summary>
+            Sometimes we get button state info as a ButtonState enum- if so, pass it off to the actual update function.
+            </summary>
+            <param name="state">A ButtonState enum representing the actual state of the button.</param>
+        </member>
+        <member name="M:GameEngine.Input.Button.ResetEvents">
+            <summary>
+            Resets all events associated with this button.
+            </summary>
+        </member>
+        <member name="M:GameEngine.Input.Button.ResetButtonPushed">
+            <summary>
+            Resets this button's ButtonPushed event.
+            </summary>
+        </member>
+        <member name="M:GameEngine.Input.Button.ResetButtonDown">
+            <summary>
+            Resets this button's ButtonDown event.
+            </summary>
+        </member>
+        <member name="M:GameEngine.Input.Button.ResetButtonReleased">
+            <summary>
+            Resets this button's ButtonReleased event.
+            </summary>
+        </member>
+        <member name="M:GameEngine.Input.Button.RunButtonPushed">
+            <summary>
+            Runs the ButtonPushed event if it is not empty;
+            </summary>
+        </member>
+        <member name="M:GameEngine.Input.Button.RunButtonDown">
+            <summary>
+            Runs the ButtonDown event if it is not empty;
+            </summary>
+        </member>
+        <member name="M:GameEngine.Input.Button.RunButtonReleased(System.Int32)">
+            <summary>
+            Runs the ButtonPushed event if it is not empty;
+            </summary>
+        </member>
+        <member name="E:GameEngine.Input.Button.ButtonPushed">
+            <summary>
+            This event fires *once* per button push, immediately when the button is pushed.
+            </summary>
+        </member>
+        <member name="E:GameEngine.Input.Button.ButtonDown">
+            <summary>
+            This event fires each update cycle that the button is depressed.
+            </summary>
+        </member>
+        <member name="E:GameEngine.Input.Button.ButtonReleased">
+            <summary>
+            This event fires *once* when the button is released.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Input.Button.IsDown">
+            <summary>
+            True when the button is depressed (and it's pressed event has fired).
+            </summary>
+        </member>
+        <member name="T:GameEngine.Drawables.Animation">
+            <summary>
+            Contains data for a Sprite's animation.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.Animation._frame">
+            <summary>
+            This sprite's current frame.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.Animation._lastFrameUpdate">
+            <summary>
+            The last time the game updated it's frame.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.Animation._animationSpeed">
+            <summary>
+            The speed of the animation.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.Animation._rowsColumns">
+            <summary>
+            The number of rows and columns in this spritesheet.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.Animation._frameSize">
+            <summary>
+            A vector2 that stores the width/height of the individual frames.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.Animation._beginEndFrames">
+            <summary>
+            The begining and end frames to play through.
+            </summary>
+        </member>
+        <member name="M:GameEngine.Drawables.Animation.#ctor(GameEngine.Drawables.Sprite)">
+            <summary>
+            Creates an instance of the animation class.
+            </summary>
+            <param name="parent">The sprite to add this animation property to.</param>
+        </member>
+        <member name="M:GameEngine.Drawables.Animation.GetCurrentFrameRectangle(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Gets a rectangle representing the area on the texture to pull the current frame from.
+            </summary>
+            <param name="gameTime">The current gametime.</param>
+            <returns>A rectangle on the texture to draw from.</returns>
+        </member>
+        <member name="M:GameEngine.Drawables.Animation.SetCurrentFrame(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Sets the current frame of the animation.
+            </summary>
+            <param name="gameTime">The current gametime.</param>
+        </member>
+        <member name="M:GameEngine.Drawables.Animation.ResetAnimation">
+            <summary>
+            Resets this sprite's animation.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.Animation.Animated">
+            <summary>
+            Whether or not this sprite animates.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.Animation.AnimationSpeed">
+            <summary>
+            The speed in seconds of this sprite's animation.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.Animation.RowsColumns">
+            <summary>
+            The number of rows and columns in this spritesheet.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.Animation.BeginEndFrames">
+            <summary>
+            <para>The frames to begin and end animation at.</para>
+            <para>If the end frame is less then the start frame, the animation will play in reverse.</para>
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.Animation.Frame">
+            <summary>
+            The current frame of the animation.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Input.InputManager._keyboard">
+            <summary>
+            Manages keyboard input.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Input.InputManager._mouse">
+            <summary>
+            Manages mouse input.
+            </summary>
+        </member>
+        <member name="M:GameEngine.Input.InputManager.#ctor">
+            <summary>
+            Creates a new Input manager.
+            </summary>
+        </member>
+        <member name="M:GameEngine.Input.InputManager.GetKey(Microsoft.Xna.Framework.Input.Keys)">
+            <summary>
+            Returns a keyboard key.
+            </summary>
+            <param name="key">The key to get.</param>
+            <returns>A Button object.</returns>
+        </member>
+        <member name="M:GameEngine.Input.InputManager.GetMouseButton(GameEngine.Input.MouseButton)">
+            <summary>
+            Returns a mouse button.
+            </summary>
+            <param name="button">The button to get.</param>
+            <returns>A Button object.</returns>
+        </member>
+        <member name="M:GameEngine.Input.InputManager.GetMousePosition">
+            <summary>
+            Gets the mouse's current X/Y coordinates.
+            </summary>
+            <returns>Returns the mouse's current X/Y coordinates.</returns>
+        </member>
+        <member name="M:GameEngine.Input.InputManager.GetMousePoisitonAsPoint">
+            <summary>
+            Gets the mouse's current X/Y coordinates as a Point.
+            </summary>
+            <returns>Returns the mouse's current X/Y coordinates.</returns>
+        </member>
+        <member name="M:GameEngine.Input.InputManager.ResetKeys">
+            <summary>
+            Clears all event handlers for keyboard keys.
+            </summary>
+        </member>
+        <member name="M:GameEngine.Input.InputManager.ResetMouse">
+            <summary>
+            Clears all event handlers for mouse buttons.
+            </summary>
+        </member>
+        <member name="M:GameEngine.Input.InputManager.Update">
+            <summary>
+            Updates all inputs.
+            </summary>
+        </member>
+        <member name="M:GameEngine.Input.InputManager.GetValues``1">
+            <summary>
+            Replaces the functionality of Enum.GetNames() on the 360.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Input.InputManager.Enabled">
+            <summary>
+            When enabled, will poll for input.
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.ControlCollection._controls">
+            <summary>
+            A private list of this container's controls.
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.ControlCollection._focusedControl">
+            <summary>
+            The index of the control that currently has focus.
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.ControlCollection._skin">
+            <summary>
+            The textures for this ControlCollection's Controls.
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.ControlCollection.LoadXMLToDictionary(System.String)">
+            <summary>
+            Loads an XML file generated by a ControlCollection into a Dictionary.
+            </summary>
+            <param name="filename">The filename of the xml to load.</param>
+            <returns>A dictionary of string/string containing your values.</returns>
+        </member>
+        <member name="M:GameEngine.GUI.ControlCollection.UpPressed_ChangeActiveControl">
+            <summary>
+            Decrements the active control.
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.ControlCollection.DownPressed_ChangeActiveControl">
+            <summary>
+            Increments the active control.
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.ControlCollection.SelectPressed_ActivateActiveControl">
+            <summary>
+            Uses the active control.
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.ControlCollection.WrapFocusedControl">
+            <summary>
+            Makes sure the value of the currently focused control is valid.
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.ControlCollection.UncheckRadioButtons(System.String)">
+            <summary>
+            Method to uncheck all radiobuttons. 
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="M:GameEngine.GUI.ControlCollection.RegisterControl(GameEngine.GUI.Control)">
+            <summary>
+            Adds a control to this collection.
+            </summary>
+            <param name="controlToRegister">The control to add.</param>
+        </member>
+        <member name="M:GameEngine.GUI.ControlCollection.ConstructFromXML(System.String)">
+            <summary>
+            Create a set of controls from an XML file.
+            </summary>
+            <param name="filename">A filename containing control information in XML.</param>
+        </member>
+        <member name="M:GameEngine.GUI.ControlCollection.WriteControlsToXML(System.String)">
+            <summary>
+            Writes the values of the controls to the specified XML file.
+            </summary>
+            <param name="filename">The name of the file to write to.</param>
+        </member>
+        <member name="M:GameEngine.GUI.ControlCollection.OnDispose">
+            <summary>
+            Clears any persistant information from this ControlCollection.
+            </summary>
+        </member>
+        <member name="P:GameEngine.GUI.ControlCollection.Item(System.String)">
+            <summary>
+            Returns the control with the specified name from the control collection.
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="P:GameEngine.GUI.ControlCollection.Skin">
+            <summary>
+            The skin for this ControlCollection.
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.Checkbox._checked">
+            <summary>
+            Whether or not this checkbox is checked.
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.Checkbox.DEFAULT_CHECKED_VALUE">
+            <summary>
+            The default value for a checkbox to be.
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.Checkbox.Use">
+            <summary>
+            Flips the status of this checkbox and updates the image.
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.Checkbox.FillValuesFromXML(System.Xml.XmlNode)">
+            <summary>
+            Fills checkbox-specific data from xml.
+            </summary>
+            <param name="node">The node to pull data from.</param>
+        </member>
+        <member name="P:GameEngine.GUI.Checkbox.Checked">
+            <summary>
+            Wether or not the checkbox is checked.
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.Sliderbar.defaultBarLength">
+            <summary>
+            The default length of bar, modifying this will modify length, and movement amount
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.Sliderbar.value">
+            <summary>
+            value that will be modified and eventually returned.
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.Sliderbar.incrementAmount">
+            <summary>
+            user defined amount to modify slider or value each step
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.Sliderbar.lowerBound">
+            <summary>
+            the lowest value the "value" can be
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.Sliderbar.upperBound">
+            <summary>
+            the highest value the "value" can be
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.Sliderbar.sliderNotch">
+            <summary>
+            Texture for sliderbar, dont know if i like this yet. 
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.Sliderbar.movementAmount">
+            <summary>
+            The amount to physically move the notch each time a directional button is pressed
+            Derived by taking number of steps needed to move through values (upperBound / increment amount)
+            Then by divinging the default length of the bar by that. 
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.Sliderbar.maximumNotchPosition">
+            <summary>
+            Used for physically keeping the notch on the sliderbar
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.Sliderbar.lowerBoundLabel">
+            <summary>
+            Labels for displaying information needed. 
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.Sliderbar.lastMovement">
+            <summary>
+            Used for time delay when moving Notch
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.Sliderbar.valueLabelTextOffset">
+            <summary>
+            Amount to offset valueLabel so text is centered to middle of bar
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.Sliderbar.CreateLabels">
+            <summary>
+            creates the labels displaying slider bar information
+            </summary>
+            <param name="font"></param>
+        </member>
+        <member name="M:GameEngine.GUI.Sliderbar.BindControls">
+            <summary>
+            Binds controls for sliderbar. 
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.Sliderbar.MoveLeft">
+            <summary>
+            Moves slider, and value left. (decrements)
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.Sliderbar.MoveRight">
+            <summary>
+            Moves slider, and value right. (increments)
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.Sliderbar.MoveByAmount(System.Single)">
+            <summary>
+            Increments value by amount give, also increments slider, and keeps value in bounds. 
+            pass negative for left, and positive for right. 
+            </summary>
+            <param name="amount"></param>
+        </member>
+        <member name="M:GameEngine.GUI.Sliderbar.KeepValueInBounds">
+            <summary>
+            Prevents user from selecting values outside of bounds. 
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.Sliderbar.MoveSlider(GameEngine.GUI.Sliderbar.Direction)">
+            <summary>
+            Will move the visable slider in a direction pass negative to move left, and positive to move right. 
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.Sliderbar.Use">
+            <summary>
+            Slider bar does not really have a use function.. leave blank for now. 
+            </summary>
+        </member>
+        <member name="T:GameEngine.GUI.Sliderbar.Direction">
+            <summary>
+            Used for physically moving slider
+            </summary>
+        </member>
+        <member name="T:GameEngine.Wrappers.SceneComponentWrapper">
+            <summary>
+            <para>This class wraps the Core functionality as a GameComponent.</para>
+            <para>Use this when running the engine as part of a Game object.</para>
+            </summary>
+        </member>
+        <member name="F:GameEngine.GraphicsDeviceService._instance">
+            <summary>
+            The instance of the GraphicsDeviceService.
+            </summary>
+        </member>
+        <member name="F:GameEngine.GraphicsDeviceService._referenceCount">
+            <summary>
+            The number of times this GraphicsDevice is referenced.
+            </summary>
+        </member>
+        <member name="F:GameEngine.GraphicsDeviceService._paramaters">
+            <summary>
+            The GraphicDevice's presentation paramaters.
+            </summary>
+        </member>
+        <member name="F:GameEngine.GraphicsDeviceService._graphicsDevice">
+            <summary>
+            The GraphicsDevice.
+            </summary>
+        </member>
+        <member name="M:GameEngine.GraphicsDeviceService.#ctor(System.IntPtr,System.Int32,System.Int32)">
+            <summary>
+            Constructs and initalizes the singleton instance of the GraphicsDevice
+            </summary>
+            <param name="windowHandle"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:GameEngine.GraphicsDeviceService.AddRef(System.IntPtr,System.Int32,System.Int32)">
+            <summary>
+            Gets a reference to the GraphicsDeviceService. 
+            </summary>
+            <param name="windowHandle"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GameEngine.GraphicsDeviceService.Release(System.Boolean)">
+            <summary>
+            Releases a reference to the shared GraphicsDeviceService.
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:GameEngine.GraphicsDeviceService.ResetDevice(System.Int32,System.Int32)">
+            <summary>
+            Resets the graphics device.
+            </summary>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="P:GameEngine.GraphicsDeviceService.GraphicsDevice">
+            <summary>
+            The GraphicsDevice.
+            </summary>
+        </member>
+        <member name="T:GameEngine.Input.KeyboardInputManager">
+            <summary>
+            This is a game component that implements IUpdateable.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Input.KeyboardInputManager._keys">
+            <summary>
+            A dictionary of Keys/Button objects.
+            </summary>
+        </member>
+        <member name="M:GameEngine.Input.KeyboardInputManager.#ctor">
+            <summary>
+            Creates a new Input manager.
+            </summary>
+        </member>
+        <member name="M:GameEngine.Input.KeyboardInputManager.Update">
+            <summary>
+            Allows the game component to update itself.
+            </summary>
+        </member>
+        <member name="T:GameEngine.Drawables.Anchor">
+            <summary>
+            Represents an anchor point in 2d space.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.Anchor.TopLeft">
+            <summary>
+            The top-left corner of the object
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.Anchor.Top">
+            <summary>
+            The top-center of the object
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.Anchor.TopRight">
+            <summary>
+            The top-right corner of the object
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.Anchor.Left">
+            <summary>
+            The left-middle of the object
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.Anchor.Center">
+            <summary>
+            The center of the object
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.Anchor.Right">
+            <summary>
+            The right-middle of the object
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.Anchor.BottomLeft">
+            <summary>
+            The bottom-left corner of the object
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.Anchor.Bottom">
+            <summary>
+            The bottom-middle of the object
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.Anchor.BottomRight">
+            <summary>
+            The bottom-right corner of the object
+            </summary>
+        </member>
+        <member name="T:GameEngine.StringLocalization.Localization">
+            <summary>
+            Contains methods for accessing strings in any language.
+            </summary>
+        </member>
+        <member name="F:GameEngine.StringLocalization.Localization.DEFAULT_LANGUAGE">
+            <summary>
+            The default language.
+            </summary>
+        </member>
+        <member name="F:GameEngine.StringLocalization.Localization._instance">
+            <summary>
+            The single instance of Localization.
+            </summary>
+        </member>
+        <member name="F:GameEngine.StringLocalization.Localization._language">
+            <summary>
+            The current language strings retrieved will be in.
+            </summary>
+        </member>
+        <member name="M:GameEngine.StringLocalization.Localization.#ctor">
+            <summary>
+            Creates a nwe instance of Localization.
+            </summary>
+        </member>
+        <member name="M:GameEngine.StringLocalization.Localization.LoadLocalizationInfo(System.String)">
+            <summary>
+            Loads a localization XML file.
+            </summary>
+            <param name="filename">The name of the file without the "-language.xml".</param>
+        </member>
+        <member name="P:GameEngine.StringLocalization.Localization.Item(System.String)">
+            <summary>
+            Retrieves a localization dictionary for the given file.
+            </summary>
+            <param name="localizationFile">The filename to query for a string.</param>
+            <returns>A Localization dictionary.</returns>
+        </member>
+        <member name="P:GameEngine.StringLocalization.Localization.Language">
+            <summary>
+            The current language.
+            </summary>
+        </member>
+        <member name="P:GameEngine.StringLocalization.Localization.Instance">
+            <summary>
+            Returns the single instance of Localization.
+            </summary>
+        </member>
+        <member name="T:GameEngine.StringLocalization.LocalizationExtensions">
+            <summary>
+            Contains extension methods that provide localization functionality to other GameEngine components.
+            </summary>
+        </member>
+        <member name="M:GameEngine.StringLocalization.LocalizationExtensions.LocalizationParse(GameEngine.GUI.ControlCollection,System.String,System.String)">
+            <summary>
+            Parses all controls in this collection based on the localization dictionary.
+            </summary>
+            <param name="collection">The control collection to modify.</param>
+            <param name="filename">The XML Localization file containing data for this collection.</param>
+            <param name="groupname">The group name that contains the data for this control collections.</param>
+        </member>
+        <member name="T:GameEngine.StringLocalization.Languages">
+            <summary>
+            Represents the different available languages.
+            </summary>
+        </member>
+        <member name="F:GameEngine.StringLocalization.Languages.en">
+            <summary>
+            English
+            </summary>
+        </member>
+        <member name="F:GameEngine.StringLocalization.Languages.es">
+            <summary>
+            Spanish
+            </summary>
+        </member>
+        <member name="T:GameEngine.StringLocalization.LocalizationDictionary">
+            <summary>
+            Handles retrieving localization information from a specific file.
+            </summary>
+        </member>
+        <member name="F:GameEngine.StringLocalization.LocalizationDictionary._languageShortName">
+            <summary>
+            The short-form name of the language loaded into this dictionary.
+            </summary>
+        </member>
+        <member name="F:GameEngine.StringLocalization.LocalizationDictionary._localizationInfo">
+            <summary>
+            Contains all the currently loaded groups and their strings/values.
+            </summary>
+        </member>
+        <member name="M:GameEngine.StringLocalization.LocalizationDictionary.#ctor(GameEngine.StringLocalization.Languages,System.String)">
+            <summary>
+            Creates a new LocalizationDictionary from the given file.
+            </summary>
+            <param name="filename">The filename of the XML file to load localization data from.</param>
+        </member>
+        <member name="M:GameEngine.StringLocalization.LocalizationDictionary.GetStringsNode(System.Xml.XmlDocument)">
+            <summary>
+            Gets the strings element from an XML file.
+            </summary>
+            <param name="localizationDocument">The XMLDocument containing localization information.</param>
+            <returns>An XMLNode containing localization strings.</returns>
+        </member>
+        <member name="M:GameEngine.StringLocalization.LocalizationDictionary.ConstructLocalizationInfo(System.Xml.XmlNode)">
+            <summary>
+            Creates a LocalizationInfo dictionary that contains localized strings and groups of localized strings.
+            </summary>
+            <param name="stringsNode">An XML node that contains string data.</param>
+            <returns>A dictionary of Localization string groups/strings.</returns>
+        </member>
+        <member name="M:GameEngine.StringLocalization.LocalizationDictionary.LoadGroup(System.Xml.XmlNode)">
+            <summary>
+            Loads a XMLNode that represents a group into the localization dictiary.
+            </summary>
+            <param name="groupNode">An XML element containing "string" elements.</param>
+        </member>
+        <member name="M:GameEngine.StringLocalization.LocalizationDictionary.LoadLocalizedString(System.Xml.XmlNode)">
+            <summary>
+            Returns a KeyValuePair containing a Localized string and it's name.
+            </summary>
+            <param name="stringNode">An XML node contianing a localized string.</param>
+            <param name="dictionaryToAdd">The dictionary to add the value to.</param>
+        </member>
+        <member name="P:GameEngine.StringLocalization.LocalizationDictionary.Item(System.String)">
+            <summary>
+            Fetches a dictionary that contains string info for the specified group.
+            </summary>
+            <param name="group">The name of the group to fetch string info for.</param>
+            <returns>A dictionary containing string/string information.</returns>
+        </member>
+        <member name="T:GameEngine.SceneGraph.HookDictionary">
+            <summary>
+            Contains a collection of hooks and eventhandlers for them.
+            </summary>
+        </member>
+        <member name="F:GameEngine.SceneGraph.HookDictionary._hooks">
+            <summary>
+            A dictionary of hooks and eventhandlers.
+            </summary>
+        </member>
+        <member name="M:GameEngine.SceneGraph.HookDictionary.AddHook``1(System.EventHandler{``0})">
+            <summary>
+            Adds a hook to this HookDictionary.
+            </summary>
+            <typeparam name="T">The type of hook to add.</typeparam>
+            <param name="handler">An EventHandler of type <typeparamref name="T"/>.</param>
+        </member>
+        <member name="M:GameEngine.SceneGraph.HookDictionary.RemoveHook``1">
+            <summary>
+            Removes a hook from this HookDictionary.
+            </summary>
+            <typeparam name="T">The type of hook to remove.</typeparam>
+        </member>
+        <member name="M:GameEngine.SceneGraph.HookDictionary.RunHook``1(System.Object,``0)">
+            <summary>
+            Attempts to run the specified hook.
+            </summary>
+            <typeparam name="T">The type of hook to run.</typeparam>
+            <param name="sender">The object sending the run request.</param>
+            <param name="args">Any applicable arguments.</param>
+        </member>
+        <member name="T:GameEngine.Input.MouseInputManager">
+            <summary>
+            This is a game component that implements IUpdateable.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Input.MouseInputManager._buttons">
+            <summary>
+            A dictionary of Keys/Button objects.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Input.MouseInputManager._scrollWheelValue">
+            <summary>
+            The cumulative value of the scrollwheel.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Input.MouseInputManager._mousePosition">
+            <summary>
+            The mouse's X/Y position.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Input.MouseInputManager._mousePositionPoint">
+            <summary>
+            The mouse's X/Y position as a point.
+            </summary>
+        </member>
+        <member name="M:GameEngine.Input.MouseInputManager.#ctor">
+            <summary>
+            Creates a new Input manager.
+            </summary>
+        </member>
+        <member name="M:GameEngine.Input.MouseInputManager.Update">
+            <summary>
+            Allows the game component to update itself.
+            </summary>
+        </member>
+        <member name="M:GameEngine.Input.MouseInputManager.UpdateMouseButtons(Microsoft.Xna.Framework.Input.MouseState)">
+            <summary>
+            Updates the three primary mouse buttons.
+            </summary>
+            <param name="ms">The current mousestate.</param>
+        </member>
+        <member name="M:GameEngine.Input.MouseInputManager.UpdateScrollWheel(Microsoft.Xna.Framework.Input.MouseState)">
+            <summary>
+            Updates the mouse's scrollwheel.
+            </summary>
+            <param name="ms">The current mousestate.</param>
+        </member>
+        <member name="P:GameEngine.Input.MouseInputManager.MousePosition">
+            <summary>
+            The mouse's current X/Y position.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Input.MouseInputManager.MousePositionPoint">
+            <summary>
+            The mouse's X/Y position as a point.
+            </summary>
+        </member>
+        <member name="T:GameEngine.Input.MouseButton">
+            <summary>
+            Represents possible mouse inputs.
+            </summary>
+        </member>
+        <member name="T:GameEngine.Drawables.Label">
+            <summary>
+            Represents a string of text to be rendered as part of the scene.
+            </summary>
+        </member>
+        <member name="F:GameEngine.Drawables.Label._font">
+            <summary>
+            This label's spritefont.
+            </summary>
+        </member>
+        <member name="M:GameEngine.Drawables.Label.#ctor(Microsoft.Xna.Framework.Graphics.SpriteFont,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Creates a new Label in a specified scene.
+            </summary>
+            <param name="targetScene">The scene to add this label to.</param>
+            <param name="fontName">The name of the spritefont resource this label should use.</param>
+            <param name="position">The position of the label in the scene.</param>
+        </member>
+        <member name="M:GameEngine.Drawables.Label.#ctor(Microsoft.Xna.Framework.Graphics.SpriteFont,System.String,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            
+            </summary>
+            <param name="fontName">The name of the spritefont resource this label should use.</param>
+            <param name="text">The text the label should have</param>
+            <param name="position">The position of the label in the scene.</param>
+        </member>
+        <member name="M:GameEngine.Drawables.Label.Draw(Microsoft.Xna.Framework.GameTime,Microsoft.Xna.Framework.Graphics.SpriteBatch)">
+            <summary>
+            Draws the label.
+            </summary>
+            <param name="spriteBatch">The spritebatch to draw to.</param>
+        </member>
+        <member name="P:GameEngine.Drawables.Label.Font">
+            <summary>
+            This sprite's texture.
+            </summary>
+        </member>
+        <member name="P:GameEngine.Drawables.Label.Text">
+            <summary>
+            This label's display text.
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.RadioButton.DEFAULT_CHECKED_VALUE">
+            <summary>
+            Default values for checked, and name.
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.RadioButton.isChecked">
+            <summary>
+            Is the Radiobutton checked?
+            </summary>
+        </member>
+        <member name="F:GameEngine.GUI.RadioButton._value">
+            <summary>
+            The internal value that will be written out for this radio button.
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.RadioButton.UnCheck">
+            <summary>
+            Method to uncheck radiobutton. Called by ControlCollection
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.RadioButton.Use">
+            <summary>
+            Cant uncheck a radio button by clicking on it, so return. If unchecked perform check action. 
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.RadioButton.Check">
+            <summary>
+            Set all other radiobuttons in "group" to false, set this to true; 
+            </summary>
+        </member>
+        <member name="M:GameEngine.GUI.RadioButton.FillValuesFromXML(System.Xml.XmlNode)">
+            <summary>
+            Loads and sets values for RadioButton
+            </summary>
+            <param name="node"></param>
+        </member>
+    </members>
+</doc>
