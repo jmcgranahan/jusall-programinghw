@@ -35,7 +35,7 @@ class object:
 
 		if self.type == 'circle':
 			if self.collided:
-				pygame.draw.circle(self.screen, pygame.Color(255,100,100),self.pos,self.size)
+				pygame.draw.circle(self.screen, pygame.color(255,100,100),self.pos,self.size)
 				self.collided = 0
 			else:
 				pygame.draw.circle(self.screen, self.color,self.pos,self.size)

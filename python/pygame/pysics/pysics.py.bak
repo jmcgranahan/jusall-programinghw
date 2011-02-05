@@ -38,7 +38,7 @@ def main():
 	while 1:
 
 		# cap the framerate at 60 frames per second
-		elapsed_time = clock.tick(60)
+		elapsed_time = clock.tick(120)
 		lastdraw += elapsed_time
 		circle = world.objects[0]
 		
@@ -48,7 +48,7 @@ def main():
 				pygame.quit()
 				return
 
-		# move the player with the arrow keys
+		# move the player rect around if you press the arrow keys
 		key = pygame.key.get_pressed()
 		if key[K_LEFT]:
 			circle.applyforce(vec2d(-100,0))

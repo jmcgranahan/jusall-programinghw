@@ -1,0 +1,139 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_MOD_BY	Bostjan Mihoric	/ccompletion@gmail.com/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	/unofficial modification/
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	/unofficial modification/
+UnitTestVec2D	vec2d.py	340;"	class
+__abs__	vec2d.py	230;"	member	class:vec2d	file:
+__add__	vec2d.py	91;"	member	class:vec2d	file:
+__and__	vec2d.py	211;"	member	class:vec2d	file:
+__div__	vec2d.py	162;"	member	class:vec2d	file:
+__divmod__	vec2d.py	189;"	member	class:vec2d	file:
+__eq__	vec2d.py	43;"	member	class:vec2d	file:
+__floordiv__	vec2d.py	169;"	member	class:vec2d	file:
+__getitem__	vec2d.py	22;"	member	class:vec2d	file:
+__getstate__	vec2d.py	325;"	member	class:vec2d	file:
+__iadd__	vec2d.py	100;"	member	class:vec2d	file:
+__idiv__	vec2d.py	166;"	member	class:vec2d	file:
+__ifloordiv__	vec2d.py	173;"	member	class:vec2d	file:
+__imul__	vec2d.py	149;"	member	class:vec2d	file:
+__init__	pysicsObj.py	9;"	member	class:object
+__init__	pysicsWorld.py	10;"	member	class:world
+__init__	vec2d.py	11;"	member	class:vec2d
+__invert__	vec2d.py	233;"	member	class:vec2d	file:
+__isub__	vec2d.py	127;"	member	class:vec2d	file:
+__itruediv__	vec2d.py	180;"	member	class:vec2d	file:
+__len__	vec2d.py	19;"	member	class:vec2d	file:
+__lshift__	vec2d.py	201;"	member	class:vec2d	file:
+__mod__	vec2d.py	184;"	member	class:vec2d	file:
+__mul__	vec2d.py	140;"	member	class:vec2d	file:
+__ne__	vec2d.py	49;"	member	class:vec2d	file:
+__neg__	vec2d.py	224;"	member	class:vec2d	file:
+__nonzero__	vec2d.py	55;"	member	class:vec2d	file:
+__or__	vec2d.py	215;"	member	class:vec2d	file:
+__pos__	vec2d.py	227;"	member	class:vec2d	file:
+__pow__	vec2d.py	195;"	member	class:vec2d	file:
+__radd__	vec2d.py	98;"	variable	class:vec2d
+__rand__	vec2d.py	213;"	variable	class:vec2d
+__rdiv__	vec2d.py	164;"	member	class:vec2d	file:
+__rdivmod__	vec2d.py	191;"	member	class:vec2d	file:
+__repr__	vec2d.py	39;"	member	class:vec2d	file:
+__rfloordiv__	vec2d.py	171;"	member	class:vec2d	file:
+__rlshift__	vec2d.py	203;"	member	class:vec2d	file:
+__rmod__	vec2d.py	186;"	member	class:vec2d	file:
+__rmul__	vec2d.py	147;"	variable	class:vec2d
+__ror__	vec2d.py	217;"	variable	class:vec2d
+__rpow__	vec2d.py	197;"	member	class:vec2d	file:
+__rrshift__	vec2d.py	208;"	member	class:vec2d	file:
+__rshift__	vec2d.py	206;"	member	class:vec2d	file:
+__rsub__	vec2d.py	120;"	member	class:vec2d	file:
+__rtruediv__	vec2d.py	178;"	member	class:vec2d	file:
+__rxor__	vec2d.py	221;"	variable	class:vec2d
+__setangle	vec2d.py	269;"	member	class:vec2d	file:
+__setitem__	vec2d.py	30;"	member	class:vec2d	file:
+__setlength	vec2d.py	242;"	member	class:vec2d	file:
+__setstate__	vec2d.py	328;"	member	class:vec2d	file:
+__slots__	vec2d.py	9;"	variable	class:vec2d
+__sub__	vec2d.py	113;"	member	class:vec2d	file:
+__truediv__	vec2d.py	176;"	member	class:vec2d	file:
+__xor__	vec2d.py	219;"	member	class:vec2d	file:
+_io	vec2d.py	80;"	member	class:vec2d
+_o2	vec2d.py	59;"	member	class:vec2d
+_r_o2	vec2d.py	71;"	member	class:vec2d
+angle	vec2d.py	273;"	variable	class:vec2d
+append	pysicsWorld.py	14;"	member	class:world
+applyforce	pysicsObj.py	27;"	member	class:object
+choice	pysics.py	3;"	namespace
+choice	pysicsObj.py	1;"	namespace
+convert_to_basis	vec2d.py	322;"	member	class:vec2d
+copysign	pysicsObj.py	2;"	namespace
+copysign	pysicsWorld.py	1;"	namespace
+cos	pysics.py	4;"	namespace
+cos	pysicsObj.py	2;"	namespace
+cos	pysicsWorld.py	1;"	namespace
+cross	vec2d.py	316;"	member	class:vec2d
+dot	vec2d.py	302;"	member	class:vec2d
+draw	pysicsObj.py	36;"	member	class:object
+draw	pysicsWorld.py	53;"	member	class:world
+floor	pysicsObj.py	2;"	namespace
+floor	pysicsWorld.py	1;"	namespace
+get_angle	vec2d.py	265;"	member	class:vec2d
+get_angle_between	vec2d.py	275;"	member	class:vec2d
+get_dist_sqrd	vec2d.py	308;"	member	class:vec2d
+get_distance	vec2d.py	305;"	member	class:vec2d
+get_length	vec2d.py	240;"	member	class:vec2d
+get_length_sqrd	vec2d.py	237;"	member	class:vec2d
+interpolate_to	vec2d.py	319;"	member	class:vec2d
+length	vec2d.py	246;"	variable	class:vec2d
+main	pysics.py	8;"	function
+math	vec2d.py	3;"	namespace
+move	pysicsWorld.py	24;"	member	class:world
+normalize_return_length	vec2d.py	286;"	member	class:vec2d
+normalized	vec2d.py	280;"	member	class:vec2d
+object	pysicsObj.py	7;"	class
+object	pysicsWorld.py	5;"	namespace
+operator	vec2d.py	2;"	namespace
+os	pysics.py	1;"	namespace
+perpendicular	vec2d.py	293;"	member	class:vec2d
+perpendicular_normal	vec2d.py	296;"	member	class:vec2d
+pickle	vec2d.py	337;"	namespace
+premovecheck	pysicsWorld.py	41;"	member	class:world
+projection	vec2d.py	311;"	member	class:vec2d
+pygame	pysics.py	1;"	namespace
+pygame	pysicsObj.py	4;"	namespace
+pygame	pysicsWorld.py	3;"	namespace
+pysicsObj	pysics.py	1;"	namespace
+pysicsWorld	pysics.py	1;"	namespace
+radians	pysics.py	4;"	namespace
+radians	pysicsObj.py	2;"	namespace
+radians	pysicsWorld.py	1;"	namespace
+randint	pysics.py	3;"	namespace
+randint	pysicsObj.py	1;"	namespace
+rotate	vec2d.py	248;"	member	class:vec2d
+rotated	vec2d.py	257;"	member	class:vec2d
+setUp	vec2d.py	342;"	member	class:.UnitTestVec2D
+sin	pysics.py	4;"	namespace
+sin	pysicsObj.py	2;"	namespace
+sin	pysicsWorld.py	1;"	namespace
+sys	pysics.py	1;"	namespace
+testAngles	vec2d.py	390;"	member	class:.UnitTestVec2D
+testComparison	vec2d.py	421;"	member	class:.UnitTestVec2D
+testCreationAndAccess	vec2d.py	345;"	member	class:.UnitTestVec2D
+testCross	vec2d.py	416;"	member	class:.UnitTestVec2D
+testHighLevel	vec2d.py	408;"	member	class:.UnitTestVec2D
+testInplace	vec2d.py	434;"	member	class:.UnitTestVec2D
+testLength	vec2d.py	379;"	member	class:.UnitTestVec2D
+testMath	vec2d.py	352;"	member	class:.UnitTestVec2D
+testPickle	vec2d.py	446;"	member	class:.UnitTestVec2D
+testReverseMath	vec2d.py	363;"	member	class:.UnitTestVec2D
+testUnary	vec2d.py	372;"	member	class:.UnitTestVec2D
+unittest	vec2d.py	336;"	namespace
+update	pysicsObj.py	32;"	member	class:object
+update	pysicsWorld.py	18;"	member	class:world
+vec2d	pysics.py	5;"	namespace
+vec2d	pysicsObj.py	3;"	namespace
+vec2d	pysicsWorld.py	2;"	namespace
+vec2d	vec2d.py	5;"	class
+world	pysicsWorld.py	8;"	class
