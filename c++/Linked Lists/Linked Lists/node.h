@@ -1,4 +1,5 @@
 //node.h
+#include <iostream>
 #pragma once
 
 template <class type>
@@ -29,13 +30,18 @@ public:
 		next = inputNext;
 	}
 
-	node(const type & inputData, node * inputPrev, node * inputNext)
+	node(const type & inputData, node * inputNext, node * inputPrev)
 	{
 		data = inputData;
 		prev = inputPrev;
 		next = inputNext;
 	}
 
+	~node(void)
+	{
+	}
+
+	//Seters
 	void setData(const type & inputData)
 	{
 		data = inputData;
@@ -50,7 +56,8 @@ public:
 	{
 		prev = inputPointer;
 	}
-
+	
+	//Geters 
 	type & getData(void)
 	{
 		return data;
@@ -66,8 +73,13 @@ public:
 		return prev;
 	}
 
-	~node(void)
+	//Utilities 
+	void print(void)
 	{
+		cout << "node pointer:" << this << endl;
+		cout << "node data:" << this->getData() << endl;
+		cout << "node next:" << this->getNext() << endl;
+		cout << "node prev:" << this->getPrev() << endl;
 	}
 };
 
