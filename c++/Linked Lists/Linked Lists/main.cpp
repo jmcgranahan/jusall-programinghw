@@ -3,6 +3,8 @@
 #include "node.h"
 #include "list.h"
 #include <string>
+#include <ctime>
+
 using namespace std;
 
 void breakLine()
@@ -42,46 +44,35 @@ int main()
 	
 	*/
 	list<string> myList;
-	node<string> * pointerList[10];
 
-	for (int i = 0; i < 5 ; i++)
+
+	for (int i = 0; i < 1500 ; i++)
 	{
 		string nodeData;
-		for (int n = 0 ; n < 5-i ;n++)
+		for (int n = 0 ; n < i ;n++)
 		{
-			nodeData += "node";
+			nodeData += ".";
 		}
 		myList.push(nodeData);
-		pointerList[i] = myList.getHead();
 	}
 
-	for (int i = 0; i < 5 ; i++)
-	{
-		string nodeData;
-		for (int n = 0 ; n < 5-i ;n++)
-		{
-			nodeData += "node";
-		}
-		myList.append(nodeData);
-		pointerList[i] = myList.getHead();
-	}
+
 	
-	for ( int i = 0; i < myList.getLength() ; i++)
-	{
-		myList.at(i)->print();
-		breakLine();
-		
-	}
-
-	cout << endl << endl << endl;
-
 	myList.insert("OMG INSERT",5);
-
+	
+	
+	/*
 	for ( int i = 0; i < myList.getLength() ; i++)
 	{
 		myList.at(i)->print();
 		breakLine();
 	}
+	*/
+	
+	cout << "searching for OMG INSERT returned: " << myList.search("OMG INSERT") << endl;
+	myList.remove(6);
+	cout << "searching for OMG INSERT returned: " << myList.search("OMG INSERT") << endl;
+
 
 	system("PAUSE");
 }

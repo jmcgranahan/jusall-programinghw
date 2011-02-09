@@ -89,23 +89,99 @@ public:
 	{
 		return head;
 	}
+	
+	node<type> * getTail(void)
+	{
+		return tail;
+	}
 
-	node<type> * at(int i)
+	type pop(int index)
 	{
 		current = head;
-		while (i > 0)
+		iCurrent = 0;
+		while (current && index > 0)
 		{
 			current = current->getNext();
-			i--;
+			index--;
 		}
-		return current;
+		if( !current )
+		{
+			cout << "no object at index" << endl;
+			return;
+		}
+
+		type data = current->getData();
+		node<type> * pTemp = current;
+
+		current = pTemp->getNext();
+		pTemp->getNext()->setPrev(pTemp->getPrev());
+		pTemp->getPrev()->setNext(pTemp->getNext());
+
+		length--;
+		delete pTemp;
+		return data;
+	}
+
+	void remove(int index)
+	{
+		current = head;
+		iCurrent = 0;
+		while (current && index > 0)
+		{
+			current = current->getNext();
+			index--;
+			iCurrent++;
+		}
+		if( !current )
+		{
+			cout << "no objecct at index" << endl;
+			return;
+		}
+		node<type> * pTemp = current;
+
+		current = pTemp->getNext();
+		pTemp->getNext()->setPrev(pTemp->getPrev());
+		pTemp->getPrev()->setNext(pTemp->getNext());
+
+		length--;
+		delete pTemp;
+	}
+
+	node<type> * at(int index)
+	{
+		current = head;
+		iCurrent = 0;
+		while (current && index > 0)
+		{
+			current = current->getNext();
+			index--;
+		}
+		if( current )
+			return current;
+		else 
+			cout << "no objecct at index" << endl;
+	}
+
+	int search(const type & item)
+	{
+		current = head;
+		iCurrent = 0;
+		
+		while( current && current->getData() != item )
+		{
+			iCurrent++;
+			current = current->getNext();
+		}
+		if(current)
+			return iCurrent;
+		else
+			return -1;
 	}
 
 	int getLength(void)
 	{
 		return length;
 	}
-
 	
 };
 
