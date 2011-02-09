@@ -52,7 +52,7 @@ def main():
 		background.blit(rfont, textpos)
 		screen.blit(background, (0, 0))
 		pygame.display.flip()
-		time.sleep(0.25)
+		time.sleep(0.075)
 
 if __name__ == "__main__":
 	main()
