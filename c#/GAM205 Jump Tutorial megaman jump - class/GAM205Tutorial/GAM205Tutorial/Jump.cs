@@ -12,7 +12,7 @@ namespace GAM205Tutorial
         /// </summary>
         private bool _standing = false;
         private float startY;
-        private bool top, endJump;
+        private bool top, firstJump ,seccondJump;
         private  float jumpSpeed ;        
         
         /// <summary>
@@ -25,8 +25,9 @@ namespace GAM205Tutorial
                 this.Y += 7;
             }
             else {
-                this.top = false; 
-                this.endJump = false;
+                this.top = false;
+                this.firstJump = false;
+                this.seccondJump = false;
 
             }
         }
@@ -36,10 +37,11 @@ namespace GAM205Tutorial
         /// </summary>
         public void Jump()
         {
-            if (_standing)
+            if (!seccondJump)
             {
+                top = false;
                 startY = this.Y;
-                jumpSpeed = 28.0f;
+                jumpSpeed = 26.0f;
             }
         }
 
@@ -48,7 +50,7 @@ namespace GAM205Tutorial
         /// </summary>
         public void HoldJump()
         {
-            if (startY - 100 <= this.Y && !top && !endJump)
+            if (startY - 100 <= this.Y && !top && !seccondJump)
             {
                 this.Y -= jumpSpeed;
                 jumpSpeed *= .9f;
@@ -63,7 +65,10 @@ namespace GAM205Tutorial
         /// <param name="duration"></param>
         public void EndJump(int duration)
         {
-            endJump = true;
+            if (!firstJump)
+                firstJump = true;
+            else
+                seccondJump = true;
         }
     }
 }

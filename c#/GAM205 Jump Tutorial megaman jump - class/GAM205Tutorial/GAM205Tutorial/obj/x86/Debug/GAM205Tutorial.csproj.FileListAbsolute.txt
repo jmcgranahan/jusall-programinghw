@@ -38,3 +38,13 @@ I:\GAM205 Jump Tutorial megaman jump\GAM205Tutorial\GAM205Tutorial\obj\x86\Debug
 I:\GAM205 Jump Tutorial megaman jump\GAM205Tutorial\GAM205Tutorial\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 I:\GAM205 Jump Tutorial megaman jump\GAM205Tutorial\GAM205Tutorial\obj\x86\Debug\GAM205Tutorial.exe
 I:\GAM205 Jump Tutorial megaman jump\GAM205Tutorial\GAM205Tutorial\obj\x86\Debug\GAM205Tutorial.pdb
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump - class\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\Content\BlockA0.xnb
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump - class\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\Content\megaman.xnb
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump - class\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\GAM205Tutorial.exe
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump - class\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\GAM205Tutorial.pdb
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump - class\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\GameEngine.dll
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump - class\GAM205Tutorial\GAM205Tutorial\bin\x86\Debug\GameEngine.xml
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump - class\GAM205Tutorial\GAM205Tutorial\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump - class\GAM205Tutorial\GAM205Tutorial\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump - class\GAM205Tutorial\GAM205Tutorial\obj\x86\Debug\GAM205Tutorial.exe
+D:\Storage\code\c#\GAM205 Jump Tutorial megaman jump - class\GAM205Tutorial\GAM205Tutorial\obj\x86\Debug\GAM205Tutorial.pdb
