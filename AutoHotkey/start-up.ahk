@@ -12,7 +12,8 @@ Hotkey, IfWinActive
 ~Lbutton::
 
 Hotkey, IfWinActive, Left 4 Dead 2
-Hotkey, !f, ChangeFireMode
+Hotkey, *!f, ChangeFireMode
+Hotkey, *LButton, mousedown
 Hotkey, LButton, mousedown
 Hotkey, IfWinActive
 autoclick := false
