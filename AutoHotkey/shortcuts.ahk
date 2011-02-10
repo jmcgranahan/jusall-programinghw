@@ -62,13 +62,13 @@ return
 SetKeyDelay -1
 Send {alt downtemp}{pgup downtemp}
 ifwinexist, TeamSpeak
-	Osd("", "Voice Active" ,"","MS Sans Serif","FM15 FS30 X0 Y100 CTDD4400 C0" ,9)
+	;Osd("", "Voice Active" ,"","MS Sans Serif","FM15 FS30 X0 Y100 CTDD4400 C0" ,9)
 return
 
 *CapsLock up::
 SetKeyDelay -1
 Send {alt up}{pgup up}
-Osd_Off(9)
+;Osd_Off(9)
 return
 
 ^+z::   Win__Fling(1, "A")

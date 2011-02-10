@@ -64,8 +64,9 @@ if($FireMode = "Auto")
 		while GetKeyState("LButton","P")
 		{
 			click up
-			Sleep, 1
+			Sleep, 5
 			click down
+			Sleep,3
 		}
 	}
 

@@ -1,3 +1,9 @@
+if not A_IsAdmin
+{
+   DllCall("shell32\ShellExecuteA", uint, 0, str, "RunAs", str, A_AhkPath
+      , str, """" . A_ScriptFullPath . """", str, A_WorkingDir, int, 1)
+   ExitApp
+}
 debug("Starting gowness's autohotkey script of doom...")
 ;#Persistent
 ; Author:  gowness <biga05@gmail.com>
@@ -10,6 +16,7 @@ SysGet, Mon2, Monitor, 2
 #SingleInstance force
 SendMode Input ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+OnExit , defaultExit
 
 #include start-up.ahk
 ;----------------includes/functions------------------
@@ -30,10 +37,16 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 EmptyMem()
+
 ^!r:: 
 debug("reloading main file, please wait...","high")
 sleep 500
 reload 
 return
 
+defaultExit:
+; gdi+ may now be shutdown on exiting the program
+Gdip_Shutdown(pToken)
+ExitApp
+Return
 
