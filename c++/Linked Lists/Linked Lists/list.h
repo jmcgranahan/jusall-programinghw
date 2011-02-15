@@ -85,41 +85,71 @@ public:
 		}
 	}
 
-	node<type> * getHead(void)
+	type getHead(void)
 	{
-		return head;
+		return head->getData();
 	}
 	
-	node<type> * getTail(void)
+	type getTail(void)
 	{
-		return tail;
+		return tail->getData();
 	}
-
-	type pop(int index)
+	
+	type get(int index)
 	{
 		current = head;
 		iCurrent = 0;
+		
 		while (current && index > 0)
 		{
 			current = current->getNext();
 			index--;
 		}
-		if( !current )
+		
+		if( current )
+			return current->getData();
+		
+		cout << "no object at index" << endl;
+	}
+
+	type pop(int index)
+	{
+		get(index);
+
+		if( current )
 		{
-			cout << "no object at index" << endl;
-			return;
+			type data = current->getData();
+			node<type> * pTemp = current;
+
+			if(head == tail)
+			{
+				current = tail = head = NULL;
+				iCurrent = 0;
+			}
+
+			else if( current == tail )
+			{
+				current = tail = pTemp->getPrev();
+				current->setNext(NULL);
+				iCurrent--;
+			}
+
+			else if( current == head)
+			{
+				current = head = pTemp->getNext();
+				current->setPrev(NULL);
+			}
+			else
+			{
+				current = current->getNext();
+				current->setPrev(pTemp->getPrev());
+				current->getPrev()->setNext(pTemp->getNext());
+			}
+
+			length--;
+			delete pTemp;
+			return data;
 		}
-
-		type data = current->getData();
-		node<type> * pTemp = current;
-
-		current = pTemp->getNext();
-		pTemp->getNext()->setPrev(pTemp->getPrev());
-		pTemp->getPrev()->setNext(pTemp->getNext());
-
-		length--;
-		delete pTemp;
-		return data;
 	}
 
 	void remove(int index)
@@ -145,21 +175,6 @@ public:
 
 		length--;
 		delete pTemp;
-	}
-
-	node<type> * at(int index)
-	{
-		current = head;
-		iCurrent = 0;
-		while (current && index > 0)
-		{
-			current = current->getNext();
-			index--;
-		}
-		if( current )
-			return current;
-		else 
-			cout << "no objecct at index" << endl;
 	}
 
 	int search(const type & item)
