@@ -53,7 +53,7 @@ namespace GAM205Tutorial
             if (startY - 100 <= this.Y && !top && !seccondJump)
             {
                 this.Y -= jumpSpeed;
-                jumpSpeed *= .9f;
+                jumpSpeed *= .85f;
             }
             else
                 top = true;
