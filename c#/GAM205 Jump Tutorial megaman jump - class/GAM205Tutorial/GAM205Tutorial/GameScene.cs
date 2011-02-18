@@ -58,6 +58,10 @@ namespace GAM205Tutorial
                 Drawables.Add(_blocks.Last());
                 blockPosition.X += 64f;
             }
+            _blocks.Add(new Block(Content.Load<Texture2D>("BlockA0"), new Vector2(900,450)));
+            Drawables.Add(_blocks.Last());
+            _blocks.Add(new Block(Content.Load<Texture2D>("BlockA0"), new Vector2(1000, 350)));
+            Drawables.Add(_blocks.Last());
         }
 
         /// <summary>
