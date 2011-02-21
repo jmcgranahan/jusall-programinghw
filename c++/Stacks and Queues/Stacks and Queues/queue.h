@@ -33,7 +33,7 @@ public:
 	{
 		node<type> * pTemp = back;
 		back = new node<type>(item);
-		if(pTemp)
+		if(pTemp) 
 			pTemp->setPrev(back);
 		else
 			front = back;
@@ -42,6 +42,8 @@ public:
 
 	type remove(void)
 	{
+		if( !front )
+			return 0;
 		node<type> * pTemp = front;
 		front = pTemp->getPrev();
 		type data = pTemp->getData();
@@ -51,9 +53,23 @@ public:
 		return data;
 	}
 
+	type peak(void)
+	{
+		if( front )
+			return front->getData();
+		return 0;
+	}
+
 	int getLength(void)
 	{
 		return length;
+	}
+
+	void print(void)
+	{
+		while( length )
+			cout << remove() ;
+		cout << endl;
 	}
 	
 };

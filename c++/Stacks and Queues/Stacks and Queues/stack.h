@@ -36,6 +36,8 @@ public:
 
 	type pop(void)
 	{
+		if( !top )
+			return 0;
 		node<type> * pTemp = top;
 		top = pTemp->getNext();
 		type data = pTemp->getData();
@@ -47,7 +49,9 @@ public:
 
 	type peak(void)
 	{
-		return top->getData();
+		if( top ) 
+			return top->getData();
+		return 0;
 	}
 
 
