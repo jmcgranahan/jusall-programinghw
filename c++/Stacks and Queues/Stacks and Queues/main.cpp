@@ -179,7 +179,7 @@ int main()
 	gets(input);
 	breakLine();	
 	for(int i = 0; i < 20; i++)
-		input[i] = buffer[i];
+		buffer[i] = input[i];
 
 	string postfix = infixToPostfix(buffer);
 	
