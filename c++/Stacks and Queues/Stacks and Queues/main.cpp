@@ -3,6 +3,7 @@
 #include <string>
 #include <stdio.h>
 #include <ctype.h>
+#include <math.h>
 #include "node.h"
 #include "stack.h"
 #include "queue.h"
@@ -14,6 +15,11 @@ void breakLine()
 	cout << "===============================================" << endl;
 }
 
+/******** Function: operatorPriority
+Inputs: char operator
+Output: int
+Description: returns the priority of the operator
+********/
 int operatorPriority(char input)
 {
 	if ( input == '+' || input == '-')
@@ -23,6 +29,11 @@ int operatorPriority(char input)
 	return 0;
 }
 
+/******** Function: infixToPostfix
+Inputs: char[]
+Output: string
+Description: translates a infix line into a postfix line
+********/
 string infixToPostfix(char infix[])
 {
 	stack<char> _stack;
@@ -36,13 +47,17 @@ string infixToPostfix(char infix[])
 
 		else if ( operatorPriority(currentchar) )
 		{
+			_queue.append(' '); // space's out the digits
 			if (_stack.getLength() == 0)
 				_stack.push(currentchar);
 
 			else
 			{
 				while ( operatorPriority(currentchar) <= operatorPriority(_stack.peak()) )  // while top of stack has higher or equal priority, pop top to queue
+				{
 					_queue.append(_stack.pop());
+					_queue.append(' ');
+				}
 				_stack.push(currentchar);
 			}
 		}
@@ -52,47 +67,70 @@ string infixToPostfix(char infix[])
 
 		else if ( currentchar == ')')
 		{
+			_queue.append(' ');
 			char poped = _stack.pop();
-			while( poped && poped != '(' )
+			while( poped && poped != '(' ) // checks until bracket
 			{
 				_queue.append(poped);
+				_queue.append(' ');
 				poped = _stack.pop();
 			}
 		}
 	}
 	
-	while( _stack.getLength() )
+	while( _stack.getLength() ) // removes anything fom the stacj
+	{
+		_queue.append(' ');
 		_queue.append(_stack.pop());
+	}
 	
 	string sOutput;
 	
 	while(_queue.getLength())
 		sOutput += _queue.remove();
 
-	return sOutput
-		;
+	return sOutput;
 } 
 
-int postfixEval(string postfix)
+/******** Function: postfixEval
+Inputs: string postfix
+Output: float
+Description: evaluates a postfix string 
+********/
+float postfixEval(string postfix)
 {
-	stack<int> intStack;
+	stack<double> floatStack;
 	for(int i = 0; i < postfix.length(); i++)
 	{
 		if( isdigit(postfix[i]) )
-			intStack.push(postfix[i] - 48);
+		{
+			int start = i;
+			while(isdigit(postfix[i+1])) // gets multi-digit numbers
+				i++;
+
+			float sum = 0;
+			for(int j = start; j <= i; j++)
+				sum += (float)(postfix[j]-48)*(pow(10,(double)(i-j))); // multiplys the first digit by the appropriate power of 10
+			floatStack.push(sum);
+		}
+
 		else if( postfix[i] == '+' )
-			intStack.push( intStack.pop() + intStack.pop() );
+			floatStack.push( floatStack.pop() + floatStack.pop() );
 		else if( postfix[i] == '-' )
-			intStack.push( -intStack.pop() - -intStack.pop() );
+			floatStack.push( -floatStack.pop() - -floatStack.pop() ); //damn negitives
 		else if( postfix[i] == '*' )
-			intStack.push( intStack.pop() * intStack.pop() );
+			floatStack.push( floatStack.pop() * floatStack.pop() );
 		else if( postfix[i] == '/' )
-			intStack.push( intStack.pop() / intStack.pop() );
+		{										// has to be parsed in reverse order
+			double bottom = floatStack.pop();
+			double top = floatStack.pop();
+			floatStack.push( top / bottom );
+		} 
 		else if( postfix[i] == '%' )
-			intStack.push( intStack.pop() % intStack.pop() );
+			floatStack.push( (int)floatStack.pop() % (int)floatStack.pop() );
 	}
-	if( intStack.getLength() == 1)
-		return intStack.pop();
+	if( floatStack.getLength() == 1)
+		return floatStack.pop();
 	cout << "MISMATCHING OPERATOR TO OPERAND RATIO" << endl;
 	return 0;
 }
@@ -136,12 +174,15 @@ int main()
 	*/
 
 	char input[20];
-
+	char buffer[20];
 	cout << "input infix equation" << endl;
 	gets(input);
 	breakLine();	
+	for(int i = 0; i < 20; i++)
+		input[i] = buffer[i];
+
+	string postfix = infixToPostfix(buffer);
 	
-	string postfix = infixToPostfix(input);
 
 	cout << "postfix expreasion: " << postfix << endl;
 	cout << "Evaluated: " << postfixEval(postfix) << endl;

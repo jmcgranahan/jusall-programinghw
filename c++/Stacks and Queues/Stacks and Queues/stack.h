@@ -10,13 +10,22 @@ class stack
 	int length;
 
 public:
-
+	/******** Function: Constructor
+	Inputs: none
+	Output: none 
+	Description: Creates a new stack
+	********/
 	stack(void)
 	{
 		top = NULL;
 		length = 0;
 	}
 
+	/******** Function: Destructor
+	Inputs: none
+	Output: none
+	Description: Deletes the stack
+	********/
 	~stack(void)
 	{
 		while(top)
@@ -27,6 +36,11 @@ public:
 		}
 	}
 
+	/******** Function: push
+	Inputs: type data
+	Output: none
+	Description: adds the passed data to the top of the stack
+	********/
 	void push(const type & item)
 	{
 		node<type> * pTemp = top;
@@ -34,6 +48,11 @@ public:
 		length++;
 	}
 
+	/******** Function: pop
+	Inputs: none
+	Output: type
+	Description: Remove the top of the stack and returns the data 
+	********/
 	type pop(void)
 	{
 		if( !top )
@@ -47,6 +66,11 @@ public:
 		return data;
 	}
 
+	/******** Function: peak
+	Inputs: none
+	Output: type
+	Description: Returns the top without removing it
+	********/
 	type peak(void)
 	{
 		if( top ) 
@@ -54,7 +78,11 @@ public:
 		return 0;
 	}
 
-
+	/******** Function: getLength
+	Inputs: none
+	Output: int
+	Description: returns the length of the stack
+	********/
 	int getLength(void)
 	{
 		return length;
