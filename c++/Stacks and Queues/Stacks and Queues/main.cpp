@@ -175,6 +175,7 @@ int main()
 
 	char input[20];
 	char buffer[20];
+	do {
 	cout << "input infix equation" << endl;
 	gets(input);
 	breakLine();	
@@ -188,4 +189,5 @@ int main()
 	cout << "Evaluated: " << postfixEval(postfix) << endl;
 
 	system("PAUSE");
+	} while( input[0] != 'q');
 }
