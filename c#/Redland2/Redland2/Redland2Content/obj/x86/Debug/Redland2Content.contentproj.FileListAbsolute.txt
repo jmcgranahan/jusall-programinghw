@@ -1,0 +1,2 @@
+C:\Users\TEMP.KNOWN-UNIVERSE.001\Desktop\Eliot's Sample Code\Redland2\Redland2\Redland2Content\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Storage\code\c#\Redland2\Redland2\Redland2Content\obj\x86\Debug\ResolveAssemblyReference.cache
