@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="dateing time">
+</Property><Property Name="Solution File" Value="F:\code\c++\dateing time\dateing time.sln">
+</Property><Property Name="User Options File" Value="F:\code\c++\dateing time\dateing time.suo">
+</Property><Property Name="Date" Value="Friday, February 04, 2011">
+</Property><Property Name="Time" Value="18:20 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="dateing time.sln" Description="File successfully backed up as F:\code\c++\dateing time\dateing time.sln.old">
+</Event><Event ErrorLevel="0" Project="" Source="dateing time.suo" Description="File successfully backed up as F:\code\c++\dateing time\dateing time.suo.old">
+</Event><Event ErrorLevel="0" Project="dateing time" Source="dateing time\dateing time.vcproj" Description="Converting project file 'F:\code\c++\dateing time\dateing time\dateing time.vcproj'.">
+</Event><Event ErrorLevel="1" Project="dateing time" Source="dateing time\dateing time.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="dateing time" Source="dateing time\dateing time.vcproj" Description="Done converting to new project file 'F:\code\c++\dateing time\dateing time\dateing time.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="dateing time" Source="dateing time\dateing time.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="dateing time.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="dateing time.sln" Description="Converted">
+</Event></UpgradeLog>
