@@ -27,7 +27,7 @@ namespace Redland2
             /// </summary>
             private Sprite _cursor;
             private Player _player;
-            private Enemy _enemy;
+            private Enemy[] _enemys;
         #endregion members
 
         #region properties
@@ -45,8 +45,9 @@ namespace Redland2
                 CreateCursor();
 
                 _player = new Player(true);
-                _enemy = new Enemy();
-                _enemy.Position = new Vector2(640, 360);
+                _enemys = new Enemy[20];
+                for(int i = 0; i <20; i++)
+                    _enemys[i] = new Enemy();
                 //---------------------------
 
                 base.Initalize();
@@ -80,7 +81,9 @@ namespace Redland2
             protected override void Update(GameTime gameTime)
             {
                 _cursor.Position = Input.GetMousePosition();
-                _enemy.TargetPos = _player.Position;
+
+                foreach(Enemy enemy in _enemys)
+                    enemy.TargetPos = _player.Position;
                 base.Update(gameTime);
             }
         #endregion methods

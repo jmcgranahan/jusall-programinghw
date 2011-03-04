@@ -12,7 +12,7 @@ namespace Redland2
 {
     public class Player : Entity
     {
-        private const float PLAYER_MOVE_SPEED = 1.5F;
+        private const float PLAYER_MOVE_SPEED = 3.0F;
         private const Keys MOVE_UP_BUTTON = Keys.W;
         private const Keys MOVE_DOWN_BUTTON = Keys.S;
         private const Keys MOVE_LEFT_BUTTON = Keys.A;
@@ -132,9 +132,9 @@ namespace Redland2
             Scene.Current.Drawables.Add(this);
         }
 
-        public void RotatePlayerToFacePoint(Vector2 Position)
+        public void RotatePlayerToFacePoint(Vector2 Target)
         {
-            Vector2 direction = this.Position - Position;
+            Vector2 direction = this.Position - Target;
             direction.Normalize();
             this.Angle = (float)Math.Atan2(direction.Y, direction.X) - MathHelper.PiOver2;
         }
