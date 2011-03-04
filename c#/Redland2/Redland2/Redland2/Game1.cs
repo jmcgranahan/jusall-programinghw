@@ -24,14 +24,23 @@ namespace Redland2
             Content.RootDirectory = "Content";
         }
 
+        private void quit()
+        {
+            this.Exit();
+        }
+
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            graphics.PreferredBackBufferWidth = 1280;
-            graphics.PreferredBackBufferHeight = 720;
+            graphics.PreferredBackBufferWidth = 1024;
+            graphics.PreferredBackBufferHeight = 600;
             graphics.ApplyChanges();
 
+            
+
             initialScene = new GameScene(this.Services);
+
+            initialScene.Input.GetKey(Keys.Escape).ButtonPushed += quit;
 
             this.Components.Add(GameEngine.Wrappers.SceneComponentWrapper.CreateSceneComponentWrapper(this, initialScene));
 

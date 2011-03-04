@@ -12,10 +12,10 @@ namespace Redland2
 {
     class Enemy : Player
     {
+        Random rand = new Random((int)DateTime.Now.Ticks);
         public Enemy() : base(false)
         {
-            base.X = new Random().Next() * 100;
-            base.Y = new Random().Next() * 100;
+            base.Position = new Vector2(rand.Next(1280),rand.Next(700));
         }
 
         public override void Update(GameTime gameTime)
