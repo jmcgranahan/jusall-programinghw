@@ -15,13 +15,14 @@ namespace Redland2
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
         GameScene initialScene;
-
+        SpriteFont font;
+        SpriteBatch _spritebatch;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            
         }
 
         private void quit()
@@ -32,8 +33,8 @@ namespace Redland2
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            graphics.PreferredBackBufferWidth = 1024;
-            graphics.PreferredBackBufferHeight = 600;
+            graphics.PreferredBackBufferWidth = 1280;
+            graphics.PreferredBackBufferHeight = 700;
             graphics.ApplyChanges();
 
             
@@ -56,8 +57,8 @@ namespace Redland2
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
             base.Draw(gameTime);
         }
+
     }
 }
