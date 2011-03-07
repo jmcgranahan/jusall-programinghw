@@ -26,8 +26,10 @@ namespace Redland2
             /// The cursor sprite.
             /// </summary>
             private Sprite _cursor;
-            private Player _player;
-            private Enemy[] _enemys;
+            public Player _player;
+            private SpriteFont font;
+            private SpriteBatch _spritebatch;
+            
         #endregion members
 
         #region properties
@@ -45,9 +47,8 @@ namespace Redland2
                 CreateCursor();
 
                 _player = new Player(true);
-                _enemys = new Enemy[20];
-                for(int i = 0; i <20; i++)
-                    _enemys[i] = new Enemy();
+                font = Content.Load<SpriteFont>("myFont");
+               
                 //---------------------------
 
                 base.Initalize();
@@ -81,11 +82,19 @@ namespace Redland2
             protected override void Update(GameTime gameTime)
             {
                 _cursor.Position = Input.GetMousePosition();
-
-                foreach(Enemy enemy in _enemys)
-                    enemy.TargetPos = _player.Position;
+     
                 base.Update(gameTime);
             }
+
+        /*
+            private void DebugText()
+            {
+                string debugstring = "DEBUG: ";
+                debugstring += "Player Bullets: ";
+                debugstring += _player._bullets.Count;
+                _spritebatch.DrawString(font, debugstring, new Vector2(20, 20), Color.Red);
+            }
+         */
         #endregion methods
     }
 }

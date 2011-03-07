@@ -46,3 +46,4 @@ F:\code\c#\Redland2\Redland2\Redland2\obj\x86\Debug\ResolveAssemblyReference.cac
 F:\code\c#\Redland2\Redland2\Redland2\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 F:\code\c#\Redland2\Redland2\Redland2\obj\x86\Debug\Redland2.exe
 F:\code\c#\Redland2\Redland2\Redland2\obj\x86\Debug\Redland2.pdb
+D:\Storage\code\c#\Redland2\Redland2\Redland2\bin\x86\Debug\Content\myFont.xnb

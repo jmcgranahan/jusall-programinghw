@@ -12,6 +12,7 @@ namespace Redland2
     {
         #region members
             private Vector2 _velocity = Vector2.Zero;
+            private List<Entity> _collisions = new List<Entity>();
         #endregion members
 
         #region properties
@@ -32,12 +33,17 @@ namespace Redland2
                 get { return _velocity.Y; }
                 set { _velocity.Y = value; }
             }
+
+            public Vector2 Velocity
+            {
+                get { return _velocity; }
+                set { _velocity = value; }
+            }
         #endregion properties
 
         #region constructors
             public Entity(Texture2D texture, Vector2 position) : base(texture, position)
             {
-                
             }
         #endregion construcors
 
