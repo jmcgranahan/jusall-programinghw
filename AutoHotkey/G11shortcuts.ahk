@@ -37,27 +37,7 @@ G1:
 return
 
 G2:
-	WinActivate ahk_class Shell_TrayWnd
-	WinActivate ahk_class Battlefield: Bad Company 2
-	#IfWinActive ahk_class Battlefield: Bad Company 2
-	MouseClick, left,  765,  147
-	Sleep, 500
-	MouseClick, left,  766,  208
-	Sleep, 500
-	MouseClick, left,  1234,  469
-	Sleep, 250
-	MouseClick, left,  1233,  485
-	Sleep, 250
-	MouseClick, left,  1236,  513
-	Sleep, 250
-	MouseClick, left,  1244,  413
-	Sleep, 250
-	MouseClick, left,  1188,  474
-	Sleep, 500
-	MouseClick, left,  987,  765
-	Sleep, 500
-	MouseClick, left,  758,  536
-	#IfWinActive
+
 return
 
 G3:
@@ -70,9 +50,9 @@ G5:
 return
 
 G6:
-return
+returnG7:
 
-G7:
+
 return
 
 G8:
@@ -89,16 +69,7 @@ G11:
 return
 
 G12:
-WinWait, AikaClient, 
-IfWinNotActive, AikaClient, , WinActivate, AikaClient, 
-WinWaitActive, AikaClient, 
-Send, , 
-MouseGetPos, xpos, ypos 
-MouseClick, left,  373,  100
-Sleep, 100
-MouseClick, left,  533,  52
-Sleep, 100
-mousemove, xpos, ypos
+
 return
 
 G13:
