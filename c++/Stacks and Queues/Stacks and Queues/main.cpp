@@ -173,8 +173,8 @@ int main()
 	breakLine();
 	*/
 
-	char input[20];
-	char buffer[20];
+	char input[50];
+	char buffer[50];
 	do {
 	cout << "input infix equation" << endl;
 	gets(input);
