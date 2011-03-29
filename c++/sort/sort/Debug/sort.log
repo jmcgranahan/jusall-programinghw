@@ -1,11 +1,14 @@
-﻿Build started 3/17/2011 8:56:23 PM.
+﻿Build started 3/28/2011 6:03:35 PM.
      1>Project "D:\Storage\code\c++\sort\sort\sort.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\sort.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
-     1>d:\storage\code\c++\sort\sort\main.cpp(22): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>d:\storage\code\c++\sort\sort\main.cpp(19): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>d:\storage\code\c++\sort\sort\main.cpp(33): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\storage\code\c++\sort\sort\main.cpp(38): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\storage\code\c++\sort\sort\main.cpp(39): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
      1>d:\storage\code\c++\sort\sort\list.h(137): warning C4715: 'list<int>::get' : not all control paths return a value
      1>d:\storage\code\c++\sort\sort\list.h(178): warning C4715: 'list<int>::pop' : not all control paths return a value
        Link:
@@ -21,4 +24,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.91
+Time Elapsed 00:00:01.26

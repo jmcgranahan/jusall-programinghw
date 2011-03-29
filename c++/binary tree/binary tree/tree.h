@@ -101,7 +101,7 @@ public:
 
 		if( left && right ) 
 		{
-			if((pTemp->getData() - pTemp->getLeft()->getData()) < (pTemp->getData() - pTemp->getRight()->getData()))
+			if((pTemp->getData() - pTemp->getLeft()->getData()) > (pTemp->getData() - pTemp->getRight()->getData()))
 			{	
 				pTemp2 = pTemp->getLeft();
 				pTempBuffer = pTemp;
@@ -113,7 +113,10 @@ public:
 				}
 				
 				pTemp->setData(pTemp2->getData());
-				pTempBuffer->setRight(pTemp2->getLeft());
+				if(pTempBuffer != pTemp)
+					pTempBuffer->setRight(pTemp2->getLeft());
+				else 
+					pTempBuffer->setLeft(NULL);
 
 				delete pTemp2;
 			}
@@ -129,7 +132,10 @@ public:
 				}
 				
 				pTemp->setData(pTemp2->getData());
-				pTempBuffer->setLeft(pTemp2->getRight());
+				if(pTempBuffer != pTemp)
+					pTempBuffer->setLeft(pTemp2->getRight());
+				else 
+					pTempBuffer->setRight(NULL);
 
 				delete pTemp2;
 			}
@@ -158,6 +164,20 @@ public:
 		delete pTemp;
 
 		return true;
+	}
+
+	void Print()
+	{
+		PrintNode(root);
+	}
+
+	void PrintNode( node<type> * pInput)
+	{
+		if(!pInput) return;
+		PrintNode(pInput->getLeft());
+		cout << " " << pInput->getData();
+		PrintNode(pInput->getRight());
+		
 	}
 };
 
