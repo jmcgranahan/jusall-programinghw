@@ -29,7 +29,13 @@ int main()
 	_tree.Add(13);
 	_tree.Add(9);
 
-
+	
 	_tree.Print();
+	_tree.PrintTransversal();
+	/*
+	_tree.Search(4);
+	_tree.Search(99);
+	_tree.Search(0);
+	*/
 	system("PAUSE");
 }

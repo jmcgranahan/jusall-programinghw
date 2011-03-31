@@ -166,9 +166,42 @@ public:
 		return true;
 	}
 
+	bool Search(const type & inData)
+	{
+		node<type> * pTemp, * pTempBuffer ;
+		int data;
+		pTemp = root;
+		data = pTemp->getData();
+		while(pTemp && data != inData)
+		{
+			pTempBuffer = pTemp;
+
+			//========Less========
+			if(inData < data)
+				pTemp = pTemp->getLeft();
+		
+			//========More========
+			else
+				pTemp = pTemp->getRight();
+
+			if(pTemp) 
+				data = pTemp->getData();
+		}
+
+		if(!pTemp) 
+		{
+			cout << inData << " not found in tree, failed at " << pTempBuffer->getData() << " in node: " << pTempBuffer << endl;
+			return false;
+		}
+			
+		cout << "Found: " << data << " in node: " << pTemp << ", with parent: " << pTempBuffer->getData() << " in node: " << pTempBuffer << endl;
+		return true;
+	}
+
 	void Print()
 	{
 		PrintNode(root);
+		cout << endl;
 	}
 
 	void PrintNode( node<type> * pInput)
@@ -178,6 +211,27 @@ public:
 		cout << " " << pInput->getData();
 		PrintNode(pInput->getRight());
 		
+	}
+
+	void PrintTransversal()
+	{
+		PrintTransversal(root);
+	}
+
+	void PrintTransversal(node<type> * pNode)
+	{
+		if(pNode == NULL) pNode = root;
+		cout << "node: " << pNode->getData();
+
+		if(pNode->getLeft()) 
+			cout << " left: " << pNode->getLeft()->getData();
+		if(pNode->getRight())
+			cout << " Right: " << pNode->getRight()->getData();
+		cout << endl;
+		if(pNode->getLeft()) 
+			PrintTransversal(pNode->getLeft());
+		if(pNode->getRight())
+			PrintTransversal(pNode->getRight());
 	}
 };
 
