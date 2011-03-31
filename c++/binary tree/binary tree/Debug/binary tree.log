@@ -1,4 +1,4 @@
-﻿Build started 3/26/2011 5:32:58 PM.
+﻿Build started 3/29/2011 9:55:50 PM.
      1>Project "D:\Storage\code\c++\binary tree\binary tree\binary tree.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\binary tree.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -18,4 +18,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.97
+Time Elapsed 00:00:00.95
