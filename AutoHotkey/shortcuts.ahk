@@ -4,8 +4,13 @@ run explorer C:\Users\gowness\Documents\AutoHotkey\
 return
 
 :*:/ip:: 
-SendInput %A_IPAddress1%
+Url := "http://icanhazip.com/"
+sData := ""
+httpQuery(sData,Url)
+VarSetCapacity(sData,-1)
+SendInput %sData%
 return
+
 :*:/gmail::biga05@gmail.com
 
 :*:/tcb::

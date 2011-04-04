@@ -66,7 +66,7 @@ if($FireMode = "Auto")
 			click up
 			Sleep, 5
 			click down
-			Sleep,3
+			Sleep,5
 		}
 	}
 

@@ -1,5 +1,6 @@
 //main.cpp
 #include <iostream>
+#include <fstream>
 #include "node.h"
 #include "tree.h"
 #include <string>
@@ -15,6 +16,7 @@ void breakLine()
 int main()
 {
 	tree<int> _tree;
+	fstream file;
 	_tree.Add(7);
 	_tree.Add(4);
 	_tree.Add(11);
@@ -28,11 +30,13 @@ int main()
 	_tree.Add(12);
 	_tree.Add(13);
 	_tree.Add(9);
-
-	
+	file.open("input.txt");
+	_tree.InputFromFile(file);
+	 
 	_tree.Print();
-	_tree.PrintTransversal();
 	/*
+	_tree.PrintTransversal();
+	
 	_tree.Search(4);
 	_tree.Search(99);
 	_tree.Search(0);

@@ -1,6 +1,11 @@
 //tree.h
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <list>
 #include "node.h"
+
+
 #pragma once
 
 template <class type>
@@ -232,6 +237,36 @@ public:
 			PrintTransversal(pNode->getLeft());
 		if(pNode->getRight())
 			PrintTransversal(pNode->getRight());
+	}
+
+	bool InputFromFile(fstream file)
+	{			
+		if(file.is_open())
+		{
+			cout << "reading file to list..." << endl;
+			while(file.good())
+			{
+				string line,word;
+				getline(file,line);
+
+				for( int i=0; i < line.length(); i++)
+				{
+					if(line[i] == ',') 
+					{
+						int sum = 0;
+						for(int j = 0; j < word.length(); j++)
+							sum += (int)(word[j]-48)*(pow((double)10,(double)word.length()-(j+1))); // multiplys the first digit by the appropriate power of 10
+						this->Add(sum);
+						word = "";
+					}
+					else
+						word.push_back(line[i]);
+				}
+			}
+		}
+		else cout << "failed to open file" << endl;
+		file.close();
+
 	}
 };
 
