@@ -17,6 +17,9 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="input.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{882BF226-EAC0-4D4E-AE76-F87C82BA3E7E}</ProjectGuid>
     <RootNamespace>binarytree</RootNamespace>
