@@ -1,14 +1,20 @@
-﻿Build started 3/31/2011 10:39:46 PM.
+﻿Build started 4/8/2011 12:16:44 AM.
      1>Project "D:\Storage\code\c++\binary tree\binary tree\binary tree.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Touching "Debug\binary tree.unsuccessfulbuild".
+         Creating "Debug\binary tree.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
-         main.cpp
-     1>d:\storage\code\c++\binary tree\binary tree\tree.h(242): error C2061: syntax error : identifier 'fstream'
-                 d:\storage\code\c++\binary tree\binary tree\tree.h(271) : see reference to class template instantiation 'tree<type>' being compiled
-     1>Done Building Project "D:\Storage\code\c++\binary tree\binary tree\binary tree.vcxproj" (build target(s)) -- FAILED.
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Storage\code\c++\binary tree\Debug\binary tree.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\binary tree.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\Storage\code\c++\binary tree\Debug\binary tree.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Storage\code\c++\binary tree\Debug\binary tree.lib" /MACHINE:X86 Debug\main.obj
+         LINK : D:\Storage\code\c++\binary tree\Debug\binary tree.exe not found or not built by the last incremental link; performing full link
+         binary tree.vcxproj -> D:\Storage\code\c++\binary tree\Debug\binary tree.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\Storage\code\c++\binary tree\Debug\binary tree.exe;#1" /manifest "Debug\binary tree.exe.intermediate.manifest"
+       FinalizeBuildStatus:
+         Deleting file "Debug\binary tree.unsuccessfulbuild".
+         Touching "Debug\binary tree.lastbuildstate".
+     1>Done Building Project "D:\Storage\code\c++\binary tree\binary tree\binary tree.vcxproj" (build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.76
+Time Elapsed 00:00:00.36
