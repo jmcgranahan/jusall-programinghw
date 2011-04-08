@@ -14,21 +14,39 @@ class tree
 public:
 	node<type> * root;
 
-
+	//=================================
+	// default constructor
+	//	Creates a binary tree class
+	//=================================
 	tree(void)
 	{
 		root = NULL;
 	}
 
+	//=================================
+	// constructor(type data)
+	//	Creates a binary tree class with the root initialied to inData.
+	//	input: <treetype> data
+	//=================================
 	tree(const type & inData)
 	{
 		root = new node(inData);
 	}
 
+	//=================================
+	// destructor
+	//=================================
 	~tree(void)
 	{
+		while(root) 
+			Remove(root->getData());
 	}
 
+	//=================================
+	// Add(type data)
+	//	Adds a value to the tree, prints error if value exists.
+	//	input: <treetype> data
+	//=================================
 	void Add(const type & inData)
 	{
 		if(!root)
@@ -72,11 +90,18 @@ public:
 		}
 	}
 
+	//=================================
+	// Remove(type data)
+	//	Removes a value from the tree
+	//	input: <treetype> data
+	//=================================
 	bool Remove(const type & inData)
 	{
-		node<type> * pTemp, * pTempBuffer ;
-		pTemp = root;
+		if( !root->getLeft() && !root->getRight())
+			delete root;
 
+		node<type> * pTemp, * pTempBuffer ;
+		pTempBuffer = pTemp = root;
 		while( pTemp )
 		{
 			//========Found========
@@ -96,7 +121,7 @@ public:
 
 		if(!pTemp) 
 		{
-			cout << "Item not found" << endl;
+			//cout << "Item not found" << endl;
 			return false;
 		}
 
@@ -104,9 +129,12 @@ public:
 		left = pTemp->getLeft();
 		right = pTemp->getRight();
 
-		if( left && right ) 
+		if( left && right ) // two children
 		{
-			if((pTemp->getData() - pTemp->getLeft()->getData()) > (pTemp->getData() - pTemp->getRight()->getData()))
+			int leftDifference, rightDifference;
+			leftDifference = pTemp->getData() - pTemp->getLeft()->getData()
+			rightDifference = pTemp->getData() - pTemp->getRight()->getData()
+			if(leftDifference > rightDifference) // attempt at picking best replacement
 			{	
 				pTemp2 = pTemp->getLeft();
 				pTempBuffer = pTemp;
@@ -148,7 +176,7 @@ public:
 			return true;
 		}
 
-		else if ( left )
+		else if ( left ) // one smaller child
 		{
 			if(inData < pTempBuffer->getData())
 				pTempBuffer->setLeft(left);
@@ -157,7 +185,7 @@ public:
 				pTempBuffer->setRight(left);
 		}
 
-		else if ( right )
+		else if ( right ) //  one larger child
 		{
 			if(inData < pTempBuffer->getData())
 				pTempBuffer->setLeft(right);
@@ -171,6 +199,12 @@ public:
 		return true;
 	}
 
+	//=================================
+	// Search(type data)
+	//	Searches for a value in the tree and prints out information
+	//	input: <treetype> data
+	//	output: bool - true if found
+	//=================================
 	bool Search(const type & inData)
 	{
 		node<type> * pTemp, * pTempBuffer ;
@@ -203,12 +237,21 @@ public:
 		return true;
 	}
 
+	//=================================
+	// Print
+	//	Prints the tree from left to right
+	//=================================
 	void Print()
 	{
 		PrintNode(root);
 		cout << endl;
 	}
 
+	//=================================
+	// PrintNode(node * node)
+	//	Recursive print function for print(), prints left child, the current node, and the right child
+	//	input: node * node
+	//=================================
 	void PrintNode( node<type> * pInput)
 	{
 		if(!pInput) return;
@@ -218,28 +261,42 @@ public:
 		
 	}
 
-	void PrintTransversal()
+	//=================================
+	// PrintTraversal
+	//	Starts the recursive printing ofthe traversals for the entire tree
+	//=================================
+	void PrintTraversal()
 	{
-		PrintTransversal(root);
+		PrintTraversal(root);
 	}
 
-	void PrintTransversal(node<type> * pNode)
+	//=================================
+	// PrintTraversal(node * node)
+	//	Recursive print used by PrintTraversal, pringing the current node and the left and the right nodes
+	//	input: node * node
+	//=================================
+	void PrintTraversal(node<type> * pNode)
 	{
 		if(pNode == NULL) pNode = root;
-		cout << "node: " << pNode->getData();
+		cout << "Node: " << pNode->getData();
 
 		if(pNode->getLeft()) 
-			cout << " left: " << pNode->getLeft()->getData();
+			cout << " Left: " << pNode->getLeft()->getData();
 		if(pNode->getRight())
 			cout << " Right: " << pNode->getRight()->getData();
 		cout << endl;
 		if(pNode->getLeft()) 
-			PrintTransversal(pNode->getLeft());
+			PrintTraversal(pNode->getLeft());
 		if(pNode->getRight())
-			PrintTransversal(pNode->getRight());
+			PrintTraversal(pNode->getRight());
 	}
 
-	bool InputFromFile(fstream file)
+	//=================================
+	// InputFromFile(fstream file)
+	//	Inputs the information in the file to the tree
+	//	input: fstream file
+	/*/=================================
+	void InputFromFile(fstream file)
 	{			
 		if(file.is_open())
 		{
@@ -268,5 +325,6 @@ public:
 		file.close();
 
 	}
+	*/
 };
 
