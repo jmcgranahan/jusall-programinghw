@@ -5,6 +5,7 @@
 #include <list>
 #include "node.h"
 
+using namespace std;
 
 #pragma once
 
@@ -116,7 +117,7 @@ public:
 			else 
 				pTemp = pTemp->getRight();
 
-			
+
 		}
 
 		if(!pTemp) 
@@ -132,8 +133,8 @@ public:
 		if( left && right ) // two children
 		{
 			int leftDifference, rightDifference;
-			leftDifference = pTemp->getData() - pTemp->getLeft()->getData()
-			rightDifference = pTemp->getData() - pTemp->getRight()->getData()
+			leftDifference = pTemp->getData() - pTemp->getLeft()->getData();
+			rightDifference = pTemp->getData() - pTemp->getRight()->getData();
 			if(leftDifference > rightDifference) // attempt at picking best replacement
 			{	
 				pTemp2 = pTemp->getLeft();
@@ -144,7 +145,7 @@ public:
 					pTempBuffer = pTemp2;
 					pTemp2 = pTemp2->getRight();
 				}
-				
+
 				pTemp->setData(pTemp2->getData());
 				if(pTempBuffer != pTemp)
 					pTempBuffer->setRight(pTemp2->getLeft());
@@ -163,7 +164,7 @@ public:
 					pTempBuffer = pTemp2;
 					pTemp2 = pTemp2->getLeft();
 				}
-				
+
 				pTemp->setData(pTemp2->getData());
 				if(pTempBuffer != pTemp)
 					pTempBuffer->setLeft(pTemp2->getRight());
@@ -180,7 +181,7 @@ public:
 		{
 			if(inData < pTempBuffer->getData())
 				pTempBuffer->setLeft(left);
-			
+
 			else 
 				pTempBuffer->setRight(left);
 		}
@@ -189,7 +190,7 @@ public:
 		{
 			if(inData < pTempBuffer->getData())
 				pTempBuffer->setLeft(right);
-			
+
 			else 
 				pTempBuffer->setRight(right);
 		}
@@ -218,7 +219,7 @@ public:
 			//========Less========
 			if(inData < data)
 				pTemp = pTemp->getLeft();
-		
+
 			//========More========
 			else
 				pTemp = pTemp->getRight();
@@ -232,7 +233,7 @@ public:
 			cout << inData << " not found in tree, failed at " << pTempBuffer->getData() << " in node: " << pTempBuffer << endl;
 			return false;
 		}
-			
+
 		cout << "Found: " << data << " in node: " << pTemp << ", with parent: " << pTempBuffer->getData() << " in node: " << pTempBuffer << endl;
 		return true;
 	}
@@ -258,7 +259,7 @@ public:
 		PrintNode(pInput->getLeft());
 		cout << " " << pInput->getData();
 		PrintNode(pInput->getRight());
-		
+
 	}
 
 	//=================================
@@ -295,10 +296,10 @@ public:
 	// InputFromFile(fstream file)
 	//	Inputs the information in the file to the tree
 	//	input: fstream file
-	/*/=================================
-	void InputFromFile(fstream file)
+	//=================================
+	void InputFromFile( /*ifstream file*/ )
 	{			
-		if(file.is_open())
+		/*if(file.is_open())
 		{
 			cout << "reading file to list..." << endl;
 			while(file.good())
@@ -320,11 +321,12 @@ public:
 						word.push_back(line[i]);
 				}
 			}
+			//file.close();
 		}
 		else cout << "failed to open file" << endl;
-		file.close();
 
+		*/
 	}
-	*/
+
 };
 

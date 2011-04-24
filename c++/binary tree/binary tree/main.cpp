@@ -16,7 +16,7 @@ void breakLine()
 int main()
 {
 	tree<int> _tree;
-	fstream file;
+	ifstream file;
 	bool run = true;
 
 	while(run)
@@ -79,18 +79,20 @@ int main()
 
 		else if( choice == 7 )
 		{
-			/*file.open("input.txt");
+			file.open("input.txt");
 			if(file.is_open())
-				_tree.InputFromFile(file);
-			else
+				_tree.InputFromFile();
+			/*else
 				cout << "couldn't open file\n";
-				*/
+				
 			cout << "weird problem with function\n";
+			file.close();*/
 		}
 		
 		else
 			cout << "0-7 please\n";
-	}
+	
+}
 
 	//system("PAUSE");
-}
+};
