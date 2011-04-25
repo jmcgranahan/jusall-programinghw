@@ -135,6 +135,7 @@ public:
 			return current->getData();
 		
 		cout << "no object at index" << endl;
+		return NULL;
 	}
 
 	// removes the indexed node from the list, returning the data stored there
@@ -176,6 +177,8 @@ public:
 			delete pTemp;
 			return data;
 		}
+		cout << "No value at index\n";
+		return NULL;
 	}
 
 	//remove the indexed node from the list, no return 

@@ -19,6 +19,6 @@ public:
 	void Add(string inString);
 	bool Remove(string inString);
 	bool Find(string inString);
-	void Print(int numberOfElements = 0);
+	void Print(int numberOfElements = 1);
 };
 
