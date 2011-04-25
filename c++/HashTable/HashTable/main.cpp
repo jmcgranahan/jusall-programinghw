@@ -16,33 +16,42 @@ void BreakLine()
 
 int main()
 {
+	int const NUM_OF_STRINGS = 1000000; 
+	int const SIZE_OF_TABLE  = 1000000; // Why Not?
+
 	clock_t timeBefore,timeAfter;
-	srand(time(NULL));
+	srand((unsigned int)time(NULL));
 
 
-	StringHashTable Table(100000);
+	StringHashTable Table(SIZE_OF_TABLE);
 	list<string> list;
 
 
 	cout << "Hash testing" << endl;
-	cout << Table.Hash("test") << endl;
-	cout << Table.Hash("tset") << endl;
-	cout << Table.Hash("sett") << endl;
-	cout << Table.Hash("ttse") << endl;
-	cout << Table.Hash("ttes") << endl;
+	cout << "hasing test:" << Table.Hash("test") << endl;
+	cout << "hasing tset:" << Table.Hash("tset") << endl;
+	cout << "hasing sett:" << Table.Hash("sett") << endl;
+	cout << "hasing ttse:" << Table.Hash("ttse") << endl;
+	cout << "hasing ttes:" << Table.Hash("ttes") << endl;
 	BreakLine();
-	cout << Table.Hash("god") << endl;
-	cout << Table.Hash("dog") << endl;
-	cout << Table.Hash("odg") << endl;
-	cout << Table.Hash("ogd") << endl;
-	cout << Table.Hash("gdo") << endl;
-	cout << Table.Hash("dgo") << endl;
+	cout << "hasing god:" << Table.Hash("god") << endl;
+	cout << "hasing dog:" << Table.Hash("dog") << endl;
+	cout << "hasing odg:" << Table.Hash("odg") << endl;
+	cout << "hasing ogd:" << Table.Hash("ogd") << endl;
+	cout << "hasing gdo:" << Table.Hash("gdo") << endl;
+	cout << "hasing dgo:" << Table.Hash("dgo") << endl;
+	BreakLine();
+	cout << "hasing ab:" << Table.Hash("ab") << endl;
+	cout << "hasing ba:" << Table.Hash("ba") << endl;
 	BreakLine();
 	BreakLine();
+
+
 	cout << "initializing table...\n";
-	for ( int i = 0; i < 75000; i++)
+
+	for ( int i = 0; i < NUM_OF_STRINGS; i++)
 	{
-		int stringLength = rand() % 10 +5;
+		int stringLength = 10;//rand() % 10 +5;
 		string randomString;
 		
 		for ( int j = 0; j < stringLength; j++)
@@ -54,8 +63,9 @@ int main()
 	}
 	
 	cout << "starting search" << endl;
+
 	timeBefore = clock();
-	for(int i = 0; i < 75000; i++)
+	for(int i = 0; i < NUM_OF_STRINGS; i++)
 	{
 		if( !Table.Find(list.get(i)))
 		{
@@ -67,7 +77,7 @@ int main()
 
 	cout << "found all elements in " << (float)(timeAfter-timeBefore)/CLOCKS_PER_SEC  << "s\n";
 
-	//Table.Print(3);
+	//Table.Print();
 
 	system("PAUSE");
 }
